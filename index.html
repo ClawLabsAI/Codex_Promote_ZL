@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -23,7 +23,8 @@
           <p class="eyebrow">Growth OS</p>
           <h1>ZeroLimitAI</h1>
           <p class="muted">
-            Plan, ejecución y reporting en un solo panel listo para GitHub.
+            Panel operativo para lanzar distribución, contenido, landings y
+            primeros clientes.
           </p>
         </div>
 
@@ -47,47 +48,52 @@
           <p id="north-star" class="sidebar-copy"></p>
         </section>
 
-        <section class="sidebar-card">
+        <section class="sidebar-card accent-card">
           <p class="eyebrow">Data Source</p>
           <p class="sidebar-copy">
-            El dashboard está leyendo desde:
+            Fuente activa:
             <strong id="source-status">defaultState</strong>
           </p>
         </section>
       </aside>
 
       <main class="main-content">
-        <section class="hero-card" id="overview">
+        <section class="hero-card section-blue" id="overview">
           <div class="hero-copy">
-            <p class="eyebrow">Early Growth Dashboard</p>
-            <h2>Empieza el marketing antes del tráfico y construye distribución real</h2>
-            <p class="lead">
-              Este panel está pensado para una fase pre-tráfico: qué publicar,
-              qué landing construir, a qué directorios entrar, cómo mover redes
-              sociales y cómo generar tus primeras visitas y clientes.
+            <p class="eyebrow eyebrow-light">Early Growth Dashboard</p>
+            <h2>Empieza el marketing antes del tráfico</h2>
+            <p class="lead lead-light">
+              Decide qué publicar, qué landing construir, dónde distribuir y
+              cómo generar las primeras visitas y clientes de ZeroLimitAI.
             </p>
             <div class="hero-meta">
-              <span class="meta-pill">Pre-traffic mode</span>
-              <span class="meta-pill">Social-first</span>
-              <span class="meta-pill">Execution-driven</span>
+              <span class="meta-pill meta-pill-light">Pre-traffic mode</span>
+              <span class="meta-pill meta-pill-light">Social-first</span>
+              <span class="meta-pill meta-pill-light">Flat system</span>
             </div>
+          </div>
+
+          <div class="hero-graphic" aria-hidden="true">
+            <div class="shape shape-circle"></div>
+            <div class="shape shape-square"></div>
+            <div class="shape shape-rect"></div>
           </div>
 
           <div class="hero-actions">
             <button id="focus-button" class="primary">Ver foco</button>
-            <button id="export-button" class="secondary">Copiar estado</button>
-            <button id="report-button" class="secondary">Copiar reporte</button>
-            <button id="reset-button" class="secondary">Reset</button>
-            <label class="file-button secondary">
+            <button id="export-button" class="secondary light">Copiar estado</button>
+            <button id="report-button" class="secondary light">Copiar reporte</button>
+            <button id="reset-button" class="secondary light">Reset</button>
+            <label class="file-button secondary light">
               Importar JSON
               <input id="import-file" type="file" accept="application/json" />
             </label>
           </div>
         </section>
 
-        <section class="metrics-grid" id="metrics"></section>
+        <section class="metrics-grid section-white" id="metrics"></section>
 
-        <section class="split-grid">
+        <section class="split-grid section-muted">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -109,7 +115,7 @@
           </article>
         </section>
 
-        <section class="split-grid" id="setup">
+        <section class="split-grid section-white" id="setup">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -131,8 +137,8 @@
           </article>
         </section>
 
-        <section class="split-grid">
-          <article class="panel">
+        <section class="split-grid section-amber">
+          <article class="panel panel-contrast">
             <div class="section-head">
               <div>
                 <p class="eyebrow">Positioning</p>
@@ -143,7 +149,7 @@
             <ul id="positioning-points" class="list"></ul>
           </article>
 
-          <article class="panel">
+          <article class="panel panel-contrast">
             <div class="section-head">
               <div>
                 <p class="eyebrow">Weekly Focus</p>
@@ -173,7 +179,7 @@
           </article>
         </section>
 
-        <section class="split-grid">
+        <section class="split-grid section-white">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -192,15 +198,15 @@
               </div>
             </div>
             <ul class="list">
-              <li>Primero enfócate en publicar, distribuir y crear landings</li>
-              <li>Cuando entre tráfico, activa PostHog y Stripe</li>
+              <li>Primero publica, distribuye y construye landings</li>
+              <li>Después conecta PostHog y Stripe</li>
               <li><code>data/dashboard.json</code> sigue siendo la fuente central</li>
-              <li>Los scripts de métricas ya están listos para cuando toque</li>
+              <li>Los scripts de métricas ya están listos cuando los necesites</li>
             </ul>
           </article>
         </section>
 
-        <section class="split-grid" id="audiences">
+        <section class="split-grid section-muted" id="audiences">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -222,7 +228,7 @@
           </article>
         </section>
 
-        <section class="split-grid" id="distribution">
+        <section class="split-grid section-white" id="distribution">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -244,8 +250,8 @@
           </article>
         </section>
 
-        <section class="split-grid" id="social">
-          <article class="panel">
+        <section class="split-grid section-green" id="social">
+          <article class="panel panel-contrast">
             <div class="section-head">
               <div>
                 <p class="eyebrow">Social System</p>
@@ -255,7 +261,7 @@
             <div id="social-grid" class="info-grid"></div>
           </article>
 
-          <article class="panel">
+          <article class="panel panel-contrast">
             <div class="section-head">
               <div>
                 <p class="eyebrow">Weekly Assets</p>
@@ -266,7 +272,7 @@
           </article>
         </section>
 
-        <section class="panel" id="roadmap">
+        <section class="panel section-white" id="roadmap">
           <div class="section-head">
             <div>
               <p class="eyebrow">Roadmap</p>
@@ -276,7 +282,7 @@
           <div id="roadmap-columns" class="roadmap-grid"></div>
         </section>
 
-        <section class="split-grid" id="execution">
+        <section class="split-grid section-muted" id="execution">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -324,7 +330,7 @@
           </article>
         </section>
 
-        <section class="panel" id="channels">
+        <section class="panel section-white" id="channels">
           <div class="section-head">
             <div>
               <p class="eyebrow">Channels</p>
@@ -334,7 +340,7 @@
           <div id="channels-grid" class="channels-grid"></div>
         </section>
 
-        <section class="split-grid" id="experiments">
+        <section class="split-grid section-muted" id="experiments">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -356,7 +362,7 @@
           </article>
         </section>
 
-        <section class="split-grid" id="automation">
+        <section class="split-grid section-white" id="automation">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -378,7 +384,7 @@
           </article>
         </section>
 
-        <section class="panel" id="calendar">
+        <section class="panel section-muted" id="calendar">
           <div class="section-head">
             <div>
               <p class="eyebrow">Calendar</p>
@@ -388,7 +394,7 @@
           <div id="calendar-grid" class="calendar-grid"></div>
         </section>
 
-        <section class="split-grid" id="offers">
+        <section class="split-grid section-white" id="offers">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -410,14 +416,14 @@
           </article>
         </section>
 
-        <section class="panel">
+        <section class="panel section-blue">
           <div class="section-head">
             <div>
-              <p class="eyebrow">Immediate Next Steps</p>
-              <h3>Qué haría esta semana</h3>
+              <p class="eyebrow eyebrow-light">Immediate Next Steps</p>
+              <h3 class="text-light">Qué haría esta semana</h3>
             </div>
           </div>
-          <ol id="next-actions" class="list numbered"></ol>
+          <ol id="next-actions" class="list numbered list-light"></ol>
         </section>
       </main>
     </div>
