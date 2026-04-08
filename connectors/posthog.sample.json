@@ -1,0 +1,13 @@
+{
+  "source": "posthog",
+  "description": "Plantilla de salida para sesiones, signup y embudo desde PostHog.",
+  "mapped_fields": {
+    "sessions": 1200,
+    "trial_starts": 42,
+    "activation_rate": "21%"
+  },
+  "notes": [
+    "Exporta estos datos desde tu consulta semanal o desde una automation.",
+    "Luego vuelcalos al formato de data/dashboard.json."
+  ]
+}

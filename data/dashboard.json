@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "northStar": "Aumentar trial starts cualificados y mejorar la conversion de trial a pago.",
+    "positioning": "La alternativa lifetime a ChatGPT, Claude y Perplexity para usuarios intensivos que quieren mejores modelos, memoria y automatizacion."
+  },
+  "weeklyFocus": {
+    "sprint": "Semana 1",
+    "objective": "Instrumentar el embudo y publicar los primeros activos de adquisicion.",
+    "wins": "Landing principal terminada y dashboard operativo listo.",
+    "blockers": "Pendiente conectar analitica real y fijar ICP principal."
+  },
+  "kpis": [
+    { "id": "sessions", "label": "Sesiones semanales", "value": "1200", "target": "5000", "note": "Todo el trafico" },
+    { "id": "trial_starts", "label": "Trial starts", "value": "42", "target": "250", "note": "KPI principal" },
+    { "id": "activation", "label": "Activation rate", "value": "21%", "target": "35%", "note": "D1 activado" },
+    { "id": "trial_to_paid", "label": "Trial to paid", "value": "4%", "target": "10%", "note": "Conversion" }
+  ],
+  "meta": {
+    "updatedAt": "2026-04-08T00:00:00.000Z",
+    "updatedBy": "manual seed"
+  }
+}

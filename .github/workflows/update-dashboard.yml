@@ -1,0 +1,44 @@
+name: Update Dashboard Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync dashboard data
+        env:
+          DASHBOARD_REMOTE_JSON_URL: ${{ secrets.DASHBOARD_REMOTE_JSON_URL }}
+          DASHBOARD_REMOTE_JSON_TOKEN: ${{ secrets.DASHBOARD_REMOTE_JSON_TOKEN }}
+          DASHBOARD_SESSIONS: ${{ vars.DASHBOARD_SESSIONS }}
+          DASHBOARD_TRIAL_STARTS: ${{ vars.DASHBOARD_TRIAL_STARTS }}
+          DASHBOARD_ACTIVATION: ${{ vars.DASHBOARD_ACTIVATION }}
+          DASHBOARD_TRIAL_TO_PAID: ${{ vars.DASHBOARD_TRIAL_TO_PAID }}
+          DASHBOARD_SPRINT: ${{ vars.DASHBOARD_SPRINT }}
+          DASHBOARD_OBJECTIVE: ${{ vars.DASHBOARD_OBJECTIVE }}
+          DASHBOARD_WINS: ${{ vars.DASHBOARD_WINS }}
+          DASHBOARD_BLOCKERS: ${{ vars.DASHBOARD_BLOCKERS }}
+        run: npm run sync:data
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dashboard.json
+          git diff --staged --quiet || git commit -m "chore: update dashboard data"
+          git push
