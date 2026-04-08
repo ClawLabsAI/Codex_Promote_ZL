@@ -36,6 +36,7 @@ const defaultState = {
   distribution: [],
   socialSystem: [],
   weeklyAssets: [],
+  publishingWorkflow: [],
   monthPlan: [],
   directorySprint: [],
   outreachQueue: [],
@@ -195,6 +196,50 @@ function renderTaskBoard() {
         <span class="task-count">${tasks.length}</span>
       </div>
       <div class="task-stack">${cards || '<p class="empty">Sin tareas</p>'}</div>
+    `;
+    board.appendChild(column);
+  });
+}
+
+function renderPublishBoard() {
+  const statuses = ["Idea", "Draft", "Scheduled", "Published"];
+  const board = $("#publish-board");
+  if (!board) return;
+  board.innerHTML = "";
+
+  statuses.forEach((status) => {
+    const column = document.createElement("section");
+    column.className = "task-column";
+    const items = state.publishingWorkflow.filter((item) => item.stage === status);
+    const cards = items
+      .map(
+        (item) => `
+          <article class="task-card publish-card">
+            <div class="task-top">
+              <h4>${item.title}</h4>
+              <select data-publish-id="${item.id}" data-field="stage">
+                ${statuses
+                  .map(
+                    (option) =>
+                      `<option value="${option}" ${option === item.stage ? "selected" : ""}>${option}</option>`
+                  )
+                  .join("")}
+              </select>
+            </div>
+            <p>${item.channel} · ${item.format}</p>
+            <p class="publish-hook">${item.hook}</p>
+            <p class="task-due">Owner: ${item.owner}</p>
+          </article>
+        `
+      )
+      .join("");
+
+    column.innerHTML = `
+      <div class="task-header">
+        <h3>${status}</h3>
+        <span class="task-count">${items.length}</span>
+      </div>
+      <div class="task-stack">${cards || '<p class="empty">Sin piezas</p>'}</div>
     `;
     board.appendChild(column);
   });
@@ -548,6 +593,7 @@ function renderAll() {
   renderKpis();
   renderPlanSections();
   renderTaskBoard();
+  renderPublishBoard();
   renderChannels();
   renderCalendar();
   renderAutomations();
@@ -597,6 +643,13 @@ function bindEditableInputs() {
       renderTaskBoard();
       renderWeeklyReport();
     }
+
+    if (target.matches("[data-publish-id]")) {
+      const item = state.publishingWorkflow.find((entry) => entry.id === target.dataset.publishId);
+      item[target.dataset.field] = target.value;
+      saveState();
+      renderPublishBoard();
+    }
   });
 }
 
@@ -630,6 +683,26 @@ function bindForms() {
     saveState();
     renderTaskBoard();
     renderWeeklyReport();
+    event.target.reset();
+  });
+
+  $("#publish-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const title = $("#publish-title").value.trim();
+    if (!title) return;
+
+    state.publishingWorkflow.push({
+      id: `publish-${Date.now()}`,
+      title,
+      channel: $("#publish-channel").value.trim() || "X",
+      format: $("#publish-format").value.trim() || "Post",
+      hook: $("#publish-hook").value.trim() || "Definir hook principal",
+      stage: $("#publish-stage").value,
+      owner: $("#publish-owner").value.trim() || "Founder"
+    });
+
+    saveState();
+    renderPublishBoard();
     event.target.reset();
   });
 }

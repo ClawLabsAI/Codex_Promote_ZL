@@ -736,6 +736,16 @@ blockquote {
   background: var(--muted);
 }
 
+.publish-card {
+  display: grid;
+  gap: 8px;
+}
+
+.publish-hook {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .task-count {
   width: 32px;
   height: 32px;

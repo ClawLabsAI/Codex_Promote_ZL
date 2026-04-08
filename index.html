@@ -181,6 +181,59 @@
           </article>
         </section>
 
+        <section class="split-grid section-white" id="publishing-workflow">
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Publishing Workflow</p>
+                <h3>Pipeline de contenido</h3>
+              </div>
+            </div>
+            <div id="publish-board" class="task-board"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">New Content Item</p>
+                <h3>Captura rápida</h3>
+              </div>
+            </div>
+            <form id="publish-form" class="form-grid">
+              <label class="field field-full">
+                Título
+                <input id="publish-title" placeholder="Ej. X thread comparando ChatGPT vs ZeroLimitAI" />
+              </label>
+              <label class="field">
+                Canal
+                <input id="publish-channel" placeholder="X / LinkedIn / Shorts / Email" />
+              </label>
+              <label class="field">
+                Formato
+                <input id="publish-format" placeholder="Thread / Post / Reel / Email" />
+              </label>
+              <label class="field field-full">
+                Hook
+                <input id="publish-hook" placeholder="Ej. La mayoría paga 3 suscripciones AI sin necesitarlo" />
+              </label>
+              <label class="field">
+                Estado
+                <select id="publish-stage">
+                  <option>Idea</option>
+                  <option>Draft</option>
+                  <option>Scheduled</option>
+                  <option>Published</option>
+                </select>
+              </label>
+              <label class="field">
+                Owner
+                <input id="publish-owner" placeholder="Founder" />
+              </label>
+              <button class="primary" type="submit">Añadir pieza</button>
+            </form>
+          </article>
+        </section>
+
         <section class="split-grid section-muted" id="execution">
           <article class="panel">
             <div class="section-head">

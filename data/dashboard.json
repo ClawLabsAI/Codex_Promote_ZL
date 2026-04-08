@@ -533,6 +533,44 @@
       ]
     }
   ],
+  "publishingWorkflow": [
+    {
+      "id": "publish-1",
+      "title": "X thread sobre pagar 3 suscripciones AI",
+      "channel": "X",
+      "format": "Thread",
+      "hook": "La mayoría de usuarios intensivos paga varias suscripciones AI cuando realmente quiere centralizar modelos y memoria en un solo sitio.",
+      "stage": "Draft",
+      "owner": "Founder"
+    },
+    {
+      "id": "publish-2",
+      "title": "LinkedIn post con comparación ChatGPT vs ZeroLimitAI",
+      "channel": "LinkedIn",
+      "format": "Post",
+      "hook": "No compites solo por mejor modelo, compites por menos fricción y mejor economics para el usuario intensivo.",
+      "stage": "Idea",
+      "owner": "Founder"
+    },
+    {
+      "id": "publish-3",
+      "title": "Short demo de memory + multi-model routing",
+      "channel": "Shorts",
+      "format": "Video",
+      "hook": "En 30 segundos: por qué usar memoria y varios modelos en un mismo flujo te ahorra más tiempo que cambiar de chatbot cada día.",
+      "stage": "Scheduled",
+      "owner": "Founder"
+    },
+    {
+      "id": "publish-4",
+      "title": "Email a newsletter AI con angle lifetime",
+      "channel": "Email",
+      "format": "Pitch",
+      "hook": "Herramienta AI lifetime para power users que quieren reducir coste y mantener acceso flexible a varios modelos.",
+      "stage": "Published",
+      "owner": "Founder"
+    }
+  ],
   "monthPlan": [
     {
       "week": "Semana 1",
