@@ -154,3 +154,5 @@ Conectar una fuente real de métricas para generar `data/dashboard.json` desde:
 - Buffer, Metricool o exports de redes
 
 Si quieres, el siguiente paso puede ser dejar un script real que consulte PostHog y Stripe directamente y publique el reporte semanal en Markdown dentro del repo.
+
+Updated deployment trigger
