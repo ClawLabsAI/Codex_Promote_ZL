@@ -209,10 +209,12 @@ select {
 
 .panel {
   background: var(--white);
+  color: var(--fg);
 }
 
 .panel-contrast {
   background: rgba(255, 255, 255, 0.92);
+  color: var(--fg);
 }
 
 .hero-card {
@@ -681,6 +683,7 @@ blockquote {
 .automation-card {
   padding: 18px;
   background: var(--white);
+  color: var(--fg);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
@@ -758,6 +761,7 @@ blockquote {
   padding: 14px;
   border-radius: var(--radius-md);
   background: var(--muted);
+  color: var(--fg);
 }
 
 .publish-card {
@@ -773,6 +777,21 @@ blockquote {
 .publish-hook {
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+#publishing-workflow {
+  grid-template-columns: 1fr;
+}
+
+#publish-board {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+}
+
+#campaign-board,
+#paid-board {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
 }
 
 .task-count {
