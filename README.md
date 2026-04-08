@@ -65,6 +65,58 @@ Lee variables y secretos de GitHub y actualiza `data/dashboard.json`.
 
 El script `scripts/sync-data.mjs` mezcla estas fuentes y luego aplica variables de entorno o un parche remoto opcional.
 
+## Conectores reales
+
+Ya están preparados dos scripts:
+
+- `scripts/fetch-posthog.mjs`
+- `scripts/fetch-stripe.mjs`
+
+Y estos comandos:
+
+```bash
+npm run fetch:posthog
+npm run fetch:stripe
+npm run fetch:sources
+npm run sync:data
+```
+
+### PostHog
+
+Variables esperadas:
+
+- `POSTHOG_HOST`
+- `POSTHOG_PROJECT_ID`
+- `POSTHOG_PERSONAL_API_KEY`
+- `POSTHOG_TRIAL_EVENT`
+- `POSTHOG_ACTIVATION_EVENT`
+- `POSTHOG_PAGEVIEW_EVENT`
+- `POSTHOG_LOOKBACK_DAYS`
+
+Suposiciones actuales:
+
+- sesiones = `count(distinct properties.$session_id)` sobre el evento de pageview
+- trials = conteo del evento definido en `POSTHOG_TRIAL_EVENT`
+- activation rate = ratio entre `POSTHOG_ACTIVATION_EVENT` y `POSTHOG_TRIAL_EVENT`
+
+### Stripe
+
+Variables esperadas:
+
+- `STRIPE_SECRET_KEY`
+- `STRIPE_LOOKBACK_DAYS`
+- `STRIPE_CURRENCY`
+
+Suposiciones actuales:
+
+- usa cargos pagados del periodo
+- calcula orders y revenue semanal
+- si no existe `trial_to_paid` directo, el consolidado lo deriva como `orders_week / trial_starts`
+
+### Archivo de ejemplo
+
+Puedes copiar `.env.example` y rellenarlo con tus claves reales.
+
 ### Variables recomendadas
 
 - `DASHBOARD_SESSIONS`

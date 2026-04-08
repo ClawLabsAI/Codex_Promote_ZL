@@ -84,6 +84,14 @@ function applySourceFiles(data, sources) {
     updateMetric(data.kpis, "trial_to_paid", coercePercent(stripe.metrics.trial_to_paid, undefined));
   }
 
+  if (!stripe?.metrics?.trial_to_paid && stripe?.metrics?.orders_week && posthog?.metrics?.trial_starts) {
+    const trialStarts = Number(posthog.metrics.trial_starts || 0);
+    const ordersWeek = Number(stripe.metrics.orders_week || 0);
+    if (trialStarts > 0) {
+      updateMetric(data.kpis, "trial_to_paid", `${((ordersWeek / trialStarts) * 100).toFixed(2)}%`);
+    }
+  }
+
   if (ops?.weeklyFocus) {
     data.weeklyFocus = { ...data.weeklyFocus, ...ops.weeklyFocus };
   }

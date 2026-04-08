@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "build:data": "node ./scripts/sync-data.mjs",
+    "fetch:posthog": "node ./scripts/fetch-posthog.mjs",
+    "fetch:stripe": "node ./scripts/fetch-stripe.mjs",
+    "fetch:sources": "node ./scripts/fetch-posthog.mjs && node ./scripts/fetch-stripe.mjs",
     "sync:data": "node ./scripts/sync-data.mjs"
   }
 }
