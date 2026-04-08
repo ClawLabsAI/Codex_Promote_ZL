@@ -1,0 +1,9 @@
+{
+  "source": "ops",
+  "weeklyFocus": {
+    "sprint": "Semana 1",
+    "objective": "Instrumentar embudo, lanzar una landing comparativa y activar contenido founder-led.",
+    "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
+    "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
+  }
+}

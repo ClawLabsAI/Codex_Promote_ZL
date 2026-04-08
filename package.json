@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "build:data": "node ./scripts/sync-data.mjs",
     "sync:data": "node ./scripts/sync-data.mjs"
   }
 }

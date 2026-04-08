@@ -26,163 +26,21 @@ const defaultState = {
     wins: "",
     blockers: ""
   },
-  tasks: [
-    {
-      id: "task-1",
-      title: "Configurar analytics de embudo",
-      owner: "Founder",
-      due: "2026-04-11",
-      channel: "Infra",
-      status: "Todo"
-    },
-    {
-      id: "task-2",
-      title: "Crear landing ChatGPT alternative",
-      owner: "Founder",
-      due: "2026-04-14",
-      channel: "SEO",
-      status: "Doing"
-    },
-    {
-      id: "task-3",
-      title: "Secuencia de emails trial 0-7 días",
-      owner: "Founder",
-      due: "2026-04-15",
-      channel: "Lifecycle",
-      status: "Doing"
-    },
-    {
-      id: "task-4",
-      title: "Preparar 10 posts base de contenido",
-      owner: "Founder",
-      due: "2026-04-16",
-      channel: "Social",
-      status: "Todo"
-    },
-    {
-      id: "task-5",
-      title: "Instalar retargeting para pricing visitors",
-      owner: "Founder",
-      due: "2026-04-18",
-      channel: "Paid",
-      status: "Done"
-    }
-  ],
-  channels: [
-    {
-      name: "SEO",
-      stage: "Build",
-      priority: "Muy alta",
-      target: "4 landings + 4 artículos",
-      metric: "Trials orgánicos"
-    },
-    {
-      name: "X / LinkedIn",
-      stage: "Build",
-      priority: "Muy alta",
-      target: "5 posts y 2 demos/semana",
-      metric: "CTR a landing"
-    },
-    {
-      name: "Short Video",
-      stage: "Test",
-      priority: "Alta",
-      target: "3 shorts/semana",
-      metric: "Retención + clicks"
-    },
-    {
-      name: "Paid Retargeting",
-      stage: "Scale later",
-      priority: "Media",
-      target: "Campañas warm audiences",
-      metric: "CAC trial"
-    }
-  ],
-  contentCalendar: [
-    { day: "Lunes", focus: "Analítica + planning", asset: "Tema central y hooks" },
-    { day: "Martes", focus: "LinkedIn + X", asset: "Post fundador + hilo" },
-    { day: "Miércoles", focus: "Short demo", asset: "Vídeo de feature o caso de uso" },
-    { day: "Jueves", focus: "SEO + email", asset: "Comparativa o caso de uso" },
-    { day: "Viernes", focus: "Review semanal", asset: "Aprendizajes y backlog" }
-  ],
-  automations: [
-    {
-      name: "Feature -> Content",
-      tool: "n8n",
-      status: "Planned",
-      description: "Convierte features, cambios de ranking y testimonios en borradores multicanal."
-    },
-    {
-      name: "Trial Lifecycle",
-      tool: "Loops / Customer.io",
-      status: "Planned",
-      description: "Secuencia de onboarding, activación, objeciones y upgrade."
-    },
-    {
-      name: "Weekly Growth Report",
-      tool: "PostHog + Notion",
-      status: "Planned",
-      description: "Resumen semanal automático de canales, conversión y decisiones."
-    }
-  ],
-  roadmap: [
-    {
-      title: "0-30 días",
-      focus: "Fijar mensaje, medición y activos base",
-      items: [
-        "Definir ICP prioritario: AI power users, developers e indie hackers.",
-        "Crear 4 landings de alta intención: alternative, developers, AI agents, lifetime AI.",
-        "Configurar PostHog o GA4 con eventos de CTA, signup, activation y paid conversion.",
-        "Montar secuencia de emails: bienvenida, activación, objeciones, upgrade, winback.",
-        "Abrir sistema de contenido multiformato con un calendario fijo."
-      ]
-    },
-    {
-      title: "30-60 días",
-      focus: "Escalar distribución orgánica y captación",
-      items: [
-        "Publicar 3-5 piezas semanales reutilizadas entre X, LinkedIn, shorts y newsletter.",
-        "Subir comparativas SEO con intención de compra y uso real del producto.",
-        "Enviar a directorios AI y páginas de listados útiles.",
-        "Activar retargeting a visitantes y trial users no convertidos.",
-        "Recoger testimonios reales y mini casos de uso."
-      ]
-    },
-    {
-      title: "60-90 días",
-      focus: "Lanzamientos y crecimiento repetible",
-      items: [
-        "Preparar Product Hunt con assets, narrativa, comentarios y embudo ya afinado.",
-        "Evaluar AppSumo si el soporte y la economía del lifetime deal siguen siendo sostenibles.",
-        "Buscar partnerships con newsletters, YouTubers y comunidades de AI/dev.",
-        "Doblar inversión solo en los 2 canales que mejor conviertan a trial y pago."
-      ]
-    }
-  ],
-  productHunt: [
-    "No lanzar hasta tener onboarding, métricas básicas y prueba social real.",
-    "Preparar tagline, gallery, vídeo corto y primer comentario del maker.",
-    "Activar lista de contactos para visitas y feedback, no para pedir votos de forma agresiva.",
-    "Tener oferta clara para el día del lanzamiento y soporte en tiempo real."
-  ],
-  appsumo: [
-    "Validar primero que el lifetime deal es sostenible en soporte y costes.",
-    "Definir muy bien qué incluye cada tier y qué queda fuera.",
-    "Tener docs, onboarding y soporte preparados antes de aplicar.",
-    "Usarlo como acelerador cuando el mensaje ya convierta, no como parche."
-  ],
-  nextActions: [
-    "Instalar analytics de embudo y definir eventos clave hoy mismo.",
-    "Crear 4 landings específicas con un CTA único a trial.",
-    "Montar la secuencia de emails del trial antes de invertir en tráfico.",
-    "Producir 10 piezas base de contenido reutilizable a partir de la landing y las features.",
-    "Preparar retargeting simple para visitantes de pricing y trial no convertidos."
-  ],
-  notes: `Fuentes recomendadas para conectar en la siguiente fase:
-- PostHog o GA4 para sesiones, trial starts y funnels
-- Stripe para ingresos y trial to paid
-- Buffer/Metricool o export manual de redes para performance por canal
-- Airtable/Notion para partnerships, directorios y calendario editorial`
+  audiences: [],
+  offers: [],
+  contentPillars: [],
+  distribution: [],
+  experiments: [],
+  sourceMap: [],
+  tasks: [],
+  channels: [],
+  contentCalendar: [],
+  automations: [],
+  roadmap: [],
+  productHunt: [],
+  appsumo: [],
+  nextActions: [],
+  notes: ""
 };
 
 let state = structuredClone(defaultState);
@@ -196,11 +54,8 @@ function deepMerge(base, patch) {
 
   const result = { ...base };
   Object.entries(patch || {}).forEach(([key, value]) => {
-    if (key in base) {
-      result[key] = deepMerge(base[key], value);
-    } else {
-      result[key] = value;
-    }
+    if (key in base) result[key] = deepMerge(base[key], value);
+    else result[key] = value;
   });
   return result;
 }
@@ -256,6 +111,29 @@ function renderKpis() {
           <input data-kpi-id="${kpi.id}" data-field="target" value="${kpi.target}" />
         </label>
       </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderInfoCards(containerId, items, config) {
+  const container = $(containerId);
+  container.innerHTML = "";
+
+  items.forEach((item) => {
+    const card = document.createElement("article");
+    card.className = "info-card";
+    const bullets = (config.list(item) || []).map((entry) => `<li>${entry}</li>`).join("");
+    const meta = (config.meta ? config.meta(item) : [])
+      .filter(Boolean)
+      .map((entry) => `<span class="pill">${entry}</span>`)
+      .join("");
+
+    card.innerHTML = `
+      <h4>${config.title(item)}</h4>
+      <p>${config.body(item)}</p>
+      ${meta ? `<div class="info-meta">${meta}</div>` : ""}
+      ${bullets ? `<ul>${bullets}</ul>` : ""}
     `;
     container.appendChild(card);
   });
@@ -446,11 +324,13 @@ function buildWeeklyReport() {
 
   const lowest = gaps[0];
   const strongest = [...gaps].sort((a, b) => b.ratio - a.ratio)[0];
+  const topExperiment = state.experiments.find((item) => item.status === "Live") || state.experiments[0];
 
   return {
     summary: `${state.weeklyFocus.sprint}: ${state.weeklyFocus.objective}`,
     performance: `Mejor señal relativa: ${strongest.label} (${strongest.current} / ${strongest.target}). Mayor gap: ${lowest.label} (${lowest.current} / ${lowest.target}).`,
     execution: `Tareas: ${done} done, ${doing} doing, ${todo} pendientes.`,
+    bets: topExperiment ? `Experimento prioritario: ${topExperiment.title}.` : "Sin experimento prioritario definido.",
     wins: state.weeklyFocus.wins || "Sin wins registrados todavía.",
     blockers: state.weeklyFocus.blockers || "Sin blockers registrados."
   };
@@ -462,6 +342,7 @@ function renderWeeklyReport() {
     <p><strong>Foco:</strong> ${report.summary}</p>
     <p><strong>Performance:</strong> ${report.performance}</p>
     <p><strong>Ejecución:</strong> ${report.execution}</p>
+    <p><strong>Bet principal:</strong> ${report.bets}</p>
     <p><strong>Wins:</strong> ${report.wins}</p>
     <p><strong>Blockers:</strong> ${report.blockers}</p>
   `;
@@ -471,10 +352,55 @@ function renderNotes() {
   $("#notes").value = state.notes;
 }
 
+function renderPlanSections() {
+  renderInfoCards("#audience-grid", state.audiences, {
+    title: (item) => item.name,
+    body: (item) => item.pain,
+    meta: (item) => [item.priority, item.goal],
+    list: (item) => [`Hook: ${item.hook}`, `Oferta: ${item.offer}`]
+  });
+
+  renderInfoCards("#offers-grid", state.offers, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.audience, item.price],
+    list: (item) => item.bullets
+  });
+
+  renderInfoCards("#content-pillars", state.contentPillars, {
+    title: (item) => item.name,
+    body: (item) => item.description,
+    meta: (item) => [item.channel, item.frequency],
+    list: (item) => item.angles
+  });
+
+  renderInfoCards("#distribution-grid", state.distribution, {
+    title: (item) => item.name,
+    body: (item) => item.why,
+    meta: (item) => [item.priority, item.owner],
+    list: (item) => item.actions
+  });
+
+  renderInfoCards("#experiments-grid", state.experiments, {
+    title: (item) => item.title,
+    body: (item) => item.hypothesis,
+    meta: (item) => [item.channel, item.status],
+    list: (item) => [`Success metric: ${item.metric}`, `Next step: ${item.next}`]
+  });
+
+  renderInfoCards("#sources-grid", state.sourceMap, {
+    title: (item) => item.name,
+    body: (item) => item.description,
+    meta: (item) => [item.file, item.refresh],
+    list: (item) => item.fields
+  });
+}
+
 function renderAll() {
   renderSourceStatus();
   renderSummary();
   renderKpis();
+  renderPlanSections();
   renderTaskBoard();
   renderChannels();
   renderCalendar();
@@ -571,6 +497,7 @@ function buildReportText() {
     `Focus: ${report.summary}`,
     `Performance: ${report.performance}`,
     `Execution: ${report.execution}`,
+    `Top bet: ${report.bets}`,
     `Wins: ${report.wins}`,
     `Blockers: ${report.blockers}`
   ].join("\n");
@@ -630,9 +557,7 @@ function bindActions() {
 }
 
 async function loadExternalData() {
-  if (!window.location.protocol.startsWith("http")) {
-    return false;
-  }
+  if (!window.location.protocol.startsWith("http")) return false;
 
   try {
     const response = await fetch(EXTERNAL_DATA_URL, { cache: "no-store" });
@@ -660,10 +585,10 @@ function loadLocalState() {
 }
 
 async function init() {
-  const hasLocal = loadLocalState();
-  if (!hasLocal) {
-    const hasExternal = await loadExternalData();
-    if (!hasExternal) {
+  const hasExternal = await loadExternalData();
+  if (!hasExternal) {
+    const hasLocal = loadLocalState();
+    if (!hasLocal) {
       state = structuredClone(defaultState);
       sourceLabel = "defaultState";
     }

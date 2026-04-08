@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const dashboardPath = path.join(rootDir, "data", "dashboard.json");
+const sourcesDir = path.join(rootDir, "data", "sources");
 
 function coercePercent(value, fallback) {
   if (!value) return fallback;
@@ -20,6 +21,15 @@ function updateMetric(metrics, id, nextValue) {
 async function readDashboard() {
   const raw = await fs.readFile(dashboardPath, "utf8");
   return JSON.parse(raw);
+}
+
+async function readSource(fileName) {
+  try {
+    const raw = await fs.readFile(path.join(sourcesDir, fileName), "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
 }
 
 async function maybeFetchRemoteJson() {
@@ -59,8 +69,43 @@ function applyRemotePatch(data, patch) {
   return data;
 }
 
+function applySourceFiles(data, sources) {
+  const posthog = sources.posthog;
+  const stripe = sources.stripe;
+  const ops = sources.ops;
+
+  if (posthog?.metrics) {
+    updateMetric(data.kpis, "sessions", posthog.metrics.sessions);
+    updateMetric(data.kpis, "trial_starts", posthog.metrics.trial_starts);
+    updateMetric(data.kpis, "activation", coercePercent(posthog.metrics.activation_rate, undefined));
+  }
+
+  if (stripe?.metrics) {
+    updateMetric(data.kpis, "trial_to_paid", coercePercent(stripe.metrics.trial_to_paid, undefined));
+  }
+
+  if (ops?.weeklyFocus) {
+    data.weeklyFocus = { ...data.weeklyFocus, ...ops.weeklyFocus };
+  }
+
+  data.meta = {
+    ...(data.meta || {}),
+    sourceFilesApplied: Object.entries(sources)
+      .filter(([, value]) => Boolean(value))
+      .map(([key]) => key)
+  };
+}
+
 async function main() {
   const data = await readDashboard();
+  const sources = {
+    posthog: await readSource("posthog.json"),
+    stripe: await readSource("stripe.json"),
+    social: await readSource("social.json"),
+    ops: await readSource("ops.json")
+  };
+
+  applySourceFiles(data, sources);
 
   const remotePatch = await maybeFetchRemoteJson().catch((error) => {
     console.warn(`Remote patch skipped: ${error.message}`);

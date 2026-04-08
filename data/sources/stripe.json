@@ -1,0 +1,8 @@
+{
+  "source": "stripe",
+  "metrics": {
+    "trial_to_paid": "4%",
+    "orders_week": 10,
+    "net_revenue_week": 490
+  }
+}

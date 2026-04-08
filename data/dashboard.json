@@ -1,22 +1,494 @@
 {
   "summary": {
-    "northStar": "Aumentar trial starts cualificados y mejorar la conversion de trial a pago.",
-    "positioning": "La alternativa lifetime a ChatGPT, Claude y Perplexity para usuarios intensivos que quieren mejores modelos, memoria y automatizacion."
+    "northStar": "Aumentar trial starts cualificados y mejorar la conversion a pago poniendo foco en power users, developers e indie hackers.",
+    "positioning": "La alternativa lifetime a ChatGPT, Claude y Perplexity para usuarios intensivos que quieren mejores modelos, memoria, automatizacion y control del coste."
   },
+  "positioningPoints": [
+    "Hero principal centrado en alternativa lifetime para usuarios intensivos.",
+    "Separar ZeroClaw, ZeroLabs y API como capas secundarias o landings dedicadas.",
+    "Demostrar valor con casos de uso, comparativas y ahorro real, no solo con claims amplios.",
+    "Cada canal debe empujar a una landing especifica y a un trial con onboarding guiado."
+  ],
   "weeklyFocus": {
     "sprint": "Semana 1",
-    "objective": "Instrumentar el embudo y publicar los primeros activos de adquisicion.",
-    "wins": "Landing principal terminada y dashboard operativo listo.",
-    "blockers": "Pendiente conectar analitica real y fijar ICP principal."
+    "objective": "Instrumentar embudo, lanzar una landing comparativa y activar contenido founder-led.",
+    "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
+    "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
   },
   "kpis": [
-    { "id": "sessions", "label": "Sesiones semanales", "value": "1200", "target": "5000", "note": "Todo el trafico" },
-    { "id": "trial_starts", "label": "Trial starts", "value": "42", "target": "250", "note": "KPI principal" },
-    { "id": "activation", "label": "Activation rate", "value": "21%", "target": "35%", "note": "D1 activado" },
-    { "id": "trial_to_paid", "label": "Trial to paid", "value": "4%", "target": "10%", "note": "Conversion" }
+    {
+      "id": "sessions",
+      "label": "Sesiones semanales",
+      "value": "1200",
+      "target": "5000",
+      "note": "Todo el trafico"
+    },
+    {
+      "id": "trial_starts",
+      "label": "Trial starts",
+      "value": "42",
+      "target": "250",
+      "note": "KPI principal"
+    },
+    {
+      "id": "activation",
+      "label": "Activation rate",
+      "value": "21%",
+      "target": "35%",
+      "note": "D1 activado"
+    },
+    {
+      "id": "trial_to_paid",
+      "label": "Trial to paid",
+      "value": "4%",
+      "target": "10%",
+      "note": "Conversion"
+    }
   ],
+  "audiences": [
+    {
+      "name": "AI power users",
+      "priority": "P1",
+      "goal": "Convierte rapido",
+      "pain": "Pagan demasiadas suscripciones o saltan entre herramientas sin memoria ni enrutado de calidad.",
+      "hook": "Pay once, use forever con mejores modelos y memoria.",
+      "offer": "Landing alternativa a ChatGPT/Perplexity + trial guiado + comparativa de coste."
+    },
+    {
+      "name": "Developers e indie hackers",
+      "priority": "P1",
+      "goal": "Ticket alto",
+      "pain": "Quieren velocidad, modelos top, automatizacion y control del stack sin pagar varias herramientas.",
+      "hook": "Un AI workspace lifetime con modelos premium, Telegram, memory y automatizacion.",
+      "offer": "Landing para developers + demos de ZeroClaw + casos de automatizacion."
+    },
+    {
+      "name": "Creators y operators",
+      "priority": "P2",
+      "goal": "Volumen de awareness",
+      "pain": "Necesitan producir mas contenido y ejecutar mejor sin aprender un stack tecnico complejo.",
+      "hook": "Contenido, research y automatizacion desde un mismo lugar.",
+      "offer": "Demos cortas y comparativas de workflows."
+    },
+    {
+      "name": "Teams curiosos por IA",
+      "priority": "P3",
+      "goal": "Future expansion",
+      "pain": "Buscan productividad pero aun no tienen necesidad clara ni urgencia de compra.",
+      "hook": "Una plataforma flexible para experimentar sin suscripciones por usuario.",
+      "offer": "No priorizar paid ni outreach todavia."
+    }
+  ],
+  "offers": [
+    {
+      "name": "Alternative landing",
+      "audience": "AI power users",
+      "price": "Lifetime angle",
+      "summary": "Comparativa directa contra ChatGPT, Claude y Perplexity enfocada en ahorro, routing y memoria.",
+      "bullets": [
+        "CTA unico a trial",
+        "Captura comparativa de producto",
+        "Tabla de ahorro anual",
+        "FAQ de objeciones sobre LTD"
+      ]
+    },
+    {
+      "name": "Developer landing",
+      "audience": "Developers",
+      "price": "Value angle",
+      "summary": "Presentar ZeroLimitAI como cockpit de modelos, automatizacion y memoria para construir mas rapido.",
+      "bullets": [
+        "Demo de ZeroClaw",
+        "Casos reales tipo build, debug y research",
+        "Integraciones y Telegram",
+        "CTA a trial y newsletter tecnica"
+      ]
+    },
+    {
+      "name": "Trial lifecycle",
+      "audience": "Todos",
+      "price": "Conversion angle",
+      "summary": "Secuencia de 7 dias para activar, demostrar valor y empujar conversion.",
+      "bullets": [
+        "Dia 0 bienvenida y caso de uso",
+        "Dia 1 modelos y routing",
+        "Dia 2 memoria y automatizacion",
+        "Dia 3 comparativas y upgrade"
+      ]
+    },
+    {
+      "name": "Lifetime trust pack",
+      "audience": "Warm traffic",
+      "price": "Retention angle",
+      "summary": "Bloque de confianza para justificar por que el lifetime deal es sostenible y util.",
+      "bullets": [
+        "Roadmap visible",
+        "Casos de uso",
+        "Testimonios",
+        "Transparencia sobre limites y soporte"
+      ]
+    }
+  ],
+  "contentPillars": [
+    {
+      "name": "Comparativas de modelos",
+      "channel": "SEO + X + LinkedIn",
+      "frequency": "2x semana",
+      "description": "Comparar tareas concretas entre GPT, Claude, Gemini y ZeroLimitAI.",
+      "angles": [
+        "Best model for coding",
+        "Claude vs ChatGPT vs ZeroLimitAI",
+        "Que modelo usar segun tarea",
+        "Cuanto ahorras si usas routing"
+      ]
+    },
+    {
+      "name": "Demos de producto",
+      "channel": "Short video",
+      "frequency": "3x semana",
+      "description": "Micro demos mostrando memoria, Telegram, ZeroClaw y workflows reales.",
+      "angles": [
+        "Research en 30 segundos",
+        "Prompt -> output -> memory",
+        "Automatizacion real",
+        "Use case para developers"
+      ]
+    },
+    {
+      "name": "Founder-led insights",
+      "channel": "LinkedIn + X",
+      "frequency": "5x semana",
+      "description": "Aprendizajes del producto, decisiones, comparativas y building in public.",
+      "angles": [
+        "Por que hicimos un lifetime deal",
+        "Lecciones del onboarding",
+        "Lo que aprendemos de usuarios intensivos",
+        "Errores en herramientas AI actuales"
+      ]
+    },
+    {
+      "name": "SEO de alta intencion",
+      "channel": "Blog + landing",
+      "frequency": "2x semana",
+      "description": "Piezas dirigidas a demanda existente y comparativas con intencion de compra.",
+      "angles": [
+        "Best AI app for developers",
+        "ChatGPT alternative with memory",
+        "Lifetime AI tools",
+        "AI agents with Telegram"
+      ]
+    }
+  ],
+  "distribution": [
+    {
+      "name": "Founder social loop",
+      "priority": "Muy alta",
+      "owner": "Founder",
+      "why": "Es el canal mas rapido para afinar mensaje, crear confianza y llevar trafico cualificado.",
+      "actions": [
+        "1 post diario en X",
+        "3 posts semanales en LinkedIn",
+        "2 demos en video por semana",
+        "20 comentarios de calidad en cuentas relevantes"
+      ]
+    },
+    {
+      "name": "AI directories",
+      "priority": "Alta",
+      "owner": "Ops",
+      "why": "Aportan backlinks, visibilidad continua y discovery cualificado con poco coste.",
+      "actions": [
+        "Futurepedia",
+        "There is an AI for That",
+        "AI tool directories nicho",
+        "Listados de indie tools"
+      ]
+    },
+    {
+      "name": "Launch platforms",
+      "priority": "Media",
+      "owner": "Founder",
+      "why": "Product Hunt y AppSumo pueden amplificar cuando el embudo ya convierta.",
+      "actions": [
+        "Preparar Product Hunt a partir de prueba social",
+        "Evaluar AppSumo solo si la economia soporta el LTD",
+        "Tener assets, soporte y onboarding listos"
+      ]
+    },
+    {
+      "name": "Newsletter and partner outreach",
+      "priority": "Alta",
+      "owner": "Founder",
+      "why": "Permite conseguir audiencia prestada y testimonios de mercado rapido.",
+      "actions": [
+        "Outreach a newsletters AI",
+        "Micro creators de productividad y dev",
+        "Comunidades indie y builder",
+        "Cross-posts o demos compartidas"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "title": "Landing ChatGPT alternative",
+      "channel": "SEO",
+      "status": "Live",
+      "hypothesis": "Una landing comparativa con ahorro y memoria convertira mejor que la home generica.",
+      "metric": "Trial start rate",
+      "next": "Publicar pagina, indexarla y medir CTA -> trial"
+    },
+    {
+      "title": "7-day activation emails",
+      "channel": "Lifecycle",
+      "status": "Queued",
+      "hypothesis": "Una secuencia de activacion mejorara D1 activation y trial to paid.",
+      "metric": "Activation rate",
+      "next": "Escribir correos y eventos disparadores"
+    },
+    {
+      "title": "Founder short demo series",
+      "channel": "Social",
+      "status": "Live",
+      "hypothesis": "Demos cortas con caso de uso real generaran mas CTR que posts abstractos.",
+      "metric": "CTR a landing y saves",
+      "next": "Publicar 3 piezas y comparar formatos"
+    },
+    {
+      "title": "Pricing visitor retargeting",
+      "channel": "Paid",
+      "status": "Draft",
+      "hypothesis": "Retargeting warm reducira CAC respecto a cold traffic.",
+      "metric": "Coste por trial",
+      "next": "Activar solo tras fijar pixel y eventos"
+    }
+  ],
+  "sourceMap": [
+    {
+      "name": "PostHog / analytics",
+      "file": "data/sources/posthog.json",
+      "refresh": "Semanal",
+      "description": "Fuente para sesiones, trial starts, activation y funnels.",
+      "fields": [
+        "sessions",
+        "trial_starts",
+        "activation_rate",
+        "top_landing"
+      ]
+    },
+    {
+      "name": "Stripe / pagos",
+      "file": "data/sources/stripe.json",
+      "refresh": "Semanal",
+      "description": "Fuente para conversion a pago, orders y revenue.",
+      "fields": [
+        "trial_to_paid",
+        "orders_week",
+        "net_revenue_week"
+      ]
+    },
+    {
+      "name": "Social exports",
+      "file": "data/sources/social.json",
+      "refresh": "Semanal",
+      "description": "Fuente para CTR, top posts y señal de contenido por canal.",
+      "fields": [
+        "linkedin_ctr",
+        "x_ctr",
+        "top_post"
+      ]
+    },
+    {
+      "name": "Manual strategy state",
+      "file": "data/dashboard.json",
+      "refresh": "Continuo",
+      "description": "Fuente principal para roadmap, tasks, experiments y foco semanal.",
+      "fields": [
+        "weeklyFocus",
+        "tasks",
+        "roadmap",
+        "notes"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Configurar PostHog o GA4 con eventos de trial y activation",
+      "owner": "Founder",
+      "due": "2026-04-11",
+      "channel": "Infra",
+      "status": "Todo"
+    },
+    {
+      "id": "task-2",
+      "title": "Crear landing ChatGPT alternative",
+      "owner": "Founder",
+      "due": "2026-04-14",
+      "channel": "SEO",
+      "status": "Doing"
+    },
+    {
+      "id": "task-3",
+      "title": "Escribir secuencia de 7 emails para trial",
+      "owner": "Founder",
+      "due": "2026-04-15",
+      "channel": "Lifecycle",
+      "status": "Doing"
+    },
+    {
+      "id": "task-4",
+      "title": "Preparar 10 piezas de contenido base a partir del producto",
+      "owner": "Founder",
+      "due": "2026-04-16",
+      "channel": "Social",
+      "status": "Todo"
+    },
+    {
+      "id": "task-5",
+      "title": "Crear lista de 20 directorios y newsletters para outreach",
+      "owner": "Ops",
+      "due": "2026-04-17",
+      "channel": "Distribution",
+      "status": "Todo"
+    }
+  ],
+  "channels": [
+    {
+      "name": "SEO comparativo",
+      "stage": "Build",
+      "priority": "Muy alta",
+      "target": "4 landings + 4 comparativas",
+      "metric": "Trials organicos"
+    },
+    {
+      "name": "X / LinkedIn founder-led",
+      "stage": "Build",
+      "priority": "Muy alta",
+      "target": "5 posts y 2 demos/semana",
+      "metric": "CTR a landings y replies"
+    },
+    {
+      "name": "Short video",
+      "stage": "Test",
+      "priority": "Alta",
+      "target": "3 shorts/semana",
+      "metric": "Retencion y clicks"
+    },
+    {
+      "name": "Retargeting",
+      "stage": "Later",
+      "priority": "Media",
+      "target": "Campanas a pricing visitors y warm traffic",
+      "metric": "CAC trial"
+    }
+  ],
+  "contentCalendar": [
+    {
+      "day": "Lunes",
+      "focus": "Review metrics + plan",
+      "asset": "Tema central, KPI y hooks"
+    },
+    {
+      "day": "Martes",
+      "focus": "LinkedIn + X",
+      "asset": "Insight fundador + comparativa"
+    },
+    {
+      "day": "Miércoles",
+      "focus": "Short demo",
+      "asset": "Video de feature o caso real"
+    },
+    {
+      "day": "Jueves",
+      "focus": "SEO + email",
+      "asset": "Nueva landing o artículo"
+    },
+    {
+      "day": "Viernes",
+      "focus": "Outreach + review",
+      "asset": "Directorios, partners y retro"
+    }
+  ],
+  "automations": [
+    {
+      "name": "Feature to content",
+      "tool": "n8n",
+      "status": "Planned",
+      "description": "Convierte features, rankings, soporte y feedback en borradores para X, LinkedIn, email y video."
+    },
+    {
+      "name": "Trial lifecycle",
+      "tool": "Loops o Customer.io",
+      "status": "Planned",
+      "description": "Secuencia de onboarding, activacion, objeciones, upgrade y winback."
+    },
+    {
+      "name": "Weekly growth report",
+      "tool": "Script + Vercel / GitHub",
+      "status": "Planned",
+      "description": "Consolidar fuentes y generar un reporte semanal listo para compartir."
+    }
+  ],
+  "roadmap": [
+    {
+      "title": "0-30 dias",
+      "focus": "Mensaje, medicion y activos base",
+      "items": [
+        "Elegir ICP prioritario y simplificar propuesta en la home.",
+        "Crear landings de alta intencion.",
+        "Configurar eventos del embudo.",
+        "Montar secuencia de activacion del trial.",
+        "Lanzar cadencia de contenido del founder."
+      ]
+    },
+    {
+      "title": "30-60 dias",
+      "focus": "Escalar distribucion organica",
+      "items": [
+        "Publicar comparativas SEO y demos de producto.",
+        "Enviar el producto a directorios y partners.",
+        "Recoger testimonios y casos reales.",
+        "Activar retargeting basico."
+      ]
+    },
+    {
+      "title": "60-90 dias",
+      "focus": "Lanzamientos y crecimiento repetible",
+      "items": [
+        "Preparar Product Hunt con assets y soporte.",
+        "Evaluar AppSumo si la economia del LTD aguanta.",
+        "Concentrar recursos en los 2 canales que mejor conviertan."
+      ]
+    }
+  ],
+  "productHunt": [
+    "No lanzar hasta tener onboarding y prueba social minimamente validada.",
+    "Preparar tagline, gallery, video corto y primer comentario del maker.",
+    "Coordinar trafico de calidad sin pedir votos agresivamente.",
+    "Tener oferta y soporte en tiempo real el dia del lanzamiento."
+  ],
+  "appsumo": [
+    "Validar muy bien la sostenibilidad del lifetime deal antes de entrar.",
+    "Definir tiers claros y limites transparentes.",
+    "Tener onboarding y soporte preparados.",
+    "Usarlo como acelerador cuando el mensaje ya convierta."
+  ],
+  "nextActions": [
+    "Definir un ICP principal para los siguientes 30 dias.",
+    "Construir landing comparativa contra ChatGPT y Claude.",
+    "Configurar eventos de trial, activation y conversion.",
+    "Escribir secuencia de activacion del trial.",
+    "Publicar 3 demos y 2 comparativas esta semana."
+  ],
+  "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
-    "updatedAt": "2026-04-08T00:00:00.000Z",
-    "updatedBy": "manual seed"
+    "updatedAt": "2026-04-08T12:49:13.230Z",
+    "updatedBy": "scripts/sync-data.mjs",
+    "sourceFilesApplied": [
+      "posthog",
+      "stripe",
+      "social",
+      "ops"
+    ]
   }
 }

@@ -276,6 +276,7 @@ textarea::placeholder {
 .channels-grid,
 .automation-grid,
 .calendar-grid,
+.info-grid,
 .form-grid {
   display: grid;
   gap: 18px;
@@ -298,7 +299,8 @@ textarea::placeholder {
 }
 
 .channels-grid,
-.automation-grid {
+.automation-grid,
+.info-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -393,7 +395,8 @@ blockquote {
 .channel-card,
 .automation-card,
 .calendar-day,
-.task-column {
+.task-column,
+.info-card {
   border-radius: var(--radius-lg);
   padding: 18px;
   border: 1px solid var(--panel-border);
@@ -480,6 +483,31 @@ blockquote {
   min-height: 420px;
 }
 
+.info-card h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.info-card .info-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.info-card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted-strong);
+}
+
 code {
   padding: 2px 6px;
   border-radius: 8px;
@@ -506,7 +534,8 @@ code {
   .task-board,
   .channels-grid,
   .automation-grid,
-  .calendar-grid {
+  .calendar-grid,
+  .info-grid {
     grid-template-columns: 1fr;
   }
 }

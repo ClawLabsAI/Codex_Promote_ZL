@@ -1,0 +1,12 @@
+{
+  "source": "posthog",
+  "metrics": {
+    "sessions": 1200,
+    "trial_starts": 42,
+    "activation_rate": "21%"
+  },
+  "insights": {
+    "top_landing": "/chatgpt-alternative",
+    "best_channel": "organic search"
+  }
+}
