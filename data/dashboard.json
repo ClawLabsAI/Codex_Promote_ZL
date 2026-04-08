@@ -15,6 +15,98 @@
     "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
     "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
   },
+  "setupAssumptions": [
+    {
+      "name": "Evento trial asumido",
+      "status": "Default activo",
+      "summary": "Hasta que confirmes el nombre real en PostHog, asumimos que el evento de trial es trial_started.",
+      "items": [
+        "Variable: POSTHOG_TRIAL_EVENT=trial_started",
+        "Mide altas al trial",
+        "Se puede corregir luego sin romper el dashboard"
+      ]
+    },
+    {
+      "name": "Evento activacion asumido",
+      "status": "Default activo",
+      "summary": "Hasta que confirmes el nombre real, asumimos que la activacion es first_message_sent.",
+      "items": [
+        "Variable: POSTHOG_ACTIVATION_EVENT=first_message_sent",
+        "Sirve como proxy de usuario activado",
+        "Luego lo podemos cambiar por otro evento mejor"
+      ]
+    },
+    {
+      "name": "Tipo de pago asumido",
+      "status": "Default activo",
+      "summary": "Para Stripe estamos midiendo pagos a partir de charges porque es la opcion mas simple para empezar.",
+      "items": [
+        "Mide orders pagados en el periodo",
+        "Calcula revenue semanal",
+        "Se puede migrar a subscriptions mas adelante"
+      ]
+    },
+    {
+      "name": "Prioridad de growth",
+      "status": "Social-first",
+      "summary": "En esta fase el sistema prioriza redes sociales, comparativas y SEO antes que paid frio.",
+      "items": [
+        "Founder-led content como canal principal",
+        "SEO comparativo como canal compuesto",
+        "Retargeting solo despues de instrumentar"
+      ]
+    }
+  ],
+  "firstRunChecklist": [
+    {
+      "title": "Paso 1: comprobar PostHog",
+      "owner": "Founder",
+      "priority": "Alta",
+      "description": "Entrar en PostHog y verificar si trial_started y first_message_sent existen.",
+      "steps": [
+        "Abrir Events",
+        "Buscar trial_started",
+        "Buscar first_message_sent",
+        "Si no existen, anotar el evento equivalente"
+      ]
+    },
+    {
+      "title": "Paso 2: rellenar variables",
+      "owner": "Founder",
+      "priority": "Alta",
+      "description": "Copiar .env.example y poner las claves de PostHog y Stripe.",
+      "steps": [
+        "POSTHOG_PROJECT_ID",
+        "POSTHOG_PERSONAL_API_KEY",
+        "STRIPE_SECRET_KEY",
+        "Mantener el lookback en 7 dias para empezar"
+      ]
+    },
+    {
+      "title": "Paso 3: traer datos",
+      "owner": "Founder",
+      "priority": "Alta",
+      "description": "Ejecutar los scripts y revisar que data/sources tenga contenido real.",
+      "steps": [
+        "npm run fetch:posthog",
+        "npm run fetch:stripe",
+        "npm run sync:data",
+        "Abrir el dashboard"
+      ]
+    },
+    {
+      "title": "Paso 4: operar la semana",
+      "owner": "Founder",
+      "priority": "Muy alta",
+      "description": "Usar el dashboard como sistema operativo de growth.",
+      "steps": [
+        "Actualizar foco semanal",
+        "Publicar activos sociales",
+        "Mover tareas",
+        "Revisar reporte semanal"
+      ]
+    }
+  ],
   "kpis": [
     {
       "id": "sessions",
@@ -225,6 +317,98 @@
         "Micro creators de productividad y dev",
         "Comunidades indie y builder",
         "Cross-posts o demos compartidas"
+      ]
+    }
+  ],
+  "socialSystem": [
+    {
+      "name": "X daily loop",
+      "channel": "X",
+      "goal": "Awareness + clicks",
+      "description": "Publicar todos los dias con foco en comparativas, opiniones y demos cortas de valor real.",
+      "actions": [
+        "1 post insight diario",
+        "1 mini hilo o chain 3 veces por semana",
+        "20 comentarios utiles por semana",
+        "CTA a una landing especifica"
+      ]
+    },
+    {
+      "name": "LinkedIn authority loop",
+      "channel": "LinkedIn",
+      "goal": "Trust + demo",
+      "description": "Posicionar al founder con posts mas reflexivos y pruebas de producto.",
+      "actions": [
+        "3 posts semanales",
+        "1 carrusel o comparativa",
+        "1 build log semanal",
+        "CTA a trial o newsletter"
+      ]
+    },
+    {
+      "name": "Short video demo loop",
+      "channel": "Reels / Shorts / TikTok",
+      "goal": "Reach + product proof",
+      "description": "Clips de 20 a 45 segundos mostrando una tarea concreta resuelta con ZeroLimitAI.",
+      "actions": [
+        "3 videos por semana",
+        "Gancho en 2 segundos",
+        "Problema -> solucion -> CTA",
+        "Reciclar a 3 plataformas"
+      ]
+    },
+    {
+      "name": "Email recap loop",
+      "channel": "Newsletter",
+      "goal": "Nurture + reactivation",
+      "description": "Resumen semanal con top comparativa, top demo y CTA final.",
+      "actions": [
+        "1 email semanal",
+        "Mejor contenido de la semana",
+        "1 caso de uso",
+        "1 CTA claro"
+      ]
+    }
+  ],
+  "weeklyAssets": [
+    {
+      "name": "1 comparativa larga",
+      "frequency": "Semanal",
+      "description": "Contenido ancla que luego se trocea en varios canales.",
+      "examples": [
+        "Claude vs ChatGPT vs ZeroLimitAI para coding",
+        "Cuanto ahorras con routing",
+        "AI con memoria vs sin memoria"
+      ]
+    },
+    {
+      "name": "3 demos cortas",
+      "frequency": "Semanal",
+      "description": "Videos o clips que prueban valor real rapido.",
+      "examples": [
+        "Research rapido",
+        "Telegram + memory",
+        "Caso de uso de developer"
+      ]
+    },
+    {
+      "name": "5 posts founder-led",
+      "frequency": "Semanal",
+      "description": "Posts simples, directos y opinionados sobre producto y mercado.",
+      "examples": [
+        "Por que hicimos un lifetime deal",
+        "Que modelos funcionan mejor",
+        "Lo que aprendemos de usuarios intensivos"
+      ]
+    },
+    {
+      "name": "1 email resumen",
+      "frequency": "Semanal",
+      "description": "Recap claro con top aprendizaje, top demo y CTA final.",
+      "examples": [
+        "Mejor contenido de la semana",
+        "Nueva landing o comparativa",
+        "Oferta o upgrade"
       ]
     }
   ],
@@ -482,7 +666,7 @@
   ],
   "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
-    "updatedAt": "2026-04-08T13:09:07.632Z",
+    "updatedAt": "2026-04-08T13:34:11.606Z",
     "updatedBy": "scripts/sync-data.mjs",
     "sourceFilesApplied": [
       "posthog",

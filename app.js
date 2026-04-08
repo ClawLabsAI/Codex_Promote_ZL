@@ -26,10 +26,14 @@ const defaultState = {
     wins: "",
     blockers: ""
   },
+  setupAssumptions: [],
+  firstRunChecklist: [],
   audiences: [],
   offers: [],
   contentPillars: [],
   distribution: [],
+  socialSystem: [],
+  weeklyAssets: [],
   experiments: [],
   sourceMap: [],
   tasks: [],
@@ -353,6 +357,20 @@ function renderNotes() {
 }
 
 function renderPlanSections() {
+  renderInfoCards("#setup-grid", state.setupAssumptions, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.status],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#first-run-grid", state.firstRunChecklist, {
+    title: (item) => item.title,
+    body: (item) => item.description,
+    meta: (item) => [item.owner, item.priority],
+    list: (item) => item.steps
+  });
+
   renderInfoCards("#audience-grid", state.audiences, {
     title: (item) => item.name,
     body: (item) => item.pain,
@@ -379,6 +397,20 @@ function renderPlanSections() {
     body: (item) => item.why,
     meta: (item) => [item.priority, item.owner],
     list: (item) => item.actions
+  });
+
+  renderInfoCards("#social-grid", state.socialSystem, {
+    title: (item) => item.name,
+    body: (item) => item.description,
+    meta: (item) => [item.channel, item.goal],
+    list: (item) => item.actions
+  });
+
+  renderInfoCards("#asset-grid", state.weeklyAssets, {
+    title: (item) => item.name,
+    body: (item) => item.description,
+    meta: (item) => [item.frequency],
+    list: (item) => item.examples
   });
 
   renderInfoCards("#experiments-grid", state.experiments, {

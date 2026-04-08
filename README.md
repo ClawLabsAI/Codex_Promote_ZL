@@ -2,6 +2,10 @@
 
 Dashboard estático de growth para ZeroLimitAI, preparado para vivir en GitHub y desplegarse automáticamente en GitHub Pages.
 
+Si quieres una guía muy simple en español para configurarlo y operarlo:
+
+- `GUIA_PASO_A_PASO.md`
+
 ## Qué incluye
 
 - UI moderna y limpia para estrategia, KPIs, tareas y reporting
