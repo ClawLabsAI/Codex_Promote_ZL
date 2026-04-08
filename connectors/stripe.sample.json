@@ -1,0 +1,13 @@
+{
+  "source": "stripe",
+  "description": "Plantilla de salida para conversion e ingresos desde Stripe.",
+  "mapped_fields": {
+    "trial_to_paid": "4%",
+    "net_revenue_week": 490,
+    "orders_week": 10
+  },
+  "notes": [
+    "Usa este archivo como referencia para transformar exports de Stripe.",
+    "Los campos finales utiles para el dashboard deben terminar en data/dashboard.json."
+  ]
+}
