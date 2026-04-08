@@ -61,6 +61,9 @@ const defaultState = {
   roadmap: [],
   productHunt: [],
   appsumo: [],
+  directoryLaunch: [],
+  launchAssets: [],
+  launchRules: [],
   nextActions: [],
   notes: ""
 };
@@ -525,25 +528,8 @@ function renderRoadmap() {
 }
 
 function renderChecklists() {
-  const ph = $("#product-hunt-list");
-  const as = $("#appsumo-list");
   const next = $("#next-actions");
-
-  ph.innerHTML = "";
-  as.innerHTML = "";
   next.innerHTML = "";
-
-  state.productHunt.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    ph.appendChild(li);
-  });
-
-  state.appsumo.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    as.appendChild(li);
-  });
 
   state.nextActions.forEach((item) => {
     const li = document.createElement("li");
@@ -769,6 +755,41 @@ function renderPlanSections() {
     body: (item) => item.description,
     meta: (item) => [item.file, item.refresh],
     list: (item) => item.fields
+  });
+
+  renderInfoCards("#product-hunt-grid", state.productHunt, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.status, item.owner],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#appsumo-grid", state.appsumo, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.status, item.owner],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#directory-launch-grid", state.directoryLaunch, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.status, item.owner],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#launch-assets-grid", state.launchAssets, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.priority],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#launch-rules-grid", state.launchRules, {
+    title: (item) => item.name,
+    body: (item) => item.rule,
+    meta: (item) => [item.stage],
+    list: (item) => [`Why: ${item.why}`, `Action: ${item.action}`]
   });
 }
 

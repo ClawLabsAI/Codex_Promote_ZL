@@ -1627,16 +1627,176 @@
     }
   ],
   "productHunt": [
-    "No lanzar hasta tener onboarding y prueba social minimamente validada.",
-    "Preparar tagline, gallery, video corto y primer comentario del maker.",
-    "Coordinar trafico de calidad sin pedir votos agresivamente.",
-    "Tener oferta y soporte en tiempo real el dia del lanzamiento."
+    {
+      "name": "Readiness",
+      "status": "Not ready yet",
+      "owner": "Founder",
+      "summary": "No activar Product Hunt hasta tener onboarding, soporte y pruebas mínimas de conversión.",
+      "items": [
+        "Onboarding del trial sin fricción",
+        "Prueba social mínima o testimonios",
+        "Landing clara con CTA consistente",
+        "Capacidad de responder en tiempo real"
+      ]
+    },
+    {
+      "name": "Assets",
+      "status": "Todo",
+      "owner": "Founder",
+      "summary": "Preparar todo el material antes de elegir la fecha de lanzamiento.",
+      "items": [
+        "Tagline fuerte y corta",
+        "Gallery con screenshots limpias",
+        "Video corto de producto",
+        "Primer comentario del maker"
+      ]
+    },
+    {
+      "name": "Launch day",
+      "status": "Todo",
+      "owner": "Founder",
+      "summary": "El día del lanzamiento debe parecer una operación, no un post más.",
+      "items": [
+        "Responder comentarios rápido",
+        "Empujar tráfico de calidad",
+        "No pedir votos agresivamente",
+        "Tener oferta y soporte listos"
+      ]
+    }
   ],
   "appsumo": [
-    "Validar muy bien la sostenibilidad del lifetime deal antes de entrar.",
-    "Definir tiers claros y limites transparentes.",
-    "Tener onboarding y soporte preparados.",
-    "Usarlo como acelerador cuando el mensaje ya convierta."
+    {
+      "name": "Economics",
+      "status": "Validate first",
+      "owner": "Founder",
+      "summary": "Solo entrar si el LTD aguanta económicamente y no te rompe soporte ni margen.",
+      "items": [
+        "Revisar coste real por usuario",
+        "Definir límites y fair use",
+        "Asegurar que el tier no canibaliza todo",
+        "Confirmar soporte operativo"
+      ]
+    },
+    {
+      "name": "Offer design",
+      "status": "Todo",
+      "owner": "Founder",
+      "summary": "La oferta debe ser simple, transparente y fácil de comparar.",
+      "items": [
+        "Tiers claros",
+        "Límites transparentes",
+        "Beneficios concretos",
+        "FAQ de objeciones"
+      ]
+    },
+    {
+      "name": "Go live",
+      "status": "Later",
+      "owner": "Founder",
+      "summary": "Usarlo como acelerador cuando el mensaje y la activación ya conviertan mejor.",
+      "items": [
+        "No lanzarlo demasiado pronto",
+        "Llegar con onboarding resuelto",
+        "Tener assets preparados",
+        "Preparar soporte post-launch"
+      ]
+    }
+  ],
+  "directoryLaunch": [
+    {
+      "name": "First wave",
+      "status": "In progress",
+      "owner": "Ops",
+      "summary": "Empujar los directorios que dan discovery continuo y mejor encajan con AI tools.",
+      "items": [
+        "Futurepedia",
+        "There is an AI for That",
+        "Indie Hackers listings",
+        "Tool directories relevantes"
+      ]
+    },
+    {
+      "name": "Submission assets",
+      "status": "Todo",
+      "owner": "Founder",
+      "summary": "La calidad de screenshots, tagline y categoría impacta bastante más de lo que parece.",
+      "items": [
+        "Tagline alineado al ángulo principal",
+        "3 screenshots fuertes",
+        "Caso de uso claro",
+        "CTA a landing específica"
+      ]
+    },
+    {
+      "name": "Follow-up",
+      "status": "Todo",
+      "owner": "Ops",
+      "summary": "No basta con enviar: hay que comprobar publicación, categoría y enlace.",
+      "items": [
+        "Verificar listing publicado",
+        "Corregir categoría si hace falta",
+        "Actualizar screenshots con el tiempo",
+        "Recoger tráfico y señales"
+      ]
+    }
+  ],
+  "launchAssets": [
+    {
+      "name": "Core assets",
+      "priority": "High",
+      "summary": "Activos mínimos para cualquier lanzamiento importante.",
+      "items": [
+        "Tagline",
+        "Hero screenshot",
+        "Video corto",
+        "CTA principal"
+      ]
+    },
+    {
+      "name": "Proof assets",
+      "priority": "High",
+      "summary": "Activos que mejoran confianza y conversión en launch.",
+      "items": [
+        "Testimonios",
+        "Comparativa clara",
+        "Caso de uso real",
+        "FAQ de objeciones"
+      ]
+    },
+    {
+      "name": "Support assets",
+      "priority": "Medium",
+      "summary": "Activos internos para responder bien durante el lanzamiento.",
+      "items": [
+        "Respuestas rápidas",
+        "Plantillas de outreach",
+        "Lista de enlaces clave",
+        "Checklist del día"
+      ]
+    }
+  ],
+  "launchRules": [
+    {
+      "name": "Message before launch",
+      "stage": "Guardrail",
+      "rule": "No lanzar fuerte si todavía no sabes qué mensaje y qué landing convierten mejor.",
+      "why": "Un launch amplifica lo que ya funciona; no arregla un posicionamiento confuso.",
+      "action": "Validar primero ángulos en contenido, outreach y comparativas."
+    },
+    {
+      "name": "Assets before date",
+      "stage": "Guardrail",
+      "rule": "No fijar fecha hasta tener assets y soporte listos.",
+      "why": "Improvisar assets el mismo día reduce calidad y respuesta.",
+      "action": "Preparar screenshots, vídeo, FAQs y respuestas antes de calendarizar."
+    },
+    {
+      "name": "Warm up first",
+      "stage": "Activation",
+      "rule": "Llegar con señal previa desde contenido, directorios y outreach antes de un gran launch.",
+      "why": "Un launch con audiencia tibia funciona mejor que uno desde cero.",
+      "action": "Activar contenido y partnerships 2-3 semanas antes."
+    }
   ],
   "nextActions": [
     "Definir un ICP principal para los siguientes 30 dias.",
