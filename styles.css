@@ -152,10 +152,10 @@ select {
 .main-content {
   max-width: var(--max-width);
   width: 100%;
-  padding: 20px;
+  padding: 24px;
   margin: 0 auto;
   display: grid;
-  gap: 20px;
+  gap: 24px;
 }
 
 .hero-card,
@@ -220,7 +220,7 @@ select {
   grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
   gap: 24px;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 340px;
 }
 
 .hero-copy {
@@ -437,6 +437,7 @@ select:focus {
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--muted);
+  border: 2px solid var(--fg);
 }
 
 .library-section summary {
@@ -445,7 +446,7 @@ select:focus {
   justify-content: space-between;
   gap: 12px;
   align-items: center;
-  padding: 18px 20px;
+  padding: 16px 18px;
   background: var(--fg);
   color: var(--white);
   cursor: pointer;
@@ -468,13 +469,14 @@ select:focus {
 }
 
 .library-content {
-  padding: 18px;
+  padding: 20px;
   display: grid;
-  gap: 16px;
+  gap: 20px;
 }
 
 .overview-grid {
   grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  align-items: start;
 }
 
 .metrics-grid {
@@ -513,6 +515,10 @@ select:focus {
   min-height: 100%;
 }
 
+.spotlight-panel .section-head {
+  margin-bottom: 12px;
+}
+
 .spotlight-accent {
   background: var(--fg);
 }
@@ -528,7 +534,7 @@ select:focus {
 }
 
 .metric-card {
-  padding: 18px;
+  padding: 20px 18px;
   background: var(--white);
 }
 
@@ -609,7 +615,7 @@ select:focus {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .section-head h3 {
@@ -627,10 +633,10 @@ blockquote {
 }
 
 .list {
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   padding-left: 20px;
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .numbered {
@@ -652,6 +658,18 @@ blockquote {
   padding: 18px;
   background: var(--white);
   transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.task-column,
+.panel,
+.report-box {
+  border: 2px solid transparent;
+}
+
+.task-column:hover,
+.panel:hover,
+.report-box:hover {
+  border-color: var(--fg);
 }
 
 .roadmap-card:hover,
