@@ -1,6 +1,6 @@
 {
   "summary": {
-    "northStar": "Aumentar trial starts cualificados y mejorar la conversion a pago poniendo foco en power users, developers e indie hackers.",
+    "northStar": "Crear un sistema de distribucion repetible para generar las primeras visitas, trials y clientes de ZeroLimitAI.",
     "positioning": "La alternativa lifetime a ChatGPT, Claude y Perplexity para usuarios intensivos que quieren mejores modelos, memoria, automatizacion y control del coste."
   },
   "positioningPoints": [
@@ -15,6 +15,99 @@
     "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
     "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
   },
+  "launchPriorities": [
+    {
+      "name": "Landing principal de adquisicion",
+      "priority": "P1",
+      "owner": "Founder",
+      "summary": "Elegir una sola landing de alta intencion y usarla como destino principal de todos los canales.",
+      "actions": [
+        "ChatGPT alternative",
+        "AI for developers",
+        "Lifetime AI app"
+      ]
+    },
+    {
+      "name": "Sistema founder-led en redes",
+      "priority": "P1",
+      "owner": "Founder",
+      "summary": "Empezar ya a publicar antes de tener todo perfecto. La velocidad de aprendizaje importa mas que la perfeccion.",
+      "actions": [
+        "5 posts en X",
+        "3 posts en LinkedIn",
+        "3 demos cortas"
+      ]
+    },
+    {
+      "name": "Directorios y communities",
+      "priority": "P1",
+      "owner": "Ops",
+      "summary": "Conseguir primeros backlinks, discovery y señales de mercado con listados y comunidades utiles.",
+      "actions": [
+        "Futurepedia",
+        "There is an AI for That",
+        "Indie tool directories",
+        "Comunidades de builders"
+      ]
+    },
+    {
+      "name": "Embudo trial y onboarding",
+      "priority": "P2",
+      "owner": "Founder",
+      "summary": "Tener listo el paso desde la visita hasta el primer uso real del producto.",
+      "actions": [
+        "CTA unico a trial",
+        "Email de bienvenida",
+        "Caso de uso inicial",
+        "Bloque de confianza"
+      ]
+    }
+  ],
+  "assetPipeline": [
+    {
+      "name": "Landing comparativa principal",
+      "status": "En curso",
+      "summary": "La primera pagina con la que probaras conversion y mensaje.",
+      "items": [
+        "Hero claro",
+        "Comparativa",
+        "FAQ",
+        "CTA a trial"
+      ]
+    },
+    {
+      "name": "10 piezas founder-led",
+      "status": "Pendiente",
+      "summary": "Base de contenido para no improvisar cada dia.",
+      "items": [
+        "5 posts opinion",
+        "2 comparativas",
+        "3 mini demos"
+      ]
+    },
+    {
+      "name": "Lista de 20 directorios",
+      "status": "Pendiente",
+      "summary": "Base para visibility sprint y backlinks iniciales.",
+      "items": [
+        "AI directories",
+        "Indie listings",
+        "Tool stacks",
+        "Founder communities"
+      ]
+    },
+    {
+      "name": "Outreach list de partners",
+      "status": "Pendiente",
+      "summary": "Lista de newsletters, creators y cuentas que pueden darte audiencia prestada.",
+      "items": [
+        "10 newsletters",
+        "10 microcreators",
+        "5 comunidades",
+        "Template de outreach"
+      ]
+    }
+  ],
   "setupAssumptions": [
     {
       "name": "Evento trial asumido",
@@ -109,32 +202,60 @@
   ],
   "kpis": [
     {
+      "id": "landings",
+      "label": "Landings creadas",
+      "value": "1",
+      "target": "4",
+      "note": "Paginas de alta intencion"
+    },
+    {
+      "id": "social_posts",
+      "label": "Posts publicados",
+      "value": "0",
+      "target": "8",
+      "note": "X + LinkedIn"
+    },
+    {
+      "id": "short_videos",
+      "label": "Demos cortas",
+      "value": "0",
+      "target": "3",
+      "note": "Shorts/Reels/TikTok"
+    },
+    {
+      "id": "directory_submissions",
+      "label": "Directorios enviados",
+      "value": "0",
+      "target": "10",
+      "note": "Listados y communities"
+    },
+    {
       "id": "sessions",
       "label": "Sesiones semanales",
       "value": "1200",
       "target": "5000",
-      "note": "Todo el trafico"
+      "note": "Analytics cuando empiece a entrar trafico"
     },
     {
       "id": "trial_starts",
       "label": "Trial starts",
       "value": "42",
       "target": "250",
-      "note": "KPI principal"
+      "note": "Analytics"
     },
     {
       "id": "activation",
       "label": "Activation rate",
       "value": "21%",
       "target": "35%",
-      "note": "D1 activado"
+      "note": "Analytics"
     },
     {
       "id": "trial_to_paid",
       "label": "Trial to paid",
       "value": "4%",
       "target": "10%",
-      "note": "Conversion"
+      "note": "Analytics"
     }
   ],
   "audiences": [
@@ -666,7 +787,7 @@
   ],
   "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
-    "updatedAt": "2026-04-08T13:34:11.606Z",
+    "updatedAt": "2026-04-08T13:41:49.967Z",
     "updatedBy": "scripts/sync-data.mjs",
     "sourceFilesApplied": [
       "posthog",

@@ -59,17 +59,17 @@
       <main class="main-content">
         <section class="hero-card" id="overview">
           <div class="hero-copy">
-            <p class="eyebrow">Marketing Dashboard</p>
-            <h2>Convierte la landing en un motor de adquisición repetible</h2>
+            <p class="eyebrow">Early Growth Dashboard</p>
+            <h2>Empieza el marketing antes del tráfico y construye distribución real</h2>
             <p class="lead">
-              Un panel limpio para medir tráfico, trials, activación, contenido,
-              automatizaciones y próximos lanzamientos sin depender de archivos
-              locales.
+              Este panel está pensado para una fase pre-tráfico: qué publicar,
+              qué landing construir, a qué directorios entrar, cómo mover redes
+              sociales y cómo generar tus primeras visitas y clientes.
             </p>
             <div class="hero-meta">
-              <span class="meta-pill">GitHub-ready</span>
-              <span class="meta-pill">Static deploy</span>
-              <span class="meta-pill">Weekly reporting</span>
+              <span class="meta-pill">Pre-traffic mode</span>
+              <span class="meta-pill">Social-first</span>
+              <span class="meta-pill">Execution-driven</span>
             </div>
           </div>
 
@@ -86,6 +86,28 @@
         </section>
 
         <section class="metrics-grid" id="metrics"></section>
+
+        <section class="split-grid">
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Launch Priority</p>
+                <h3>Qué mover primero</h3>
+              </div>
+            </div>
+            <div id="launch-priority-grid" class="info-grid"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Asset Pipeline</p>
+                <h3>Activos a construir</h3>
+              </div>
+            </div>
+            <div id="asset-pipeline-grid" class="info-grid"></div>
+          </article>
+        </section>
 
         <section class="split-grid" id="setup">
           <article class="panel">
@@ -156,7 +178,7 @@
             <div class="section-head">
               <div>
                 <p class="eyebrow">Weekly Report</p>
-                <h3>Resumen automático</h3>
+                <h3>Resumen de ejecución</h3>
               </div>
             </div>
             <div id="weekly-report" class="report-box"></div>
@@ -165,15 +187,15 @@
           <article class="panel">
             <div class="section-head">
               <div>
-                <p class="eyebrow">Data Layer</p>
-                <h3>Estructura del proyecto</h3>
+                <p class="eyebrow">Analytics Layer</p>
+                <h3>Se activa después</h3>
               </div>
             </div>
             <ul class="list">
-              <li><code>data/dashboard.json</code> para datos del panel</li>
-              <li><code>scripts/sync-data.mjs</code> para generar métricas</li>
-              <li><code>.github/workflows/update-dashboard.yml</code> para automatizar sync</li>
-              <li><code>connectors/</code> para plantillas e integraciones futuras</li>
+              <li>Primero enfócate en publicar, distribuir y crear landings</li>
+              <li>Cuando entre tráfico, activa PostHog y Stripe</li>
+              <li><code>data/dashboard.json</code> sigue siendo la fuente central</li>
+              <li>Los scripts de métricas ya están listos para cuando toque</li>
             </ul>
           </article>
         </section>

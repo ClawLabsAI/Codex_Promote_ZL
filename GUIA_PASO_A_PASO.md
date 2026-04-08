@@ -4,24 +4,62 @@ Esta guia esta pensada para que pongas el dashboard en marcha sin pelearte con d
 
 ## Objetivo
 
-Queremos que el dashboard mida tres cosas:
+Queremos que el dashboard te ayude primero a hacer marketing de verdad:
+
+- construir landings
+- publicar contenido
+- mover redes sociales
+- entrar en directorios
+- hacer outreach
+
+Y despues, cuando entre trafico, medir:
 
 - visitas
 - trials
 - pagos
 
-Y que ademas te ayude a operar redes sociales cada semana.
-
 ## Paso 1
+
+No pienses en analytics como la prioridad numero uno.
+
+En esta fase, tu KPI principal es ejecucion:
+
+- cuantas landings has creado
+- cuantos posts has publicado
+- cuantos videos has publicado
+- cuantos directorios has atacado
+- cuantos partners has contactado
+
+## Paso 2
+
+En el dashboard, empieza por estas zonas:
+
+- `Launch Priority`
+- `Asset Pipeline`
+- `Social System`
+- `Weekly Assets`
+- `Execution`
+
+## Paso 3
+
+Esta semana deberias intentar llegar a:
+
+- 1 landing comparativa principal
+- 5 posts en X
+- 3 posts en LinkedIn
+- 3 demos cortas
+- 10 envios a directorios
+
+## Paso 4
 
 En PostHog vamos a asumir por ahora:
 
 - trial event = `trial_started`
 - activation event = `first_message_sent`
 
-No hace falta que sean definitivos hoy. Luego los corregimos.
+No hace falta que sean definitivos hoy porque ahora mismo analytics no es el cuello de botella.
 
-## Paso 2
+## Paso 5
 
 En Stripe vamos a asumir por ahora:
 
@@ -29,7 +67,7 @@ En Stripe vamos a asumir por ahora:
 
 Es la opcion mas simple para empezar.
 
-## Paso 3
+## Paso 6
 
 Crea un archivo `.env` en la raiz del proyecto copiando `.env.example`.
 
@@ -48,7 +86,7 @@ Y deja estos valores por defecto por ahora:
 - `STRIPE_LOOKBACK_DAYS=7`
 - `STRIPE_CURRENCY=usd`
 
-## Paso 4
+## Paso 7
 
 Ejecuta estos comandos:
 
@@ -64,21 +102,22 @@ Esto hará:
 - traer datos a `data/sources/stripe.json`
 - consolidarlo todo en `data/dashboard.json`
 
-## Paso 5
+## Paso 8
 
 Haz push a GitHub y deja que Vercel redeploye.
 
 El dashboard online leerá el JSON actualizado del repo.
 
-## Paso 6
+## Paso 9
 
 Cada lunes:
 
-- revisar KPI
+- revisar ejecucion
 - actualizar foco semanal
 - decidir 1 comparativa larga
 - decidir 3 demos cortas
 - decidir 5 posts founder-led
+- decidir 10 envios a directorios o outreach
 
 ## Sistema de redes recomendado
 

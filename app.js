@@ -26,6 +26,8 @@ const defaultState = {
     wins: "",
     blockers: ""
   },
+  launchPriorities: [],
+  assetPipeline: [],
   setupAssumptions: [],
   firstRunChecklist: [],
   audiences: [],
@@ -308,16 +310,13 @@ function renderChecklists() {
 }
 
 function buildWeeklyReport() {
-  const sessions = state.kpis.find((item) => item.id === "sessions");
-  const trials = state.kpis.find((item) => item.id === "trial_starts");
-  const activation = state.kpis.find((item) => item.id === "activation");
-  const trialToPaid = state.kpis.find((item) => item.id === "trial_to_paid");
+  const focusKpis = state.kpis.slice(0, 4);
 
   const done = state.tasks.filter((task) => task.status === "Done").length;
   const doing = state.tasks.filter((task) => task.status === "Doing").length;
   const todo = state.tasks.filter((task) => task.status === "Todo").length;
 
-  const gaps = [sessions, trials, activation, trialToPaid]
+  const gaps = focusKpis
     .map((item) => ({
       label: item.label,
       current: item.value,
@@ -332,7 +331,7 @@ function buildWeeklyReport() {
 
   return {
     summary: `${state.weeklyFocus.sprint}: ${state.weeklyFocus.objective}`,
-    performance: `Mejor señal relativa: ${strongest.label} (${strongest.current} / ${strongest.target}). Mayor gap: ${lowest.label} (${lowest.current} / ${lowest.target}).`,
+    performance: `Mejor progreso: ${strongest.label} (${strongest.current} / ${strongest.target}). Mayor gap: ${lowest.label} (${lowest.current} / ${lowest.target}).`,
     execution: `Tareas: ${done} done, ${doing} doing, ${todo} pendientes.`,
     bets: topExperiment ? `Experimento prioritario: ${topExperiment.title}.` : "Sin experimento prioritario definido.",
     wins: state.weeklyFocus.wins || "Sin wins registrados todavía.",
@@ -357,6 +356,20 @@ function renderNotes() {
 }
 
 function renderPlanSections() {
+  renderInfoCards("#launch-priority-grid", state.launchPriorities, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.priority, item.owner],
+    list: (item) => item.actions
+  });
+
+  renderInfoCards("#asset-pipeline-grid", state.assetPipeline, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.status],
+    list: (item) => item.items
+  });
+
   renderInfoCards("#setup-grid", state.setupAssumptions, {
     title: (item) => item.name,
     body: (item) => item.summary,
