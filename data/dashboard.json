@@ -533,6 +533,148 @@
       ]
     }
   ],
+  "monthPlan": [
+    {
+      "week": "Semana 1",
+      "theme": "Posicionamiento y primer push",
+      "goal": "Publicar la landing principal y arrancar cadencia founder-led.",
+      "deliverables": [
+        "Landing ChatGPT alternative",
+        "5 posts en X",
+        "3 posts en LinkedIn",
+        "2 demos cortas",
+        "10 envios a directorios"
+      ]
+    },
+    {
+      "week": "Semana 2",
+      "theme": "Comparativas y prueba social",
+      "goal": "Construir contenido de comparativa y empezar a recoger señales reales.",
+      "deliverables": [
+        "Articulo comparativo largo",
+        "1 carrusel LinkedIn",
+        "3 demos de uso real",
+        "10 comentarios estrategicos",
+        "Primer outreach a newsletters"
+      ]
+    },
+    {
+      "week": "Semana 3",
+      "theme": "Developer angle",
+      "goal": "Abrir el angulo developers e indie hackers con casos de uso concretos.",
+      "deliverables": [
+        "Landing developer",
+        "3 piezas sobre ZeroClaw",
+        "1 mini caso real",
+        "5 outreach a microcreators",
+        "Nueva tanda de directorios"
+      ]
+    },
+    {
+      "week": "Semana 4",
+      "theme": "Optimizar y doblar",
+      "goal": "Doblar lo que mas respuesta genere y preparar un launch mas grande.",
+      "deliverables": [
+        "Actualizar mejores landings",
+        "Repetir mejor formato social",
+        "Activar newsletter semanal",
+        "Preparar base para Product Hunt",
+        "Revisar top canales y top mensajes"
+      ]
+    }
+  ],
+  "directorySprint": [
+    {
+      "name": "Futurepedia",
+      "priority": "Alta",
+      "status": "Pendiente",
+      "why": "Visibilidad continua y buen discovery para herramientas AI.",
+      "notes": [
+        "Preparar descripcion clara",
+        "Subir screenshot fuerte",
+        "Usar tagline centrado en lifetime AI"
+      ]
+    },
+    {
+      "name": "There is an AI for That",
+      "priority": "Alta",
+      "status": "Pendiente",
+      "why": "Buen canal de discovery para usuarios explorando alternativas.",
+      "notes": [
+        "Seleccionar categoria correcta",
+        "Añadir caso de uso claro",
+        "Revisar CTA a landing especifica"
+      ]
+    },
+    {
+      "name": "Indie Hackers / directories",
+      "priority": "Media",
+      "status": "Pendiente",
+      "why": "Builder audience con buena afinidad para LTD y herramientas nuevas.",
+      "notes": [
+        "Post launch simple",
+        "Enlazar comparativa o demo",
+        "No vender demasiado pronto"
+      ]
+    },
+    {
+      "name": "AI tool roundups",
+      "priority": "Media",
+      "status": "Pendiente",
+      "why": "Backlinks y posibilidad de audiencia prestada.",
+      "notes": [
+        "Buscar blogs pequeños",
+        "Enviar descripcion resumida",
+        "Añadir diferenciador claro"
+      ]
+    }
+  ],
+  "outreachQueue": [
+    {
+      "name": "Newsletters de AI aplicada",
+      "type": "Newsletter",
+      "status": "Pendiente",
+      "angle": "Presentar ZeroLimitAI como alternativa lifetime con comparativa clara y demo corta.",
+      "actions": [
+        "Crear lista de 10 newsletters",
+        "Preparar email corto",
+        "Incluir screenshot y CTA"
+      ]
+    },
+    {
+      "name": "Microcreators de productividad",
+      "type": "Creator",
+      "status": "Pendiente",
+      "angle": "Ofrecer acceso y demo para mostrar un workflow concreto en video.",
+      "actions": [
+        "Priorizar cuentas 5k-50k",
+        "Proponer una demo concreta",
+        "Pedir respuesta simple"
+      ]
+    },
+    {
+      "name": "Builders y dev creators",
+      "type": "Creator",
+      "status": "Pendiente",
+      "angle": "Entrar por el angulo developer y automatizacion con ZeroClaw y memory.",
+      "actions": [
+        "Enviar comparativa tecnica",
+        "Ofrecer caso de uso",
+        "Proponer post o demo"
+      ]
+    },
+    {
+      "name": "Comunidades indie y AI",
+      "type": "Community",
+      "status": "Pendiente",
+      "angle": "Participar con demo o feedback request antes que entrar vendiendo.",
+      "actions": [
+        "Seleccionar 5 comunidades",
+        "Publicar caso de uso",
+        "Responder feedback manualmente"
+      ]
+    }
+  ],
   "experiments": [
     {
       "title": "Landing ChatGPT alternative",

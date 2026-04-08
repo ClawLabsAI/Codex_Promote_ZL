@@ -36,6 +36,9 @@ const defaultState = {
   distribution: [],
   socialSystem: [],
   weeklyAssets: [],
+  monthPlan: [],
+  directorySprint: [],
+  outreachQueue: [],
   experiments: [],
   sourceMap: [],
   tasks: [],
@@ -427,6 +430,27 @@ function renderPlanSections() {
     body: (item) => item.description,
     meta: (item) => [item.frequency],
     list: (item) => item.examples
+  });
+
+  renderInfoCards("#month-plan-grid", state.monthPlan, {
+    title: (item) => item.week,
+    body: (item) => item.goal,
+    meta: (item) => [item.theme],
+    list: (item) => item.deliverables
+  });
+
+  renderInfoCards("#directory-grid", state.directorySprint, {
+    title: (item) => item.name,
+    body: (item) => item.why,
+    meta: (item) => [item.priority, item.status],
+    list: (item) => item.notes
+  });
+
+  renderInfoCards("#outreach-grid", state.outreachQueue, {
+    title: (item) => item.name,
+    body: (item) => item.angle,
+    meta: (item) => [item.type, item.status],
+    list: (item) => item.actions
   });
 
   renderInfoCards("#experiments-grid", state.experiments, {
