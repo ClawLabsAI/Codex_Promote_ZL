@@ -293,6 +293,63 @@
           </article>
         </section>
 
+        <section class="split-grid section-green" id="paid-tracker">
+          <article class="panel panel-contrast">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Paid Acquisition</p>
+                <h3>Anuncios, audiencias y creatividades</h3>
+              </div>
+            </div>
+            <div id="paid-board" class="task-board"></div>
+          </article>
+
+          <article class="panel panel-contrast">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">New Ad Test</p>
+                <h3>Captura de experimento paid</h3>
+              </div>
+            </div>
+            <form id="paid-form" class="form-grid">
+              <label class="field field-full">
+                Campaña
+                <input id="paid-name" placeholder="Ej. Meta retargeting pricing visitors" />
+              </label>
+              <label class="field">
+                Plataforma
+                <input id="paid-platform" placeholder="Meta / Google / X" />
+              </label>
+              <label class="field">
+                Audiencia
+                <input id="paid-audience" placeholder="Pricing visitors 30d" />
+              </label>
+              <label class="field field-full">
+                Creatividad
+                <input id="paid-creative" placeholder="Demo 20s + CTA lifetime" />
+              </label>
+              <label class="field">
+                Presupuesto
+                <input id="paid-budget" placeholder="$10/day" />
+              </label>
+              <label class="field">
+                Estado
+                <select id="paid-stage">
+                  <option>Planned</option>
+                  <option>Building</option>
+                  <option>Live</option>
+                  <option>Reviewing</option>
+                </select>
+              </label>
+              <label class="field field-full">
+                Hipótesis
+                <input id="paid-hypothesis" placeholder="Retargeting warm traffic debería convertir mejor que cold ads" />
+              </label>
+              <button class="primary" type="submit">Añadir experimento paid</button>
+            </form>
+          </article>
+        </section>
+
         <section class="section-white" id="editorial-sprint">
           <article class="panel">
             <div class="section-head">

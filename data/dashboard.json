@@ -613,6 +613,48 @@
       "owner": "Founder"
     }
   ],
+  "paidAcquisition": [
+    {
+      "id": "paid-1",
+      "name": "Meta retargeting pricing visitors",
+      "platform": "Meta",
+      "audience": "Pricing visitors 30d",
+      "creative": "Video demo 20s + angle lifetime",
+      "budget": "$10/day",
+      "stage": "Planned",
+      "hypothesis": "Warm traffic debería convertir mejor que tráfico frío con un CTA directo a pricing."
+    },
+    {
+      "id": "paid-2",
+      "name": "Google Search chatgpt alternative",
+      "platform": "Google",
+      "audience": "Search intent high",
+      "creative": "Text ads + landing comparativa",
+      "budget": "$20/day",
+      "stage": "Building",
+      "hypothesis": "Las búsquedas comparativas pueden generar trials cualificados si la landing resuelve objeciones rápido."
+    },
+    {
+      "id": "paid-3",
+      "name": "X boost founder thread",
+      "platform": "X",
+      "audience": "AI builders / developers",
+      "creative": "Founder thread + CTA dev landing",
+      "budget": "$15/day",
+      "stage": "Live",
+      "hypothesis": "Promocionar el mejor thread puede empujar tráfico barato hacia la landing developer."
+    },
+    {
+      "id": "paid-4",
+      "name": "Meta creators demo test",
+      "platform": "Meta",
+      "audience": "Creators interesados en productividad e IA",
+      "creative": "Short demo memory + social proof",
+      "budget": "$12/day",
+      "stage": "Reviewing",
+      "hypothesis": "La demo visual debería generar mejor CTR que una creatividad estática."
+    }
+  ],
   "editorialSprint": [
     {
       "day": "Day 1",

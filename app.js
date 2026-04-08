@@ -38,6 +38,7 @@ const defaultState = {
   weeklyAssets: [],
   publishingWorkflow: [],
   campaignTracker: [],
+  paidAcquisition: [],
   editorialSprint: [],
   monthPlan: [],
   directorySprint: [],
@@ -144,6 +145,7 @@ function buildWeeklyScorecard() {
   const published = state.publishingWorkflow.filter((item) => item.stage === "Published").length;
   const liveCampaigns = state.campaignTracker.filter((item) => item.stage === "Live").length;
   const optimizingCampaigns = state.campaignTracker.filter((item) => item.stage === "Optimizing").length;
+  const liveAds = state.paidAcquisition.filter((item) => item.stage === "Live").length;
   const waitingReplies = state.outreachCRM.filter((item) =>
     ["Contacted", "Waiting reply", "Follow-up"].includes(item.stage)
   ).length;
@@ -167,7 +169,7 @@ function buildWeeklyScorecard() {
     {
       title: "Campaigns",
       value: `${liveCampaigns} live`,
-      note: `${optimizingCampaigns} optimizing`
+      note: `${optimizingCampaigns} optimizing · ${liveAds} ads live`
     },
     {
       title: "Outreach",
@@ -347,6 +349,51 @@ function renderCampaignBoard() {
         <span class="task-count">${items.length}</span>
       </div>
       <div class="task-stack">${cards || '<p class="empty">Sin campañas</p>'}</div>
+    `;
+    board.appendChild(column);
+  });
+}
+
+function renderPaidBoard() {
+  const statuses = ["Planned", "Building", "Live", "Reviewing"];
+  const board = $("#paid-board");
+  if (!board) return;
+  board.innerHTML = "";
+
+  statuses.forEach((status) => {
+    const column = document.createElement("section");
+    column.className = "task-column";
+    const items = state.paidAcquisition.filter((item) => item.stage === status);
+    const cards = items
+      .map(
+        (item) => `
+          <article class="task-card campaign-card">
+            <div class="task-top">
+              <h4>${item.name}</h4>
+              <select data-paid-id="${item.id}" data-field="stage">
+                ${statuses
+                  .map(
+                    (option) =>
+                      `<option value="${option}" ${option === item.stage ? "selected" : ""}>${option}</option>`
+                  )
+                  .join("")}
+              </select>
+            </div>
+            <p>${item.platform} · ${item.audience}</p>
+            <p class="publish-hook">Creative: ${item.creative}</p>
+            <p class="task-due">Budget: ${item.budget}</p>
+            <p class="task-due">Hypothesis: ${item.hypothesis}</p>
+          </article>
+        `
+      )
+      .join("");
+
+    column.innerHTML = `
+      <div class="task-header">
+        <h3>${status}</h3>
+        <span class="task-count">${items.length}</span>
+      </div>
+      <div class="task-stack">${cards || '<p class="empty">Sin tests paid</p>'}</div>
     `;
     board.appendChild(column);
   });
@@ -716,6 +763,7 @@ function renderAll() {
   renderTaskBoard();
   renderPublishBoard();
   renderCampaignBoard();
+  renderPaidBoard();
   renderEditorialSprint();
   renderChannels();
   renderCalendar();
@@ -779,6 +827,13 @@ function bindEditableInputs() {
       item[target.dataset.field] = target.value;
       saveState();
       renderCampaignBoard();
+    }
+
+    if (target.matches("[data-paid-id]")) {
+      const item = state.paidAcquisition.find((entry) => entry.id === target.dataset.paidId);
+      item[target.dataset.field] = target.value;
+      saveState();
+      renderPaidBoard();
     }
   });
 }
@@ -854,6 +909,27 @@ function bindForms() {
 
     saveState();
     renderCampaignBoard();
+    event.target.reset();
+  });
+
+  $("#paid-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = $("#paid-name").value.trim();
+    if (!name) return;
+
+    state.paidAcquisition.push({
+      id: `paid-${Date.now()}`,
+      name,
+      platform: $("#paid-platform").value.trim() || "Meta",
+      audience: $("#paid-audience").value.trim() || "Warm audience",
+      creative: $("#paid-creative").value.trim() || "Static creative",
+      budget: $("#paid-budget").value.trim() || "$10/day",
+      stage: $("#paid-stage").value,
+      hypothesis: $("#paid-hypothesis").value.trim() || "Definir hipótesis"
+    });
+
+    saveState();
+    renderPaidBoard();
     event.target.reset();
   });
 }
