@@ -28,6 +28,8 @@ const defaultState = {
   },
   launchPriorities: [],
   assetPipeline: [],
+  firstUsersPipeline: [],
+  learningLoop: [],
   setupAssumptions: [],
   firstRunChecklist: [],
   audiences: [],
@@ -596,6 +598,20 @@ function renderPlanSections() {
     title: (item) => item.name,
     body: (item) => item.summary,
     meta: (item) => [item.status],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#first-users-grid", state.firstUsersPipeline, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.stage, item.owner],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#learning-loop-grid", state.learningLoop, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.frequency],
     list: (item) => item.items
   });
 

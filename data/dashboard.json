@@ -1,6 +1,6 @@
 {
   "summary": {
-    "northStar": "Crear un sistema de distribucion repetible para generar las primeras visitas, trials y clientes de ZeroLimitAI.",
+    "northStar": "Atraer las primeras visitas cualificadas, convertirlas en usuarios beta y aprender qué mensaje activa mejor ZeroLimitAI.",
     "positioning": "La alternativa lifetime a ChatGPT, Claude y Perplexity para usuarios intensivos que quieren mejores modelos, memoria, automatizacion y control del coste."
   },
   "positioningPoints": [
@@ -11,9 +11,9 @@
   ],
   "weeklyFocus": {
     "sprint": "Semana 1",
-    "objective": "Instrumentar embudo, lanzar una landing comparativa y activar contenido founder-led.",
+    "objective": "Lanzar el motor de marketing beta: una landing principal, contenido founder-led y outreach manual para los primeros usuarios.",
     "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
-    "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
+    "blockers": "Falta elegir una sola landing principal y empezar outreach manual de forma consistente."
   },
   "launchPriorities": [
     {
@@ -105,6 +105,102 @@
         "10 microcreators",
         "5 comunidades",
         "Template de outreach"
+      ]
+    }
+  ],
+  "firstUsersPipeline": [
+    {
+      "name": "Landing -> signup",
+      "stage": "Primary path",
+      "owner": "Founder",
+      "summary": "Todo el marketing de arranque debe empujar a una sola landing principal y a un CTA claro.",
+      "items": [
+        "Elegir una landing principal",
+        "Usar CTA único",
+        "Evitar mandar tráfico a páginas genéricas",
+        "Medir signups manualmente al principio"
+      ]
+    },
+    {
+      "name": "Content -> intent",
+      "stage": "Acquisition",
+      "owner": "Founder",
+      "summary": "El contenido no debe ser genérico: debe empujar a una promesa específica y a una página específica.",
+      "items": [
+        "Comparativas",
+        "Demos cortas",
+        "Founder opinion",
+        "CTA a landing concreta"
+      ]
+    },
+    {
+      "name": "Outreach -> demo",
+      "stage": "Manual push",
+      "owner": "Founder",
+      "summary": "Antes de escalar ads, usa outreach para conseguir los primeros usuarios con feedback directo.",
+      "items": [
+        "Newsletters",
+        "Microcreators",
+        "Builders communities",
+        "Invitación a demo o trial"
+      ]
+    },
+    {
+      "name": "Signup -> activation",
+      "stage": "Beta loop",
+      "owner": "Founder",
+      "summary": "El trabajo no termina en el signup: hay que mover al usuario al primer valor real lo antes posible.",
+      "items": [
+        "Welcome email",
+        "Caso de uso inicial",
+        "Primer mensaje guiado",
+        "Recoger feedback rápido"
+      ]
+    }
+  ],
+  "learningLoop": [
+    {
+      "name": "Message validation",
+      "frequency": "Weekly",
+      "summary": "Cada semana hay que identificar qué promesa está atrayendo mejor atención y clics.",
+      "items": [
+        "Qué hooks reciben más respuesta",
+        "Qué comparativas generan más interés",
+        "Qué CTA se entiende mejor",
+        "Qué landing parece más clara"
+      ]
+    },
+    {
+      "name": "User feedback",
+      "frequency": "Weekly",
+      "summary": "Los primeros usuarios deben darte aprendizaje, no solo vanity metrics.",
+      "items": [
+        "Por qué llegó",
+        "Qué esperaba encontrar",
+        "Qué entendió primero",
+        "Dónde se frenó"
+      ]
+    },
+    {
+      "name": "Channel learning",
+      "frequency": "Weekly",
+      "summary": "No todos los canales merecen la misma energía al principio.",
+      "items": [
+        "Qué canal trae mejor respuesta",
+        "Qué formato genera más conversación",
+        "Qué outreach recibe replies",
+        "Qué listing trae discovery útil"
+      ]
+    },
+    {
+      "name": "Next sprint decisions",
+      "frequency": "Weekly",
+      "summary": "Cada sprint debe cerrar con 2-3 decisiones concretas basadas en lo aprendido.",
+      "items": [
+        "Qué repetir",
+        "Qué pausar",
+        "Qué landing doblar",
+        "Qué mensaje abandonar"
       ]
     }
   ],
@@ -205,7 +301,7 @@
       "id": "landings",
       "label": "Landings creadas",
       "value": "1",
-      "target": "4",
+      "target": "3",
       "note": "Paginas de alta intencion"
     },
     {
@@ -216,11 +312,32 @@
       "note": "X + LinkedIn"
     },
     {
+      "id": "outreach_sent",
+      "label": "Outreach enviados",
+      "value": "0",
+      "target": "20",
+      "note": "Emails + DMs"
+    },
+    {
+      "id": "first_signups",
+      "label": "Primeros signups",
+      "value": "0",
+      "target": "10",
+      "note": "Usuarios beta"
+    },
+    {
       "id": "short_videos",
       "label": "Demos cortas",
       "value": "0",
       "target": "3",
       "note": "Shorts/Reels/TikTok"
+    },
+    {
+      "id": "replies",
+      "label": "Replies recibidas",
+      "value": "0",
+      "target": "8",
+      "note": "Outreach + social"
     },
     {
       "id": "directory_submissions",
@@ -230,32 +347,11 @@
       "note": "Listados y communities"
     },
     {
-      "id": "sessions",
-      "label": "Sesiones semanales",
-      "value": "1200",
-      "target": "5000",
-      "note": "Analytics cuando empiece a entrar trafico"
-    },
-    {
-      "id": "trial_starts",
-      "label": "Trial starts",
-      "value": "42",
-      "target": "250",
-      "note": "Analytics"
-    },
-    {
-      "id": "activation",
-      "label": "Activation rate",
-      "value": "21%",
-      "target": "35%",
-      "note": "Analytics"
-    },
-    {
-      "id": "trial_to_paid",
-      "label": "Trial to paid",
-      "value": "4%",
-      "target": "10%",
-      "note": "Analytics"
+      "id": "feedback_loops",
+      "label": "Feedbacks recogidos",
+      "value": "0",
+      "target": "5",
+      "note": "Calls, emails o DMs útiles"
     }
   ],
   "audiences": [
@@ -1799,11 +1895,11 @@
     }
   ],
   "nextActions": [
-    "Definir un ICP principal para los siguientes 30 dias.",
-    "Construir landing comparativa contra ChatGPT y Claude.",
-    "Configurar eventos de trial, activation y conversion.",
-    "Escribir secuencia de activacion del trial.",
-    "Publicar 3 demos y 2 comparativas esta semana."
+    "Elegir una sola landing principal para todo el tráfico beta.",
+    "Publicar 3 piezas founder-led y 2 demos cortas esta semana.",
+    "Enviar 20 outreachs a newsletters, creators y communities.",
+    "Conseguir los primeros 10 signups beta.",
+    "Recoger 5 aprendizajes reales de usuarios o replies."
   ],
   "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
