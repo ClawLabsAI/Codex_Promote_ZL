@@ -137,6 +137,67 @@ function renderKpis() {
   });
 }
 
+function buildWeeklyScorecard() {
+  const drafts = state.publishingWorkflow.filter((item) => item.stage === "Draft").length;
+  const scheduled = state.publishingWorkflow.filter((item) => item.stage === "Scheduled").length;
+  const published = state.publishingWorkflow.filter((item) => item.stage === "Published").length;
+  const liveCampaigns = state.campaignTracker.filter((item) => item.stage === "Live").length;
+  const optimizingCampaigns = state.campaignTracker.filter((item) => item.stage === "Optimizing").length;
+  const waitingReplies = state.outreachCRM.filter((item) =>
+    ["Contacted", "Waiting reply", "Follow-up"].includes(item.stage)
+  ).length;
+
+  const recommendedMoves = [
+    drafts ? `Convertir ${drafts} borradores en piezas programadas.` : "Crear al menos 2 borradores nuevos esta semana.",
+    liveCampaigns
+      ? `Optimizar ${liveCampaigns} campañas live con mejor CTA o landing.`
+      : "Activar al menos 1 campaña live con landing y CTA claros.",
+    waitingReplies
+      ? `Hacer follow-up a ${waitingReplies} contactos del outreach CRM.`
+      : "Añadir 3 contactos nuevos al outreach CRM y enviar los primeros mensajes."
+  ];
+
+  return [
+    {
+      title: "Publishing",
+      value: `${published} published`,
+      note: `${drafts} draft · ${scheduled} scheduled`
+    },
+    {
+      title: "Campaigns",
+      value: `${liveCampaigns} live`,
+      note: `${optimizingCampaigns} optimizing`
+    },
+    {
+      title: "Outreach",
+      value: `${waitingReplies} pendientes`,
+      note: "Contactos esperando respuesta o follow-up"
+    },
+    {
+      title: "Recommended Moves",
+      value: state.weeklyFocus.sprint,
+      note: recommendedMoves.join(" ")
+    }
+  ];
+}
+
+function renderWeeklyScorecard() {
+  const container = $("#weekly-scorecard");
+  if (!container) return;
+  container.innerHTML = "";
+
+  buildWeeklyScorecard().forEach((item) => {
+    const card = document.createElement("article");
+    card.className = "metric-card scorecard-card";
+    card.innerHTML = `
+      <p class="metric-label">${item.title}</p>
+      <p class="scorecard-value">${item.value}</p>
+      <p class="scorecard-note">${item.note}</p>
+    `;
+    container.appendChild(card);
+  });
+}
+
 function renderInfoCards(containerId, items, config) {
   const container = $(containerId);
   container.innerHTML = "";
@@ -635,6 +696,7 @@ function renderPlanSections() {
 function renderAll() {
   renderSourceStatus();
   renderSummary();
+  renderWeeklyScorecard();
   renderKpis();
   renderPlanSections();
   renderTaskBoard();

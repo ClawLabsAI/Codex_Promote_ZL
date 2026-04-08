@@ -538,6 +538,23 @@ select:focus {
   background: var(--white);
 }
 
+.scorecard-card {
+  border: 2px solid var(--fg);
+}
+
+.scorecard-value {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.scorecard-note {
+  margin-top: 10px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .metrics-grid .metric-card:nth-child(1) {
   background: var(--primary);
   color: var(--white);
