@@ -414,6 +414,7 @@ select:focus {
   padding: 10px 12px;
 }
 
+.overview-grid,
 .metrics-grid,
 .split-grid,
 .roadmap-grid,
@@ -425,6 +426,10 @@ select:focus {
 .form-grid {
   display: grid;
   gap: 16px;
+}
+
+.overview-grid {
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
 }
 
 .metrics-grid {
@@ -459,6 +464,24 @@ select:focus {
   grid-column: 1 / -1;
 }
 
+.spotlight-panel {
+  min-height: 100%;
+}
+
+.spotlight-accent {
+  background: var(--fg);
+}
+
+.spotlight-accent .eyebrow,
+.spotlight-accent h3,
+.spotlight-accent li {
+  color: var(--white);
+}
+
+.compact-panel {
+  align-self: start;
+}
+
 .metric-card {
   padding: 18px;
   background: var(--white);
@@ -481,6 +504,21 @@ select:focus {
 
 .metrics-grid .metric-card:nth-child(4) {
   background: var(--muted);
+}
+
+.secondary-metrics {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.secondary-metrics .metric-card {
+  padding: 14px;
+  background: var(--muted);
+}
+
+.secondary-metrics .metric-input {
+  font-size: 1.4rem;
 }
 
 .metric-label {
@@ -678,6 +716,7 @@ code {
     height: auto;
   }
 
+  .overview-grid,
   .metrics-grid,
   .split-grid,
   .roadmap-grid,

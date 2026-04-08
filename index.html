@@ -91,6 +91,57 @@
           </div>
         </section>
 
+        <section class="overview-grid section-white">
+          <article class="panel spotlight-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">This Week</p>
+                <h3 id="focus-sprint"></h3>
+              </div>
+            </div>
+            <p id="focus-objective" class="lead lead-small"></p>
+            <form id="weekly-focus-form" class="form-grid">
+              <label class="field">
+                Sprint
+                <input id="sprint" value="Semana 1" />
+              </label>
+              <label class="field">
+                Objetivo
+                <input id="objective" />
+              </label>
+              <label class="field field-full">
+                Wins
+                <textarea id="wins" rows="3"></textarea>
+              </label>
+              <label class="field field-full">
+                Blockers
+                <textarea id="blockers" rows="3"></textarea>
+              </label>
+              <button class="primary" type="submit">Guardar foco semanal</button>
+            </form>
+          </article>
+
+          <article class="panel spotlight-panel spotlight-accent">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Next Moves</p>
+                <h3>Qué haría esta semana</h3>
+              </div>
+            </div>
+            <ol id="next-actions" class="list numbered"></ol>
+          </article>
+
+          <article class="panel spotlight-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Execution Report</p>
+                <h3>Resumen rápido</h3>
+              </div>
+            </div>
+            <div id="weekly-report" class="report-box"></div>
+          </article>
+        </section>
+
         <section class="metrics-grid section-white" id="metrics"></section>
 
         <section class="split-grid section-muted">
@@ -149,48 +200,7 @@
             <ul id="positioning-points" class="list"></ul>
           </article>
 
-          <article class="panel panel-contrast">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Weekly Focus</p>
-                <h3 id="focus-sprint"></h3>
-              </div>
-            </div>
-            <p id="focus-objective" class="lead lead-small"></p>
-            <form id="weekly-focus-form" class="form-grid">
-              <label class="field">
-                Sprint
-                <input id="sprint" value="Semana 1" />
-              </label>
-              <label class="field">
-                Objetivo
-                <input id="objective" />
-              </label>
-              <label class="field field-full">
-                Wins
-                <textarea id="wins" rows="3"></textarea>
-              </label>
-              <label class="field field-full">
-                Blockers
-                <textarea id="blockers" rows="3"></textarea>
-              </label>
-              <button class="primary" type="submit">Guardar foco semanal</button>
-            </form>
-          </article>
-        </section>
-
-        <section class="split-grid section-white">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Weekly Report</p>
-                <h3>Resumen de ejecución</h3>
-              </div>
-            </div>
-            <div id="weekly-report" class="report-box"></div>
-          </article>
-
-          <article class="panel">
+          <article class="panel panel-contrast compact-panel">
             <div class="section-head">
               <div>
                 <p class="eyebrow">Analytics Layer</p>
@@ -203,6 +213,7 @@
               <li><code>data/dashboard.json</code> sigue siendo la fuente central</li>
               <li>Los scripts de métricas ya están listos cuando los necesites</li>
             </ul>
+            <div id="secondary-metrics" class="secondary-metrics"></div>
           </article>
         </section>
 
@@ -414,16 +425,6 @@
             </div>
             <ul id="appsumo-list" class="list checklist"></ul>
           </article>
-        </section>
-
-        <section class="panel section-blue">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow eyebrow-light">Immediate Next Steps</p>
-              <h3 class="text-light">Qué haría esta semana</h3>
-            </div>
-          </div>
-          <ol id="next-actions" class="list numbered list-light"></ol>
         </section>
       </main>
     </div>

@@ -101,10 +101,12 @@ function renderSummary() {
 }
 
 function renderKpis() {
-  const container = $("#metrics");
-  container.innerHTML = "";
+  const primaryContainer = $("#metrics");
+  const secondaryContainer = $("#secondary-metrics");
+  primaryContainer.innerHTML = "";
+  if (secondaryContainer) secondaryContainer.innerHTML = "";
 
-  state.kpis.forEach((kpi) => {
+  state.kpis.forEach((kpi, index) => {
     const card = document.createElement("article");
     card.className = "metric-card";
     card.innerHTML = `
@@ -118,7 +120,8 @@ function renderKpis() {
         </label>
       </div>
     `;
-    container.appendChild(card);
+    if (index < 4) primaryContainer.appendChild(card);
+    else if (secondaryContainer) secondaryContainer.appendChild(card);
   });
 }
 
