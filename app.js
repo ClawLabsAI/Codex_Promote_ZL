@@ -39,6 +39,7 @@ const defaultState = {
   monthPlan: [],
   directorySprint: [],
   outreachQueue: [],
+  outreachCRM: [],
   xCopyBank: [],
   linkedinCopyBank: [],
   videoScriptBank: [],
@@ -456,6 +457,17 @@ function renderPlanSections() {
     body: (item) => item.angle,
     meta: (item) => [item.type, item.status],
     list: (item) => item.actions
+  });
+
+  renderInfoCards("#outreach-crm-grid", state.outreachCRM, {
+    title: (item) => item.name,
+    body: item => `${item.channel} · ${item.contact}`,
+    meta: (item) => [item.stage, item.priority],
+    list: (item) => [
+      `Angle: ${item.angle}`,
+      `Next step: ${item.nextStep}`,
+      `Owner: ${item.owner}`
+    ]
   });
 
   renderInfoCards("#x-copy-grid", state.xCopyBank, {

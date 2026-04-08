@@ -675,6 +675,68 @@
       ]
     }
   ],
+  "outreachCRM": [
+    {
+      "name": "Newsletter AI aplicada #1",
+      "channel": "Email",
+      "contact": "Editor / Founder",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Alternativa lifetime + comparativa clara",
+      "nextStep": "Enviar pitch corto con screenshot y CTA",
+      "owner": "Founder"
+    },
+    {
+      "name": "Microcreator productividad #1",
+      "channel": "DM / Email",
+      "contact": "Creator 10k-50k",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Demo de workflow corto para audience curiosa",
+      "nextStep": "Proponer video de 30 segundos con caso de uso",
+      "owner": "Founder"
+    },
+    {
+      "name": "Dev creator #1",
+      "channel": "DM / Email",
+      "contact": "Builder audience",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "ZeroClaw + memory para developers",
+      "nextStep": "Enviar comparativa técnica y caso de uso",
+      "owner": "Founder"
+    },
+    {
+      "name": "Comunidad indie #1",
+      "channel": "Community post",
+      "contact": "Moderador / Comunidad",
+      "stage": "Research",
+      "priority": "Media",
+      "angle": "Pedir feedback sobre positioning y landing",
+      "nextStep": "Preparar post sin vender demasiado",
+      "owner": "Founder"
+    },
+    {
+      "name": "Newsletter AI aplicada #2",
+      "channel": "Email",
+      "contact": "Editor",
+      "stage": "Research",
+      "priority": "Media",
+      "angle": "Comparativa entre tools con ahorro de coste",
+      "nextStep": "Buscar template y linea editorial",
+      "owner": "Ops"
+    },
+    {
+      "name": "Microcreator dev #2",
+      "channel": "DM",
+      "contact": "Creator nicho dev",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Caso real de research o build con ZeroLimitAI",
+      "nextStep": "Enviar mensaje corto con demo y CTA",
+      "owner": "Founder"
+    }
+  ],
   "xCopyBank": [
     {
       "title": "Comparativa directa",
