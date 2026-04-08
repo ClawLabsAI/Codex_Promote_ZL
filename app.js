@@ -39,6 +39,8 @@ const defaultState = {
   monthPlan: [],
   directorySprint: [],
   outreachQueue: [],
+  xCopyBank: [],
+  linkedinCopyBank: [],
   experiments: [],
   sourceMap: [],
   tasks: [],
@@ -451,6 +453,20 @@ function renderPlanSections() {
     body: (item) => item.angle,
     meta: (item) => [item.type, item.status],
     list: (item) => item.actions
+  });
+
+  renderInfoCards("#x-copy-grid", state.xCopyBank, {
+    title: (item) => item.title,
+    body: (item) => item.copy,
+    meta: (item) => [item.goal],
+    list: (item) => item.notes
+  });
+
+  renderInfoCards("#linkedin-copy-grid", state.linkedinCopyBank, {
+    title: (item) => item.title,
+    body: (item) => item.copy,
+    meta: (item) => [item.goal],
+    list: (item) => item.notes
   });
 
   renderInfoCards("#experiments-grid", state.experiments, {

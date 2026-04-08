@@ -675,6 +675,90 @@
       ]
     }
   ],
+  "xCopyBank": [
+    {
+      "title": "Comparativa directa",
+      "goal": "Clicks",
+      "copy": "La mayoria de herramientas AI te obligan a elegir entre precio, memoria o buenos modelos. ZeroLimitAI intenta resolver justo eso: mejores modelos, memory y automatizacion sin otra suscripcion mensual. Si eres power user, esta comparativa te puede interesar.",
+      "notes": [
+        "CTA a landing comparativa",
+        "Añadir screenshot",
+        "Publicar con reply explicando el caso de uso"
+      ]
+    },
+    {
+      "title": "Founder opinion",
+      "goal": "Autoridad",
+      "copy": "Mi opinion impopular: el problema no es que falten modelos AI. El problema es que el usuario medio sigue saltando entre herramientas desconectadas, sin memoria, sin contexto y pagando varias suscripciones para hacer el mismo trabajo. Por eso estamos construyendo ZeroLimitAI.",
+      "notes": [
+        "Ideal como post de founder",
+        "Terminar con pregunta",
+        "Responder comentarios manualmente"
+      ]
+    },
+    {
+      "title": "Lifetime angle",
+      "goal": "Curiosidad",
+      "copy": "Si usas ChatGPT, Claude y otras tools a la vez, seguramente ya sabes lo que duele pagar varias suscripciones. ZeroLimitAI va por otro camino: un AI workspace con enfoque lifetime, memoria y automatizacion. Estamos probando este modelo en abierto.",
+      "notes": [
+        "No sonar agresivamente comercial",
+        "Buen post para awareness",
+        "Enlazar a home o landing"
+      ]
+    },
+    {
+      "title": "Developer angle",
+      "goal": "Nicho dev",
+      "copy": "Estoy convencido de que los developers no necesitan otra app AI genérica. Necesitan velocidad, mejores modelos, memory y automatizacion en el mismo sitio. Ese es el angulo que estamos empujando con ZeroLimitAI y ZeroClaw.",
+      "notes": [
+        "Añadir demo tecnica",
+        "Etiquetar use case",
+        "Link a landing developers"
+      ]
+    }
+  ],
+  "linkedinCopyBank": [
+    {
+      "title": "Problema de mercado",
+      "goal": "Autoridad",
+      "copy": "Cada vez veo mas equipos y usuarios intensivos de IA con el mismo problema: demasiadas herramientas, demasiado contexto perdido y demasiadas suscripciones para resolver flujos que deberian vivir en un solo sitio.\n\nEsa es una de las razones por las que estamos construyendo ZeroLimitAI: una experiencia mas unificada, con mejores modelos, memoria y automatizacion.\n\nAntes de escalar distribucion, estamos afinando mensaje, casos de uso y una narrativa clara para power users y developers.",
+      "notes": [
+        "Buen post de posicionamiento",
+        "Ideal con una captura de producto",
+        "CTA suave al final"
+      ]
+    },
+    {
+      "title": "Build in public",
+      "goal": "Confianza",
+      "copy": "Acabamos de convertir nuestro dashboard de growth en un sistema mucho mas operativo.\n\nEn vez de obsesionarnos con visitas antes de tiempo, estamos enfocando ZeroLimitAI en tres cosas:\n\n1. una landing clara\n2. una cadencia de contenido founder-led\n3. una distribucion disciplinada\n\nMi aprendizaje: al principio no necesitas mas analytics. Necesitas mas claridad y mas velocidad de ejecucion.",
+      "notes": [
+        "Post perfecto para founders",
+        "Terminar con aprendizaje",
+        "Invitar a feedback"
+      ]
+    },
+    {
+      "title": "Comparativa / valor",
+      "goal": "Demo",
+      "copy": "Cuando alguien usa varias herramientas AI a la vez, normalmente esta intentando resolver una mezcla de necesidades: mejor modelo para cada tarea, memoria entre sesiones, automatizacion y coste controlado.\n\nEse es el espacio donde creemos que ZeroLimitAI puede aportar mucho valor.\n\nNuestro foco ahora no es parecer una herramienta mas. Es demostrar con casos concretos por que una experiencia mas integrada puede ahorrar tiempo y dinero.",
+      "notes": [
+        "Buen post con carrusel",
+        "Añadir bullets visuales",
+        "CTA a comparativa"
+      ]
+    },
+    {
+      "title": "Developer positioning",
+      "goal": "Nicho dev",
+      "copy": "Si construyes productos o automatizaciones, probablemente no necesitas mas ruido AI. Necesitas un entorno donde investigar, comparar modelos, conservar contexto y ejecutar mas rapido.\n\nPor eso estamos empujando ZeroLimitAI tambien desde un angulo muy claro para developers e indie hackers.\n\nNo como una app bonita, sino como una herramienta de trabajo.",
+      "notes": [
+        "Ideal para audiencia tecnica",
+        "Acompañar con caso real",
+        "CTA a landing dev"
+      ]
+    }
+  ],
   "experiments": [
     {
       "title": "Landing ChatGPT alternative",
