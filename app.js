@@ -41,6 +41,7 @@ const defaultState = {
   outreachQueue: [],
   xCopyBank: [],
   linkedinCopyBank: [],
+  videoScriptBank: [],
   experiments: [],
   sourceMap: [],
   tasks: [],
@@ -467,6 +468,18 @@ function renderPlanSections() {
     body: (item) => item.copy,
     meta: (item) => [item.goal],
     list: (item) => item.notes
+  });
+
+  renderInfoCards("#video-script-grid", state.videoScriptBank, {
+    title: (item) => item.title,
+    body: (item) => item.hook,
+    meta: (item) => [item.goal, item.duration],
+    list: (item) => [
+      `Scene 1: ${item.scene1}`,
+      `Scene 2: ${item.scene2}`,
+      `Scene 3: ${item.scene3}`,
+      `CTA: ${item.cta}`
+    ]
   });
 
   renderInfoCards("#experiments-grid", state.experiments, {

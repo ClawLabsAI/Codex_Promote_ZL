@@ -759,6 +759,48 @@
       ]
     }
   ],
+  "videoScriptBank": [
+    {
+      "title": "Comparativa de modelos en 30 segundos",
+      "goal": "Discovery",
+      "duration": "30-40s",
+      "hook": "Si usas varias herramientas AI, probablemente estás pagando de más y perdiendo contexto.",
+      "scene1": "Abrir con 3 ventanas o nombres de herramientas distintas y el problema de saltar entre ellas.",
+      "scene2": "Mostrar cómo ZeroLimitAI centraliza modelos, memoria y flujo en un solo sitio.",
+      "scene3": "Enseñar el resultado rápido de una tarea concreta.",
+      "cta": "Termina con: si quieres verlo comparado contra ChatGPT o Claude, mira la landing."
+    },
+    {
+      "title": "Memory como diferenciador",
+      "goal": "Producto",
+      "duration": "20-30s",
+      "hook": "La mayoría de herramientas AI olvidan el contexto demasiado pronto.",
+      "scene1": "Mostrar una interacción donde el contexto se pierde.",
+      "scene2": "Mostrar cómo con memory la conversación o workflow continúa mejor.",
+      "scene3": "Cerrar con el beneficio: menos repetición, más velocidad.",
+      "cta": "CTA suave: esto es parte de lo que estamos construyendo en ZeroLimitAI."
+    },
+    {
+      "title": "Developer workflow demo",
+      "goal": "Nicho dev",
+      "duration": "30-45s",
+      "hook": "Si eres developer, no necesitas más ruido AI. Necesitas velocidad.",
+      "scene1": "Presentar un pequeño problema real: debug, research o comparación.",
+      "scene2": "Mostrar cómo lo resuelves usando ZeroLimitAI y el angulo de ZeroClaw o modelos.",
+      "scene3": "Enseñar el output final o el ahorro de pasos.",
+      "cta": "Cerrar con: estamos empujando este ángulo para developers e indie hackers."
+    },
+    {
+      "title": "Lifetime vs subscriptions",
+      "goal": "Awareness",
+      "duration": "25-35s",
+      "hook": "¿Cuántas suscripciones AI tienes activas ahora mismo?",
+      "scene1": "Poner 3-4 logos o nombres de herramientas y sumar el coste mental o mensual.",
+      "scene2": "Explicar el enfoque de ZeroLimitAI como alternativa más integrada.",
+      "scene3": "Mostrar una pantalla simple del producto y el mensaje principal.",
+      "cta": "Invitar a visitar la comparativa o probar el trial."
+    }
+  ],
   "experiments": [
     {
       "title": "Landing ChatGPT alternative",
