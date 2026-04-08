@@ -234,6 +234,63 @@
           </article>
         </section>
 
+        <section class="split-grid section-amber" id="campaign-tracker">
+          <article class="panel panel-contrast">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Campaign Tracker</p>
+                <h3>Campañas y landings activas</h3>
+              </div>
+            </div>
+            <div id="campaign-board" class="task-board"></div>
+          </article>
+
+          <article class="panel panel-contrast">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">New Campaign</p>
+                <h3>Captura de campaña</h3>
+              </div>
+            </div>
+            <form id="campaign-form" class="form-grid">
+              <label class="field field-full">
+                Campaña
+                <input id="campaign-name" placeholder="Ej. Landing ChatGPT alternative + X threads" />
+              </label>
+              <label class="field">
+                Landing
+                <input id="campaign-landing" placeholder="/chatgpt-alternative" />
+              </label>
+              <label class="field">
+                Canal
+                <input id="campaign-channel" placeholder="SEO / X / LinkedIn / Directories" />
+              </label>
+              <label class="field field-full">
+                CTA
+                <input id="campaign-cta" placeholder="Start free trial" />
+              </label>
+              <label class="field">
+                Objetivo
+                <input id="campaign-target" placeholder="50 trial starts" />
+              </label>
+              <label class="field">
+                Estado
+                <select id="campaign-stage">
+                  <option>Planned</option>
+                  <option>Live</option>
+                  <option>Optimizing</option>
+                  <option>Completed</option>
+                </select>
+              </label>
+              <label class="field">
+                Owner
+                <input id="campaign-owner" placeholder="Founder" />
+              </label>
+              <button class="primary" type="submit">Añadir campaña</button>
+            </form>
+          </article>
+        </section>
+
         <section class="split-grid section-muted" id="execution">
           <article class="panel">
             <div class="section-head">

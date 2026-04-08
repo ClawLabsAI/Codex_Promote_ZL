@@ -571,6 +571,48 @@
       "owner": "Founder"
     }
   ],
+  "campaignTracker": [
+    {
+      "id": "campaign-1",
+      "name": "Landing ChatGPT alternative + SEO article",
+      "landing": "/chatgpt-alternative",
+      "channel": "SEO",
+      "cta": "Start free trial",
+      "target": "25 trial starts",
+      "stage": "Planned",
+      "owner": "Founder"
+    },
+    {
+      "id": "campaign-2",
+      "name": "X threads sobre lifetime vs suscripciones",
+      "landing": "/pricing",
+      "channel": "X",
+      "cta": "Compare plans",
+      "target": "10 pricing clicks",
+      "stage": "Live",
+      "owner": "Founder"
+    },
+    {
+      "id": "campaign-3",
+      "name": "Creator outreach hacia demo de memory",
+      "landing": "/ai-agents-memory",
+      "channel": "Creator outreach",
+      "cta": "Book demo",
+      "target": "5 creator replies",
+      "stage": "Optimizing",
+      "owner": "Founder"
+    },
+    {
+      "id": "campaign-4",
+      "name": "Directory push para lifetime AI app",
+      "landing": "/lifetime-ai-app",
+      "channel": "Directories",
+      "cta": "Try free",
+      "target": "8 live listings",
+      "stage": "Completed",
+      "owner": "Founder"
+    }
+  ],
   "monthPlan": [
     {
       "week": "Semana 1",

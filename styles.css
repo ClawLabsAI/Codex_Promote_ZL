@@ -741,6 +741,11 @@ blockquote {
   gap: 8px;
 }
 
+.campaign-card {
+  display: grid;
+  gap: 8px;
+}
+
 .publish-hook {
   font-size: 0.9rem;
   line-height: 1.5;

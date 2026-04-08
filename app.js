@@ -37,6 +37,7 @@ const defaultState = {
   socialSystem: [],
   weeklyAssets: [],
   publishingWorkflow: [],
+  campaignTracker: [],
   monthPlan: [],
   directorySprint: [],
   outreachQueue: [],
@@ -240,6 +241,50 @@ function renderPublishBoard() {
         <span class="task-count">${items.length}</span>
       </div>
       <div class="task-stack">${cards || '<p class="empty">Sin piezas</p>'}</div>
+    `;
+    board.appendChild(column);
+  });
+}
+
+function renderCampaignBoard() {
+  const statuses = ["Planned", "Live", "Optimizing", "Completed"];
+  const board = $("#campaign-board");
+  if (!board) return;
+  board.innerHTML = "";
+
+  statuses.forEach((status) => {
+    const column = document.createElement("section");
+    column.className = "task-column";
+    const items = state.campaignTracker.filter((item) => item.stage === status);
+    const cards = items
+      .map(
+        (item) => `
+          <article class="task-card campaign-card">
+            <div class="task-top">
+              <h4>${item.name}</h4>
+              <select data-campaign-id="${item.id}" data-field="stage">
+                ${statuses
+                  .map(
+                    (option) =>
+                      `<option value="${option}" ${option === item.stage ? "selected" : ""}>${option}</option>`
+                  )
+                  .join("")}
+              </select>
+            </div>
+            <p>${item.channel} · ${item.landing}</p>
+            <p class="publish-hook">CTA: ${item.cta}</p>
+            <p class="task-due">Goal: ${item.target} · Owner: ${item.owner}</p>
+          </article>
+        `
+      )
+      .join("");
+
+    column.innerHTML = `
+      <div class="task-header">
+        <h3>${status}</h3>
+        <span class="task-count">${items.length}</span>
+      </div>
+      <div class="task-stack">${cards || '<p class="empty">Sin campañas</p>'}</div>
     `;
     board.appendChild(column);
   });
@@ -594,6 +639,7 @@ function renderAll() {
   renderPlanSections();
   renderTaskBoard();
   renderPublishBoard();
+  renderCampaignBoard();
   renderChannels();
   renderCalendar();
   renderAutomations();
@@ -650,6 +696,13 @@ function bindEditableInputs() {
       saveState();
       renderPublishBoard();
     }
+
+    if (target.matches("[data-campaign-id]")) {
+      const item = state.campaignTracker.find((entry) => entry.id === target.dataset.campaignId);
+      item[target.dataset.field] = target.value;
+      saveState();
+      renderCampaignBoard();
+    }
   });
 }
 
@@ -703,6 +756,27 @@ function bindForms() {
 
     saveState();
     renderPublishBoard();
+    event.target.reset();
+  });
+
+  $("#campaign-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = $("#campaign-name").value.trim();
+    if (!name) return;
+
+    state.campaignTracker.push({
+      id: `campaign-${Date.now()}`,
+      name,
+      landing: $("#campaign-landing").value.trim() || "/",
+      channel: $("#campaign-channel").value.trim() || "General",
+      cta: $("#campaign-cta").value.trim() || "Start free trial",
+      target: $("#campaign-target").value.trim() || "Definir objetivo",
+      stage: $("#campaign-stage").value,
+      owner: $("#campaign-owner").value.trim() || "Founder"
+    });
+
+    saveState();
+    renderCampaignBoard();
     event.target.reset();
   });
 }
