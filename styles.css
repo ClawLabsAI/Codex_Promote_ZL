@@ -428,6 +428,51 @@ select:focus {
   gap: 16px;
 }
 
+.library-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.library-section {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--muted);
+}
+
+.library-section summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 18px 20px;
+  background: var(--fg);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.library-section summary:hover {
+  background: #000000;
+}
+
+.library-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary-note {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.library-content {
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+}
+
 .overview-grid {
   grid-template-columns: 1.2fr 0.9fr 0.9fr;
 }
@@ -730,6 +775,11 @@ code {
 
   .hero-card {
     grid-template-columns: 1fr;
+  }
+
+  .library-section summary {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

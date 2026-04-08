@@ -30,17 +30,10 @@
 
         <nav class="nav">
           <a href="#overview">Overview</a>
-          <a href="#setup">Setup</a>
-          <a href="#audiences">Audiences</a>
-          <a href="#distribution">Distribution</a>
-          <a href="#social">Social</a>
-          <a href="#roadmap">Roadmap</a>
           <a href="#execution">Execution</a>
-          <a href="#channels">Channels</a>
-          <a href="#experiments">Experiments</a>
-          <a href="#automation">Automation</a>
-          <a href="#calendar">Calendar</a>
-          <a href="#offers">Launches</a>
+          <a href="#social">Content</a>
+          <a href="#strategy-library">Strategy</a>
+          <a href="#launches-library">Launches</a>
         </nav>
 
         <section class="sidebar-card">
@@ -144,7 +137,7 @@
 
         <section class="metrics-grid section-white" id="metrics"></section>
 
-        <section class="split-grid section-muted">
+        <section class="split-grid section-muted" id="priorities">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -163,101 +156,6 @@
               </div>
             </div>
             <div id="asset-pipeline-grid" class="info-grid"></div>
-          </article>
-        </section>
-
-        <section class="split-grid section-white" id="setup">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Quick Setup</p>
-                <h3>Lo que asumimos ahora</h3>
-              </div>
-            </div>
-            <div id="setup-grid" class="info-grid"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">First Run</p>
-                <h3>Checklist guiado</h3>
-              </div>
-            </div>
-            <div id="first-run-grid" class="info-grid"></div>
-          </article>
-        </section>
-
-        <section class="split-grid section-amber">
-          <article class="panel panel-contrast">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Positioning</p>
-                <h3>Mensaje principal</h3>
-              </div>
-            </div>
-            <blockquote id="positioning"></blockquote>
-            <ul id="positioning-points" class="list"></ul>
-          </article>
-
-          <article class="panel panel-contrast compact-panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Analytics Layer</p>
-                <h3>Se activa después</h3>
-              </div>
-            </div>
-            <ul class="list">
-              <li>Primero publica, distribuye y construye landings</li>
-              <li>Después conecta PostHog y Stripe</li>
-              <li><code>data/dashboard.json</code> sigue siendo la fuente central</li>
-              <li>Los scripts de métricas ya están listos cuando los necesites</li>
-            </ul>
-            <div id="secondary-metrics" class="secondary-metrics"></div>
-          </article>
-        </section>
-
-        <section class="split-grid section-muted" id="audiences">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">ICP</p>
-                <h3>Audiencias prioritarias</h3>
-              </div>
-            </div>
-            <div id="audience-grid" class="info-grid"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Offers</p>
-                <h3>Mensajes y ofertas</h3>
-              </div>
-            </div>
-            <div id="offers-grid" class="info-grid"></div>
-          </article>
-        </section>
-
-        <section class="split-grid section-white" id="distribution">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Content Engine</p>
-                <h3>Pilares de contenido</h3>
-              </div>
-            </div>
-            <div id="content-pillars" class="info-grid"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Distribution</p>
-                <h3>Canales y directorios</h3>
-              </div>
-            </div>
-            <div id="distribution-grid" class="info-grid"></div>
           </article>
         </section>
 
@@ -281,16 +179,6 @@
             </div>
             <div id="asset-grid" class="info-grid"></div>
           </article>
-        </section>
-
-        <section class="panel section-white" id="roadmap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Roadmap</p>
-              <h3>Plan de 90 días</h3>
-            </div>
-          </div>
-          <div id="roadmap-columns" class="roadmap-grid"></div>
         </section>
 
         <section class="split-grid section-muted" id="execution">
@@ -341,90 +229,233 @@
           </article>
         </section>
 
-        <section class="panel section-white" id="channels">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Channels</p>
-              <h3>Prioridad por impacto</h3>
+        <section id="strategy-library" class="library-stack">
+          <details class="library-section" open>
+            <summary>
+              <span>Strategy Core</span>
+              <span class="summary-note">Positioning, ICP y oferta</span>
+            </summary>
+            <div class="library-content section-amber">
+              <div class="split-grid">
+                <article class="panel panel-contrast">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Positioning</p>
+                      <h3>Mensaje principal</h3>
+                    </div>
+                  </div>
+                  <blockquote id="positioning"></blockquote>
+                  <ul id="positioning-points" class="list"></ul>
+                </article>
+
+                <article class="panel panel-contrast">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Setup</p>
+                      <h3>Lo que asumimos ahora</h3>
+                    </div>
+                  </div>
+                  <div id="setup-grid" class="info-grid"></div>
+                </article>
+              </div>
+
+              <div class="split-grid">
+                <article class="panel panel-contrast">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">ICP</p>
+                      <h3>Audiencias prioritarias</h3>
+                    </div>
+                  </div>
+                  <div id="audience-grid" class="info-grid"></div>
+                </article>
+
+                <article class="panel panel-contrast">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Offers</p>
+                      <h3>Mensajes y ofertas</h3>
+                    </div>
+                  </div>
+                  <div id="offers-grid" class="info-grid"></div>
+                </article>
+              </div>
             </div>
-          </div>
-          <div id="channels-grid" class="channels-grid"></div>
+          </details>
+
+          <details class="library-section">
+            <summary>
+              <span>Distribution System</span>
+              <span class="summary-note">Canales, roadmap y experimentos</span>
+            </summary>
+            <div class="library-content section-white">
+              <div class="split-grid">
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Content Engine</p>
+                      <h3>Pilares de contenido</h3>
+                    </div>
+                  </div>
+                  <div id="content-pillars" class="info-grid"></div>
+                </article>
+
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Distribution</p>
+                      <h3>Canales y directorios</h3>
+                    </div>
+                  </div>
+                  <div id="distribution-grid" class="info-grid"></div>
+                </article>
+              </div>
+
+              <div class="panel" id="roadmap">
+                <div class="section-head">
+                  <div>
+                    <p class="eyebrow">Roadmap</p>
+                    <h3>Plan de 90 días</h3>
+                  </div>
+                </div>
+                <div id="roadmap-columns" class="roadmap-grid"></div>
+              </div>
+
+              <div class="split-grid">
+                <article class="panel" id="channels">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Channels</p>
+                      <h3>Prioridad por impacto</h3>
+                    </div>
+                  </div>
+                  <div id="channels-grid" class="channels-grid"></div>
+                </article>
+
+                <article class="panel" id="experiments">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Experiments</p>
+                      <h3>Backlog de growth</h3>
+                    </div>
+                  </div>
+                  <div id="experiments-grid" class="info-grid"></div>
+                </article>
+              </div>
+            </div>
+          </details>
+
+          <details class="library-section">
+            <summary>
+              <span>Operations & Data</span>
+              <span class="summary-note">Analytics, automatización y calendario</span>
+            </summary>
+            <div class="library-content section-muted">
+              <div class="split-grid">
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">First Run</p>
+                      <h3>Checklist guiado</h3>
+                    </div>
+                  </div>
+                  <div id="first-run-grid" class="info-grid"></div>
+                </article>
+
+                <article class="panel compact-panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Analytics Layer</p>
+                      <h3>Se activa después</h3>
+                    </div>
+                  </div>
+                  <ul class="list">
+                    <li>Primero publica, distribuye y construye landings</li>
+                    <li>Después conecta PostHog y Stripe</li>
+                    <li><code>data/dashboard.json</code> sigue siendo la fuente central</li>
+                    <li>Los scripts de métricas ya están listos cuando los necesites</li>
+                  </ul>
+                  <div id="secondary-metrics" class="secondary-metrics"></div>
+                </article>
+              </div>
+
+              <div class="split-grid" id="automation">
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Automation</p>
+                      <h3>Flujos recomendados</h3>
+                    </div>
+                  </div>
+                  <div id="automation-list" class="automation-grid"></div>
+                </article>
+
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Notes</p>
+                      <h3>Conexiones y decisiones</h3>
+                    </div>
+                  </div>
+                  <textarea id="notes" class="notes-area" rows="18"></textarea>
+                </article>
+              </div>
+
+              <div class="split-grid">
+                <article class="panel" id="calendar">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Calendar</p>
+                      <h3>Sistema semanal de ejecución</h3>
+                    </div>
+                  </div>
+                  <div id="calendar-grid" class="calendar-grid"></div>
+                </article>
+
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Data Sources</p>
+                      <h3>Mapa de datos centralizados</h3>
+                    </div>
+                  </div>
+                  <div id="sources-grid" class="info-grid"></div>
+                </article>
+              </div>
+            </div>
+          </details>
         </section>
 
-        <section class="split-grid section-muted" id="experiments">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Experiments</p>
-                <h3>Backlog de growth</h3>
+        <section id="launches-library" class="library-stack">
+          <details class="library-section">
+            <summary>
+              <span>Launch Playbooks</span>
+              <span class="summary-note">Product Hunt y AppSumo</span>
+            </summary>
+            <div class="library-content section-white">
+              <div class="split-grid" id="offers">
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Launches</p>
+                      <h3>Checklist Product Hunt</h3>
+                    </div>
+                  </div>
+                  <ul id="product-hunt-list" class="list checklist"></ul>
+                </article>
+
+                <article class="panel">
+                  <div class="section-head">
+                    <div>
+                      <p class="eyebrow">Marketplace</p>
+                      <h3>Checklist AppSumo</h3>
+                    </div>
+                  </div>
+                  <ul id="appsumo-list" class="list checklist"></ul>
+                </article>
               </div>
             </div>
-            <div id="experiments-grid" class="info-grid"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Data Sources</p>
-                <h3>Mapa de datos centralizados</h3>
-              </div>
-            </div>
-            <div id="sources-grid" class="info-grid"></div>
-          </article>
-        </section>
-
-        <section class="split-grid section-white" id="automation">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Automation</p>
-                <h3>Flujos recomendados</h3>
-              </div>
-            </div>
-            <div id="automation-list" class="automation-grid"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Notes</p>
-                <h3>Conexiones y decisiones</h3>
-              </div>
-            </div>
-            <textarea id="notes" class="notes-area" rows="18"></textarea>
-          </article>
-        </section>
-
-        <section class="panel section-muted" id="calendar">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Calendar</p>
-              <h3>Sistema semanal de ejecución</h3>
-            </div>
-          </div>
-          <div id="calendar-grid" class="calendar-grid"></div>
-        </section>
-
-        <section class="split-grid section-white" id="offers">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Launches</p>
-                <h3>Checklist Product Hunt</h3>
-              </div>
-            </div>
-            <ul id="product-hunt-list" class="list checklist"></ul>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Marketplace</p>
-                <h3>Checklist AppSumo</h3>
-              </div>
-            </div>
-            <ul id="appsumo-list" class="list checklist"></ul>
-          </article>
+          </details>
         </section>
       </main>
     </div>
