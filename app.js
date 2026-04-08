@@ -40,6 +40,7 @@ const defaultState = {
   directorySprint: [],
   outreachQueue: [],
   outreachCRM: [],
+  outreachTemplates: [],
   xCopyBank: [],
   linkedinCopyBank: [],
   videoScriptBank: [],
@@ -467,6 +468,18 @@ function renderPlanSections() {
       `Angle: ${item.angle}`,
       `Next step: ${item.nextStep}`,
       `Owner: ${item.owner}`
+    ]
+  });
+
+  renderInfoCards("#outreach-templates-grid", state.outreachTemplates, {
+    title: (item) => item.name,
+    body: (item) => item.opener,
+    meta: (item) => [item.channel, item.useCase],
+    list: (item) => [
+      `Subject: ${item.subject}`,
+      `Main ask: ${item.mainAsk}`,
+      `CTA: ${item.cta}`,
+      `Personalize with: ${item.personalize}`
     ]
   });
 

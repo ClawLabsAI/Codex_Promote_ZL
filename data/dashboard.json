@@ -737,6 +737,48 @@
       "owner": "Founder"
     }
   ],
+  "outreachTemplates": [
+    {
+      "name": "Newsletter intro",
+      "channel": "Email",
+      "useCase": "Newsletter",
+      "subject": "Herramienta AI lifetime para power users",
+      "opener": "Hola {{name}}, estoy viendo que en {{newsletter}} cubrís herramientas AI que ayudan a usuarios intensivos a ahorrar tiempo y coste.",
+      "mainAsk": "Quería enseñarte ZeroLimitAI, una alternativa lifetime a ChatGPT/Claude para gente que usa varios modelos, memoria y automatizaciones sin otra suscripción mensual.",
+      "cta": "Si te encaja, te paso acceso y una demo corta para que lo pruebes o lo incluyas en una próxima edición.",
+      "personalize": "Menciona una edición reciente o una categoría concreta de su newsletter."
+    },
+    {
+      "name": "Creator collab DM",
+      "channel": "DM",
+      "useCase": "Microcreator",
+      "subject": "Colaboración demo ZeroLimitAI",
+      "opener": "Hey {{name}}, me gustó tu contenido sobre {{topic}} y creo que tu audiencia encaja mucho con una demo práctica de ZeroLimitAI.",
+      "mainAsk": "Estamos posicionando el producto como alternativa lifetime para users intensivos que quieren mejores modelos y memoria sin pagar varias suscripciones.",
+      "cta": "Si te interesa, te paso acceso, 3 ángulos de vídeo y una demo de 60 segundos para grabarlo fácil.",
+      "personalize": "Referencia un vídeo/post reciente y el tipo de audiencia que mueve mejor."
+    },
+    {
+      "name": "Community admin pitch",
+      "channel": "Email",
+      "useCase": "Community",
+      "subject": "Recurso útil para tu comunidad AI/dev",
+      "opener": "Hola {{name}}, sigo la comunidad {{community}} y creo que ZeroLimitAI puede aportar bastante a miembros que comparan modelos, prompts y workflows con IA.",
+      "mainAsk": "No quería hacer spam, sino proponerte un recurso útil: acceso al producto + una guía comparativa corta para que, si lo ves útil, la compartas con la comunidad.",
+      "cta": "Si te encaja, te paso una landing específica para devs o creators y un texto breve para publicarlo fácil.",
+      "personalize": "Menciona una conversación o hilo reciente dentro de la comunidad."
+    },
+    {
+      "name": "Partner stack intro",
+      "channel": "Email",
+      "useCase": "Partner",
+      "subject": "Posible partnership AI tools",
+      "opener": "Hola {{name}}, estoy revisando herramientas complementarias para usuarios que ya trabajan con IA a diario y creo que hay fit entre {{partner}} y ZeroLimitAI.",
+      "mainAsk": "Nuestro ángulo es claro: una alternativa lifetime para centralizar modelos, memoria y automatización. Creo que podríamos hacer un swap de visibilidad, bundle o recurso compartido.",
+      "cta": "Si tiene sentido, coordinamos una llamada corta o intercambiamos ideas por email.",
+      "personalize": "Conecta el partnership con un caso de uso compartido concreto."
+    }
+  ],
   "xCopyBank": [
     {
       "title": "Comparativa directa",
