@@ -39,6 +39,8 @@ const defaultState = {
   publishingWorkflow: [],
   campaignTracker: [],
   paidAcquisition: [],
+  budgetPlanner: [],
+  budgetRules: [],
   editorialSprint: [],
   monthPlan: [],
   directorySprint: [],
@@ -463,6 +465,22 @@ function renderEditorialSprint() {
   });
 }
 
+function renderBudgetPlanner() {
+  renderInfoCards("#budget-grid", state.budgetPlanner, {
+    title: (item) => item.channel,
+    body: (item) => item.summary,
+    meta: (item) => [item.budget, item.status],
+    list: (item) => [`Goal: ${item.goal}`, `Primary use: ${item.use}`, `Cap: ${item.cap}`]
+  });
+
+  renderInfoCards("#budget-rules-grid", state.budgetRules, {
+    title: (item) => item.name,
+    body: (item) => item.rule,
+    meta: (item) => [item.stage],
+    list: (item) => [`Why: ${item.why}`, `Action: ${item.action}`]
+  });
+}
+
 function renderAutomations() {
   const list = $("#automation-list");
   list.innerHTML = "";
@@ -764,6 +782,7 @@ function renderAll() {
   renderPublishBoard();
   renderCampaignBoard();
   renderPaidBoard();
+  renderBudgetPlanner();
   renderEditorialSprint();
   renderChannels();
   renderCalendar();

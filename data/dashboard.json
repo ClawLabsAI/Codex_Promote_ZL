@@ -655,6 +655,74 @@
       "hypothesis": "La demo visual debería generar mejor CTR que una creatividad estática."
     }
   ],
+  "budgetPlanner": [
+    {
+      "channel": "Meta retargeting",
+      "budget": "$300/mo",
+      "status": "Ready after traffic",
+      "summary": "Primer canal paid recomendado cuando ya exista tráfico a pricing o landings comparativas.",
+      "goal": "Lower cost per trial on warm traffic",
+      "use": "Retargeting visitors de pricing, blog y landings high-intent",
+      "cap": "No pasar de $10/day al inicio"
+    },
+    {
+      "channel": "Google Search",
+      "budget": "$600/mo",
+      "status": "Selective",
+      "summary": "Solo para keywords de alta intención como alternatives, lifetime AI app o competitor pages.",
+      "goal": "Capture demand with high buying intent",
+      "use": "Keywords comparativas y branded alternatives",
+      "cap": "Solo escalar si la landing convierte"
+    },
+    {
+      "channel": "X boosts",
+      "budget": "$150/mo",
+      "status": "Experimental",
+      "summary": "Útil para amplificar un thread que ya funcione de forma orgánica.",
+      "goal": "Cheap reach to dev/AI audiences",
+      "use": "Founder threads y comparativas con señal previa",
+      "cap": "Nunca boostear piezas sin engagement orgánico previo"
+    },
+    {
+      "channel": "Creative production",
+      "budget": "$200/mo",
+      "status": "Always on",
+      "summary": "Reservar parte del presupuesto para editar demos, variaciones de hooks y screenshots.",
+      "goal": "Feed paid and social with better creative",
+      "use": "Video cuts, statics, landing visuals",
+      "cap": "Mantenerlo pequeño pero constante"
+    }
+  ],
+  "budgetRules": [
+    {
+      "name": "No cold ads first",
+      "stage": "Guardrail",
+      "rule": "No activar campañas frías hasta tener una landing clara, CTA consistente y algo de señal orgánica.",
+      "why": "Sin mensaje validado, paid solo acelera el desperdicio.",
+      "action": "Empezar por retargeting y search de alta intención."
+    },
+    {
+      "name": "Retargeting before scale",
+      "stage": "Activation",
+      "rule": "Activar Meta retargeting cuando haya suficiente tráfico acumulado a pricing, home o landings comparativas.",
+      "why": "Es el canal más fácil para convertir tráfico ya calentado.",
+      "action": "Montar pixel y audiencias antes de invertir en frío."
+    },
+    {
+      "name": "Search only for intent",
+      "stage": "Activation",
+      "rule": "Usar Google Search solo con keywords de alta intención y páginas específicas.",
+      "why": "Los clics comparativos son caros si aterrizan en una home genérica.",
+      "action": "Empujar /vs/, /pricing y landings tipo /chatgpt-alternative."
+    },
+    {
+      "name": "Creative wins before budget wins",
+      "stage": "Optimization",
+      "rule": "No subir presupuesto hasta encontrar una creatividad y un hook con CTR decente.",
+      "why": "El cuello de botella inicial suele estar en mensaje y creative, no en spend.",
+      "action": "Testear 3 hooks antes de doblar presupuesto."
+    }
+  ],
   "editorialSprint": [
     {
       "day": "Day 1",
