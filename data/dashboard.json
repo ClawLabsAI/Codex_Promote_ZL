@@ -613,6 +613,228 @@
       "owner": "Founder"
     }
   ],
+  "editorialSprint": [
+    {
+      "day": "Day 1",
+      "week": "Week 1",
+      "title": "Founder post sobre el problema",
+      "channel": "LinkedIn",
+      "format": "Post",
+      "angle": "La mayoría de usuarios intensivos paga demasiadas suscripciones AI porque usa herramientas fragmentadas.",
+      "cta": "Ver landing ChatGPT alternative",
+      "landing": "/chatgpt-alternative",
+      "status": "Draft"
+    },
+    {
+      "day": "Day 2",
+      "week": "Week 1",
+      "title": "Thread lifetime vs monthly",
+      "channel": "X",
+      "format": "Thread",
+      "angle": "Por qué el coste acumulado de varias suscripciones AI pesa más que el modelo en sí.",
+      "cta": "Compare plans",
+      "landing": "/pricing",
+      "status": "Draft"
+    },
+    {
+      "day": "Day 3",
+      "week": "Week 1",
+      "title": "Short demo multi-model routing",
+      "channel": "Shorts",
+      "format": "Video",
+      "angle": "Mostrar cómo cambiar de modelo dentro del mismo flujo reduce fricción.",
+      "cta": "Start free trial",
+      "landing": "/",
+      "status": "Scheduled"
+    },
+    {
+      "day": "Day 4",
+      "week": "Week 1",
+      "title": "Artículo SEO comparativa",
+      "channel": "SEO",
+      "format": "Article",
+      "angle": "ChatGPT vs Claude vs ZeroLimitAI para usuarios intensivos.",
+      "cta": "Try free",
+      "landing": "/chatgpt-alternative",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 5",
+      "week": "Week 1",
+      "title": "Pitch a newsletter AI",
+      "channel": "Email",
+      "format": "Pitch",
+      "angle": "Herramienta AI lifetime para ahorrar coste y centralizar uso real.",
+      "cta": "Reply for demo",
+      "landing": "/lifetime-ai-app",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 6",
+      "week": "Week 2",
+      "title": "LinkedIn carrusel comparativa",
+      "channel": "LinkedIn",
+      "format": "Carousel",
+      "angle": "No compites por tener un modelo, compites por resolver workflows enteros.",
+      "cta": "Open comparison",
+      "landing": "/chatgpt-alternative",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 7",
+      "week": "Week 2",
+      "title": "Thread sobre memoria",
+      "channel": "X",
+      "format": "Thread",
+      "angle": "La memoria importa más cuando repites tareas que cuando solo haces prompts sueltos.",
+      "cta": "See memory landing",
+      "landing": "/ai-agents-memory",
+      "status": "Idea"
+    },
+    {
+      "day": "Day 8",
+      "week": "Week 2",
+      "title": "Demo Telegram + memory",
+      "channel": "Shorts",
+      "format": "Video",
+      "angle": "Caso visual y rápido de memoria aplicada a conversaciones repetidas.",
+      "cta": "Book demo",
+      "landing": "/ai-agents-memory",
+      "status": "Draft"
+    },
+    {
+      "day": "Day 9",
+      "week": "Week 2",
+      "title": "Landing update con prueba social",
+      "channel": "Website",
+      "format": "Landing update",
+      "angle": "Añadir objeciones resueltas y prueba más concreta en la landing principal.",
+      "cta": "Start free trial",
+      "landing": "/",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 10",
+      "week": "Week 2",
+      "title": "Outreach a microcreators",
+      "channel": "DM",
+      "format": "Outreach",
+      "angle": "Ofrecer demo fácil de grabar con 3 ángulos ya preparados.",
+      "cta": "Reply to collab",
+      "landing": "/ai-agents-memory",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 11",
+      "week": "Week 3",
+      "title": "Post developer angle",
+      "channel": "LinkedIn",
+      "format": "Post",
+      "angle": "Para developers, el problema no es solo el modelo: es la velocidad de iteración y contexto.",
+      "cta": "Open dev landing",
+      "landing": "/ai-for-developers",
+      "status": "Idea"
+    },
+    {
+      "day": "Day 12",
+      "week": "Week 3",
+      "title": "X post sobre ZeroClaw workflow",
+      "channel": "X",
+      "format": "Post",
+      "angle": "Mostrar un workflow simple con automatización para construir autoridad técnica.",
+      "cta": "See workflow",
+      "landing": "/ai-for-developers",
+      "status": "Idea"
+    },
+    {
+      "day": "Day 13",
+      "week": "Week 3",
+      "title": "Video demo developer use case",
+      "channel": "Shorts",
+      "format": "Video",
+      "angle": "Caso corto: research, code help y memoria en un mismo flujo.",
+      "cta": "Try the workflow",
+      "landing": "/ai-for-developers",
+      "status": "Draft"
+    },
+    {
+      "day": "Day 14",
+      "week": "Week 3",
+      "title": "Landing developer publish",
+      "channel": "Website",
+      "format": "Landing",
+      "angle": "Landing específica para developers con 3 casos de uso claros.",
+      "cta": "Start free trial",
+      "landing": "/ai-for-developers",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 15",
+      "week": "Week 3",
+      "title": "Submit a 2nd wave of directories",
+      "channel": "Directories",
+      "format": "Submission",
+      "angle": "Reforzar discovery con nuevas categorías y mejores screenshots.",
+      "cta": "Try free",
+      "landing": "/lifetime-ai-app",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 16",
+      "week": "Week 4",
+      "title": "Founder lessons post",
+      "channel": "LinkedIn",
+      "format": "Post",
+      "angle": "Lo que estamos aprendiendo de usuarios intensivos que comparan modelos cada semana.",
+      "cta": "Read comparison",
+      "landing": "/chatgpt-alternative",
+      "status": "Idea"
+    },
+    {
+      "day": "Day 17",
+      "week": "Week 4",
+      "title": "Best performing thread remix",
+      "channel": "X",
+      "format": "Thread",
+      "angle": "Rehacer el mejor ángulo de la semana anterior con una CTA más clara.",
+      "cta": "Compare plans",
+      "landing": "/pricing",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 18",
+      "week": "Week 4",
+      "title": "Short case study",
+      "channel": "Shorts",
+      "format": "Video",
+      "angle": "Enseñar un caso breve donde la memoria reduce trabajo repetitivo.",
+      "cta": "Book demo",
+      "landing": "/ai-agents-memory",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 19",
+      "week": "Week 4",
+      "title": "Weekly recap email",
+      "channel": "Email",
+      "format": "Newsletter",
+      "angle": "Resumen con mejor contenido, mejor demo y mejor landing de la semana.",
+      "cta": "Start free trial",
+      "landing": "/",
+      "status": "Planned"
+    },
+    {
+      "day": "Day 20",
+      "week": "Week 4",
+      "title": "Review and double down",
+      "channel": "Ops",
+      "format": "Review",
+      "angle": "Elegir los 2 mejores ángulos y convertirlos en el siguiente sprint editorial.",
+      "cta": "Update next sprint",
+      "landing": "/",
+      "status": "Planned"
+    }
+  ],
   "monthPlan": [
     {
       "week": "Semana 1",

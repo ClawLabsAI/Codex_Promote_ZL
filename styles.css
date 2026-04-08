@@ -494,12 +494,19 @@ select:focus {
 
 .channels-grid,
 .automation-grid,
-.info-grid {
+.info-grid,
+.editorial-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .calendar-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.editorial-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .form-grid {
@@ -819,7 +826,8 @@ code {
   .channels-grid,
   .automation-grid,
   .calendar-grid,
-  .info-grid {
+  .info-grid,
+  .editorial-grid {
     grid-template-columns: 1fr;
   }
 

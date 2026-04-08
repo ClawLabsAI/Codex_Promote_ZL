@@ -38,6 +38,7 @@ const defaultState = {
   weeklyAssets: [],
   publishingWorkflow: [],
   campaignTracker: [],
+  editorialSprint: [],
   monthPlan: [],
   directorySprint: [],
   outreachQueue: [],
@@ -402,6 +403,19 @@ function renderCalendar() {
   });
 }
 
+function renderEditorialSprint() {
+  renderInfoCards("#editorial-grid", state.editorialSprint, {
+    title: (item) => `${item.day} · ${item.title}`,
+    body: (item) => item.angle,
+    meta: (item) => [item.week, item.channel, item.status],
+    list: (item) => [
+      `Format: ${item.format}`,
+      `CTA: ${item.cta}`,
+      `Landing: ${item.landing}`
+    ]
+  });
+}
+
 function renderAutomations() {
   const list = $("#automation-list");
   list.innerHTML = "";
@@ -702,6 +716,7 @@ function renderAll() {
   renderTaskBoard();
   renderPublishBoard();
   renderCampaignBoard();
+  renderEditorialSprint();
   renderChannels();
   renderCalendar();
   renderAutomations();
