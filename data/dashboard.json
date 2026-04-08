@@ -801,6 +801,82 @@
       "cta": "Invitar a visitar la comparativa o probar el trial."
     }
   ],
+  "landingMessaging": [
+    {
+      "name": "ChatGPT alternative landing",
+      "audience": "AI power users",
+      "promise": "Una alternativa más integrada para usuarios intensivos que quieren mejores modelos, memoria y menos fricción entre herramientas.",
+      "hook": "Si ya usas varias herramientas AI, probablemente no necesitas otra más: necesitas una experiencia mejor unificada.",
+      "proof": "Comparativa, ahorro de coste, memory y routing como diferenciadores.",
+      "cta": "Empieza el trial y compara por ti mismo."
+    },
+    {
+      "name": "Developer landing",
+      "audience": "Developers e indie hackers",
+      "promise": "Un workspace AI orientado a velocidad, memoria y automatización para construir más rápido.",
+      "hook": "No necesitas más ruido AI. Necesitas menos pasos y más contexto.",
+      "proof": "Demos de ZeroClaw, casos de uso técnicos y workflows reales.",
+      "cta": "Prueba el flujo para developers."
+    },
+    {
+      "name": "Lifetime AI landing",
+      "audience": "Cost-aware users",
+      "promise": "Reduce la fatiga de suscripciones con una propuesta AI más sostenible y clara.",
+      "hook": "¿Cuántas suscripciones AI estás pagando ahora mismo?",
+      "proof": "Comparativa anual de coste, explicación del modelo lifetime y trust pack.",
+      "cta": "Descubre si encaja contigo."
+    },
+    {
+      "name": "Memory + automation landing",
+      "audience": "Operators y heavy users",
+      "promise": "Haz más con menos repetición gracias a memoria, contexto persistente y automatización.",
+      "hook": "El problema no es solo el modelo. El problema es tener que repetir contexto cada vez.",
+      "proof": "Ejemplos con memory, Telegram y workflows conectados.",
+      "cta": "Explora el caso de uso."
+    }
+  ],
+  "ctaBank": [
+    {
+      "name": "CTA trial directa",
+      "context": "Landing hero",
+      "copy": "Empieza el trial",
+      "notes": [
+        "CTA principal simple",
+        "Mejor para landings de alta intención",
+        "Usar cuando el contexto ya está claro"
+      ]
+    },
+    {
+      "name": "CTA comparativa",
+      "context": "Posts y comparativas",
+      "copy": "Mira la comparativa completa",
+      "notes": [
+        "Ideal para social",
+        "Reduce fricción",
+        "No empuja a venta demasiado pronto"
+      ]
+    },
+    {
+      "name": "CTA de curiosidad",
+      "context": "Founder-led content",
+      "copy": "Estamos construyendo esto en abierto",
+      "notes": [
+        "Bueno para awareness",
+        "Menos comercial",
+        "Invita a seguir y entrar"
+      ]
+    },
+    {
+      "name": "CTA dev niche",
+      "context": "Landing developers o demo tecnica",
+      "copy": "Prueba el flujo para developers",
+      "notes": [
+        "Más específico",
+        "Mejor cuando el post va a audiencia técnica",
+        "Acompañar de demo o caso real"
+      ]
+    }
+  ],
   "experiments": [
     {
       "title": "Landing ChatGPT alternative",

@@ -42,6 +42,8 @@ const defaultState = {
   xCopyBank: [],
   linkedinCopyBank: [],
   videoScriptBank: [],
+  landingMessaging: [],
+  ctaBank: [],
   experiments: [],
   sourceMap: [],
   tasks: [],
@@ -480,6 +482,24 @@ function renderPlanSections() {
       `Scene 3: ${item.scene3}`,
       `CTA: ${item.cta}`
     ]
+  });
+
+  renderInfoCards("#landing-copy-grid", state.landingMessaging, {
+    title: (item) => item.name,
+    body: (item) => item.promise,
+    meta: (item) => [item.audience],
+    list: (item) => [
+      `Hook: ${item.hook}`,
+      `Proof: ${item.proof}`,
+      `CTA focus: ${item.cta}`
+    ]
+  });
+
+  renderInfoCards("#cta-bank-grid", state.ctaBank, {
+    title: (item) => item.name,
+    body: (item) => item.copy,
+    meta: (item) => [item.context],
+    list: (item) => item.notes
   });
 
   renderInfoCards("#experiments-grid", state.experiments, {
