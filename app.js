@@ -384,6 +384,7 @@ function renderTodayLayer() {
               <span class="pill">${task.priority || "Medium"}</span>
               <span class="pill">${task.channel}</span>
             </div>
+            <a class="secondary inline-button task-link" href="${getTaskWorkflowLink(task).href}">${getTaskWorkflowLink(task).label}</a>
           </article>
         `
       )
@@ -402,6 +403,20 @@ function renderTodayLayer() {
         `
       : "<p>No hay recomendación automática todavía.</p>";
   }
+
+  renderInfoCards("#x-workflow-grid", state.xPostingWorkflow, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.stage, item.output],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#publishing-automation-grid", state.publishingAutomation, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.tool, item.stage],
+    list: (item) => item.items
+  });
 }
 
 function renderInfoCards(containerId, items, config) {
@@ -1511,6 +1526,25 @@ function bindActions() {
   $("#notes").addEventListener("input", (event) => {
     state.notes = event.target.value;
     saveState();
+  });
+
+  $("#copy-x-post-button")?.addEventListener("click", async () => {
+    const firstXPost = state.publishingWorkflow.find(
+      (item) => item.channel === "X" && ["Draft", "Idea", "Scheduled"].includes(item.stage)
+    );
+
+    if (!firstXPost) {
+      window.alert("No encontré ningún post de X listo para copiar.");
+      return;
+    }
+
+    const text = `${firstXPost.title}\n\n${firstXPost.hook}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert(`Copiado al portapapeles: ${firstXPost.title}`);
+    } catch {
+      window.alert("No pude copiar el post automáticamente.");
+    }
   });
 
   $("#start-sprint-button")?.addEventListener("click", () => {
