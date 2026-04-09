@@ -11,20 +11,20 @@
   ],
   "weeklyFocus": {
     "sprint": "Semana 1",
-    "objective": "Instrumentar embudo, lanzar una landing comparativa y activar contenido founder-led.",
-    "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
-    "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
+    "objective": "Ejecutar la primera semana real de marketing beta con una sola landing principal, 7 piezas de contenido y 20 outreachs.",
+    "wins": "Dashboard live en Vercel, sistema de marketing montado y landing principal ya definida.",
+    "blockers": "Falta publicar la primera tanda de contenido y enviar outreach de forma diaria."
   },
   "launchPriorities": [
     {
       "name": "Landing principal de adquisicion",
       "priority": "P1",
       "owner": "Founder",
-      "summary": "Elegir una sola landing de alta intencion y usarla como destino principal de todos los canales.",
+      "summary": "La landing principal de esta semana es /chatgpt-alternative y será el destino prioritario de contenido, outreach y directorios.",
       "actions": [
-        "ChatGPT alternative",
-        "AI for developers",
-        "Lifetime AI app"
+        "Usar /chatgpt-alternative en posts",
+        "Usar /chatgpt-alternative en outreach",
+        "Usar /chatgpt-alternative en directorios"
       ]
     },
     {
@@ -66,45 +66,45 @@
   "assetPipeline": [
     {
       "name": "Landing comparativa principal",
-      "status": "En curso",
-      "summary": "La primera pagina con la que probaras conversion y mensaje.",
+      "status": "Prioridad absoluta",
+      "summary": "Esta semana todo el esfuerzo empuja a la landing /chatgpt-alternative como test principal de adquisición.",
       "items": [
-        "Hero claro",
-        "Comparativa",
-        "FAQ",
-        "CTA a trial"
+        "Hero claro con alternativa a ChatGPT",
+        "Comparativa visible",
+        "FAQ de objeciones",
+        "CTA único a trial"
       ]
     },
     {
-      "name": "10 piezas founder-led",
-      "status": "Pendiente",
-      "summary": "Base de contenido para no improvisar cada dia.",
+      "name": "Semana 1 content pack",
+      "status": "En producción",
+      "summary": "Las piezas concretas que se publican esta semana para mover primeras visitas y replies.",
       "items": [
-        "5 posts opinion",
-        "2 comparativas",
-        "3 mini demos"
+        "3 posts X",
+        "2 posts LinkedIn",
+        "2 demos cortas"
       ]
     },
     {
-      "name": "Lista de 20 directorios",
-      "status": "Pendiente",
-      "summary": "Base para visibility sprint y backlinks iniciales.",
+      "name": "Sprint de 20 outreachs",
+      "status": "Activo",
+      "summary": "Lista inicial de contactos para conseguir audiencia prestada, feedback y primeros signups.",
       "items": [
-        "AI directories",
+        "6 newsletters AI",
+        "6 microcreators",
+        "4 comunidades",
+        "4 builders/dev creators"
+      ]
+    },
+    {
+      "name": "Directorio y listing pack",
+      "status": "Pendiente",
+      "summary": "Primera tanda de envíos a listados para sumar discovery y backlinks iniciales.",
+      "items": [
+        "Futurepedia",
+        "There is an AI for That",
         "Indie listings",
-        "Tool stacks",
-        "Founder communities"
-      ]
-    },
-    {
-      "name": "Outreach list de partners",
-      "status": "Pendiente",
-      "summary": "Lista de newsletters, creators y cuentas que pueden darte audiencia prestada.",
-      "items": [
-        "10 newsletters",
-        "10 microcreators",
-        "5 comunidades",
-        "Template de outreach"
+        "Tool directories"
       ]
     }
   ],
@@ -645,7 +645,7 @@
       "channel": "LinkedIn",
       "format": "Post",
       "hook": "No compites solo por mejor modelo, compites por menos fricción y mejor economics para el usuario intensivo.",
-      "stage": "Idea",
+      "stage": "Draft",
       "owner": "Founder"
     },
     {
@@ -659,53 +659,80 @@
     },
     {
       "id": "publish-4",
-      "title": "Email a newsletter AI con angle lifetime",
+      "title": "X post comparativa rápida ChatGPT vs ZeroLimitAI",
+      "channel": "X",
+      "format": "Post",
+      "hook": "Si usas ChatGPT todos los días, el problema no es solo el modelo: es cuánto pagas y cuántas herramientas acabas juntando.",
+      "stage": "Draft",
+      "owner": "Founder"
+    },
+    {
+      "id": "publish-5",
+      "title": "LinkedIn founder post sobre lifetime y adopción real",
+      "channel": "LinkedIn",
+      "format": "Post",
+      "hook": "El usuario intensivo no quiere otra suscripción AI: quiere un sistema que resuelva más por menos coste.",
+      "stage": "Idea",
+      "owner": "Founder"
+    },
+    {
+      "id": "publish-6",
+      "title": "Short demo research en 30 segundos",
+      "channel": "Shorts",
+      "format": "Video",
+      "hook": "Enseñar una tarea de research corta donde el routing multi-modelo ahorra tiempo real.",
+      "stage": "Idea",
+      "owner": "Founder"
+    },
+    {
+      "id": "publish-7",
+      "title": "Email/pitch a newsletter AI con angle lifetime",
       "channel": "Email",
       "format": "Pitch",
       "hook": "Herramienta AI lifetime para power users que quieren reducir coste y mantener acceso flexible a varios modelos.",
-      "stage": "Published",
+      "stage": "Draft",
       "owner": "Founder"
     }
   ],
   "campaignTracker": [
     {
       "id": "campaign-1",
-      "name": "Landing ChatGPT alternative + SEO article",
+      "name": "Semana 1 principal: /chatgpt-alternative",
       "landing": "/chatgpt-alternative",
-      "channel": "SEO",
+      "channel": "SEO + Social + Outreach",
       "cta": "Start free trial",
-      "target": "25 trial starts",
-      "stage": "Planned",
+      "target": "10 primeros signups beta",
+      "stage": "Live",
       "owner": "Founder"
     },
     {
       "id": "campaign-2",
-      "name": "X threads sobre lifetime vs suscripciones",
-      "landing": "/pricing",
+      "name": "X comparativas y pain-first posts",
+      "landing": "/chatgpt-alternative",
       "channel": "X",
-      "cta": "Compare plans",
-      "target": "10 pricing clicks",
+      "cta": "See comparison",
+      "target": "20 clicks cualificados",
       "stage": "Live",
       "owner": "Founder"
     },
     {
       "id": "campaign-3",
-      "name": "Creator outreach hacia demo de memory",
-      "landing": "/ai-agents-memory",
-      "channel": "Creator outreach",
-      "cta": "Book demo",
-      "target": "5 creator replies",
-      "stage": "Optimizing",
+      "name": "Outreach week 1 a newsletters y creators",
+      "landing": "/chatgpt-alternative",
+      "channel": "Email + DM",
+      "cta": "Reply for access",
+      "target": "8 replies",
+      "stage": "Live",
       "owner": "Founder"
     },
     {
       "id": "campaign-4",
-      "name": "Directory push para lifetime AI app",
-      "landing": "/lifetime-ai-app",
+      "name": "Directory push beta launch",
+      "landing": "/chatgpt-alternative",
       "channel": "Directories",
       "cta": "Try free",
-      "target": "8 live listings",
-      "stage": "Completed",
+      "target": "5 listings publicados",
+      "stage": "Planned",
       "owner": "Founder"
     }
   ],
@@ -838,8 +865,8 @@
       "channel": "X",
       "format": "Thread",
       "angle": "Por qué el coste acumulado de varias suscripciones AI pesa más que el modelo en sí.",
-      "cta": "Compare plans",
-      "landing": "/pricing",
+      "cta": "See comparison",
+      "landing": "/chatgpt-alternative",
       "status": "Draft"
     },
     {
@@ -850,7 +877,7 @@
       "format": "Video",
       "angle": "Mostrar cómo cambiar de modelo dentro del mismo flujo reduce fricción.",
       "cta": "Start free trial",
-      "landing": "/",
+      "landing": "/chatgpt-alternative",
       "status": "Scheduled"
     },
     {
@@ -872,7 +899,7 @@
       "format": "Pitch",
       "angle": "Herramienta AI lifetime para ahorrar coste y centralizar uso real.",
       "cta": "Reply for demo",
-      "landing": "/lifetime-ai-app",
+      "landing": "/chatgpt-alternative",
       "status": "Planned"
     },
     {
@@ -1188,30 +1215,30 @@
       "name": "Newsletter AI aplicada #1",
       "channel": "Email",
       "contact": "Editor / Founder",
-      "stage": "Pendiente",
+      "stage": "Contacted",
       "priority": "Alta",
       "angle": "Alternativa lifetime + comparativa clara",
-      "nextStep": "Enviar pitch corto con screenshot y CTA",
+      "nextStep": "Hacer follow-up en 48h con landing /chatgpt-alternative",
       "owner": "Founder"
     },
     {
       "name": "Microcreator productividad #1",
       "channel": "DM / Email",
       "contact": "Creator 10k-50k",
-      "stage": "Pendiente",
+      "stage": "Contacted",
       "priority": "Alta",
       "angle": "Demo de workflow corto para audience curiosa",
-      "nextStep": "Proponer video de 30 segundos con caso de uso",
+      "nextStep": "Enviar demo de 30 segundos y CTA a la landing principal",
       "owner": "Founder"
     },
     {
       "name": "Dev creator #1",
       "channel": "DM / Email",
       "contact": "Builder audience",
-      "stage": "Pendiente",
+      "stage": "Contacted",
       "priority": "Alta",
       "angle": "ZeroClaw + memory para developers",
-      "nextStep": "Enviar comparativa técnica y caso de uso",
+      "nextStep": "Mandar comparativa y pedir feedback corto",
       "owner": "Founder"
     },
     {
@@ -1228,10 +1255,10 @@
       "name": "Newsletter AI aplicada #2",
       "channel": "Email",
       "contact": "Editor",
-      "stage": "Research",
+      "stage": "Pendiente",
       "priority": "Media",
       "angle": "Comparativa entre tools con ahorro de coste",
-      "nextStep": "Buscar template y linea editorial",
+      "nextStep": "Enviar pitch con comparativa y landing principal",
       "owner": "Ops"
     },
     {
@@ -1242,6 +1269,166 @@
       "priority": "Media",
       "angle": "Caso real de research o build con ZeroLimitAI",
       "nextStep": "Enviar mensaje corto con demo y CTA",
+      "owner": "Founder"
+    },
+    {
+      "name": "Newsletter builders #3",
+      "channel": "Email",
+      "contact": "Editor / Founder",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Ahorro de coste + alternativa a ChatGPT",
+      "nextStep": "Enviar pitch corto hoy",
+      "owner": "Founder"
+    },
+    {
+      "name": "Newsletter AI workflow #4",
+      "channel": "Email",
+      "contact": "Editor",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Workflow con memoria y routing",
+      "nextStep": "Enviar pitch y screenshot",
+      "owner": "Founder"
+    },
+    {
+      "name": "Newsletter productividad #5",
+      "channel": "Email",
+      "contact": "Editor",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Menos herramientas, más control del coste",
+      "nextStep": "Enviar pitch con CTA a comparativa",
+      "owner": "Founder"
+    },
+    {
+      "name": "Newsletter indie tools #6",
+      "channel": "Email",
+      "contact": "Editor",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Nueva herramienta AI con angle lifetime",
+      "nextStep": "Enviar nota breve y assets",
+      "owner": "Founder"
+    },
+    {
+      "name": "Microcreator productividad #2",
+      "channel": "DM",
+      "contact": "Creator 20k",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Demo simple de tarea resuelta en 30s",
+      "nextStep": "Enviar DM con demo y CTA",
+      "owner": "Founder"
+    },
+    {
+      "name": "Microcreator productividad #3",
+      "channel": "DM",
+      "contact": "Creator 50k",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Ahorro de suscripciones y workflow único",
+      "nextStep": "Enviar propuesta de colaboración ligera",
+      "owner": "Founder"
+    },
+    {
+      "name": "Microcreator AI #4",
+      "channel": "DM",
+      "contact": "AI creator",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Comparativa directa y demo de producto",
+      "nextStep": "Enviar nota y acceso",
+      "owner": "Founder"
+    },
+    {
+      "name": "Microcreator AI #5",
+      "channel": "DM",
+      "contact": "AI creator nicho tools",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Nueva herramienta para power users",
+      "nextStep": "Enviar mensaje personalizado",
+      "owner": "Founder"
+    },
+    {
+      "name": "Dev creator #2",
+      "channel": "DM / Email",
+      "contact": "Builder audience",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Landing /chatgpt-alternative + angle dev",
+      "nextStep": "Enviar comparativa y pedir reacción",
+      "owner": "Founder"
+    },
+    {
+      "name": "Dev creator #3",
+      "channel": "DM / Email",
+      "contact": "Indie hacker creator",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Research + coding + memory",
+      "nextStep": "Enviar demo y CTA a signup beta",
+      "owner": "Founder"
+    },
+    {
+      "name": "Dev creator #4",
+      "channel": "DM",
+      "contact": "Dev tools creator",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Alternativa para usuarios intensivos",
+      "nextStep": "Enviar short demo + landing",
+      "owner": "Founder"
+    },
+    {
+      "name": "Comunidad indie #2",
+      "channel": "Community post",
+      "contact": "Moderador / Comunidad",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Pedir feedback sobre la comparativa",
+      "nextStep": "Publicar post con pregunta abierta",
+      "owner": "Founder"
+    },
+    {
+      "name": "Comunidad AI builders #3",
+      "channel": "Community post",
+      "contact": "Moderador / Comunidad",
+      "stage": "Pendiente",
+      "priority": "Media",
+      "angle": "Compartir demo corta y pedir feedback",
+      "nextStep": "Publicar hilo sin vender agresivamente",
+      "owner": "Founder"
+    },
+    {
+      "name": "Comunidad dev tools #4",
+      "channel": "Community post",
+      "contact": "Moderador / Comunidad",
+      "stage": "Research",
+      "priority": "Baja",
+      "angle": "Abrir conversación sobre modelos y coste",
+      "nextStep": "Revisar reglas antes de publicar",
+      "owner": "Ops"
+    },
+    {
+      "name": "Builder friendlies #1",
+      "channel": "DM",
+      "contact": "Founder network",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Pedir primer feedback sobre landing y signup",
+      "nextStep": "Enviar a 2 founders hoy",
+      "owner": "Founder"
+    },
+    {
+      "name": "Builder friendlies #2",
+      "channel": "DM",
+      "contact": "Founder network",
+      "stage": "Pendiente",
+      "priority": "Alta",
+      "angle": "Conseguir 2-3 primeros usuarios manuales",
+      "nextStep": "Enviar nota directa con CTA al signup",
       "owner": "Founder"
     }
   ],
@@ -1574,42 +1761,66 @@
   "tasks": [
     {
       "id": "task-1",
-      "title": "Configurar PostHog o GA4 con eventos de trial y activation",
+      "title": "Publicar o revisar la landing principal /chatgpt-alternative",
       "owner": "Founder",
-      "due": "2026-04-11",
-      "channel": "Infra",
-      "status": "Todo"
+      "due": "2026-04-09",
+      "channel": "Landing",
+      "status": "Doing"
     },
     {
       "id": "task-2",
-      "title": "Crear landing ChatGPT alternative",
+      "title": "Escribir y publicar 3 piezas en X",
       "owner": "Founder",
-      "due": "2026-04-14",
-      "channel": "SEO",
+      "due": "2026-04-10",
+      "channel": "Social",
       "status": "Doing"
     },
     {
       "id": "task-3",
-      "title": "Escribir secuencia de 7 emails para trial",
+      "title": "Escribir y publicar 2 posts en LinkedIn",
       "owner": "Founder",
-      "due": "2026-04-15",
-      "channel": "Lifecycle",
-      "status": "Doing"
+      "due": "2026-04-10",
+      "channel": "Social",
+      "status": "Todo"
     },
     {
       "id": "task-4",
-      "title": "Preparar 10 piezas de contenido base a partir del producto",
+      "title": "Grabar y publicar 2 demos cortas",
       "owner": "Founder",
-      "due": "2026-04-16",
+      "due": "2026-04-11",
       "channel": "Social",
       "status": "Todo"
     },
     {
       "id": "task-5",
-      "title": "Crear lista de 20 directorios y newsletters para outreach",
+      "title": "Enviar 20 outreachs a newsletters, creators y communities",
+      "owner": "Founder",
+      "due": "2026-04-11",
+      "channel": "Outreach",
+      "status": "Doing"
+    },
+    {
+      "id": "task-6",
+      "title": "Enviar 5 directorios prioritarios con CTA a la landing principal",
       "owner": "Ops",
-      "due": "2026-04-17",
-      "channel": "Distribution",
+      "due": "2026-04-12",
+      "channel": "Directories",
+      "status": "Todo"
+    },
+    {
+      "id": "task-7",
+      "title": "Recoger 5 respuestas o feedbacks reales y anotarlos",
+      "owner": "Founder",
+      "due": "2026-04-13",
+      "channel": "Learning",
+      "status": "Todo"
+    },
+    {
+      "id": "task-8",
+      "title": "Revisar el viernes qué mensaje y qué canal funcionaron mejor",
+      "owner": "Founder",
+      "due": "2026-04-14",
+      "channel": "Review",
       "status": "Todo"
     }
   ],
