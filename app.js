@@ -394,15 +394,15 @@ function buildManualXVariants(seed) {
 
   return [
     {
-      title: `${baseTitle} · Option 1`,
+      title: `${baseTitle} · Pain-first`,
       text: `${baseHook}\n\nIf you use several AI tools, you are probably also paying more than you need and losing context every time you switch.\n\nThat is exactly the problem we are trying to solve with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
     },
     {
-      title: `${baseTitle} · Option 2`,
+      title: `${baseTitle} · Founder opinion`,
       text: `Honest question:\n\nHow many AI tools do you use to get one real job done?\n\nIf the answer is several, it is usually not because you want more complexity. It is because your workflow is fragmented.\n\nWe are trying to simplify that with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
     },
     {
-      title: `${baseTitle} · Option 3`,
+      title: `${baseTitle} · Comparison CTA`,
       text: `My view is getting clearer every week:\n\nthe problem is not access to one more AI model.\nThe problem is still working with disconnected tools, no shared memory, and several subscriptions on top.\n\nThat is the angle we are testing with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
     }
   ];
@@ -1290,8 +1290,15 @@ function renderAutomationCenter() {
       const card = document.createElement("article");
       card.className = "info-card manual-variant-card";
       if (index === (manualComposer.selectedIndex || 0)) card.classList.add("manual-variant-selected");
+      const variantHint =
+        index === 0
+          ? "Starts with the pain and why it matters."
+          : index === 1
+            ? "Feels more personal and opinion-led."
+            : "Pushes the direct angle and CTA harder.";
       card.innerHTML = `
         <h4>${variant.title}</h4>
+        <div class="info-meta"><span class="pill">${variantHint}</span></div>
         <p>${variant.text.replace(/\n/g, "<br />")}</p>
         <button class="${index === (manualComposer.selectedIndex || 0) ? "primary" : "secondary"}" type="button" data-x-variant-index="${index}">
           ${index === (manualComposer.selectedIndex || 0) ? "Seleccionada" : "Elegir esta"}
