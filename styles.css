@@ -118,6 +118,16 @@ select {
   gap: 8px;
 }
 
+.sidebar-steps {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .nav a {
   text-decoration: none;
   padding: 10px 12px;
@@ -175,6 +185,65 @@ select {
 .hero-card,
 .panel {
   padding: 24px;
+}
+
+.quickstart-grid,
+.section-band {
+  display: grid;
+  gap: 18px;
+}
+
+.quickstart-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.guide-card {
+  min-height: 100%;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.guide-card h3,
+.section-intro h3 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.guide-card p:last-child,
+.section-intro p:last-child {
+  margin: 0;
+}
+
+.guide-card-primary {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.guide-card-secondary {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.section-intro {
+  padding: 22px 24px 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section-intro-inline {
+  grid-column: 1 / -1;
+  padding: 0;
+}
+
+.section-intro p {
+  max-width: 56ch;
+  color: rgba(17, 24, 39, 0.72);
+}
+
+.section-intro-light h3,
+.section-intro-light p {
+  color: var(--white);
 }
 
 .section-blue,
@@ -868,6 +937,7 @@ code {
   }
 
   .overview-grid,
+  .quickstart-grid,
   .metrics-grid,
   .split-grid,
   .roadmap-grid,
@@ -885,6 +955,12 @@ code {
   }
 
   .library-section summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-intro {
+    padding: 20px 20px 0;
     flex-direction: column;
     align-items: flex-start;
   }

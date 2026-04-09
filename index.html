@@ -29,12 +29,23 @@
         </div>
 
         <nav class="nav">
-          <a href="#overview">Overview</a>
-          <a href="#execution">Execution</a>
-          <a href="#social">Content</a>
-          <a href="#strategy-library">Strategy</a>
-          <a href="#launches-library">Launches</a>
+          <a href="#today">Hoy</a>
+          <a href="#week">Esta semana</a>
+          <a href="#content-engine">Contenido</a>
+          <a href="#growth-pipeline">Outreach y campañas</a>
+          <a href="#strategy-library">Biblioteca</a>
+          <a href="#launches-library">Lanzamientos</a>
+          <a href="#operations-data">Setup y datos</a>
         </nav>
+
+        <section class="sidebar-card">
+          <p class="eyebrow">Cómo usarlo</p>
+          <ol class="sidebar-steps">
+            <li>Mira primero Hoy y Esta semana</li>
+            <li>Luego ejecuta Contenido y Outreach</li>
+            <li>Usa Biblioteca y Setup solo cuando lo necesites</li>
+          </ol>
+        </section>
 
         <section class="sidebar-card">
           <p class="eyebrow">North Star</p>
@@ -51,7 +62,7 @@
       </aside>
 
       <main class="main-content">
-        <section class="hero-card section-blue" id="overview">
+        <section class="hero-card section-blue" id="today">
           <div class="hero-copy">
             <p class="eyebrow eyebrow-light">Beta Launch Dashboard</p>
             <h2>Atrae las primeras visitas y primeros usuarios</h2>
@@ -84,7 +95,34 @@
           </div>
         </section>
 
-        <section class="overview-grid section-white">
+        <section class="quickstart-grid section-white">
+          <article class="panel guide-card guide-card-primary">
+            <p class="eyebrow">1. Haz Ahora</p>
+            <h3>Abre este panel para decidir qué publicas y qué envías hoy.</h3>
+            <p>Empieza por foco semanal, próximos pasos y una sola landing principal.</p>
+          </article>
+
+          <article class="panel guide-card guide-card-secondary">
+            <p class="eyebrow">2. Ejecuta Después</p>
+            <h3>Contenido, shorts, outreach y campañas viven en la zona operativa.</h3>
+            <p>Ahí es donde mueves piezas, grabas demos y sigues campañas activas.</p>
+          </article>
+
+          <article class="panel guide-card">
+            <p class="eyebrow">3. Consulta Luego</p>
+            <h3>Biblioteca, lanzamientos y setup son material de apoyo.</h3>
+            <p>No hace falta leerlo todo cada día: úsalo solo cuando te bloquee una decisión.</p>
+          </article>
+        </section>
+
+        <section class="overview-grid section-white" id="week">
+          <div class="section-intro section-intro-inline">
+            <div>
+              <p class="eyebrow">Zona 1 · Operación semanal</p>
+              <h3>Empieza siempre aquí</h3>
+            </div>
+            <p>Estos bloques te dicen qué hacer esta semana y cómo vas de ejecución.</p>
+          </div>
           <article class="panel spotlight-panel">
             <div class="section-head">
               <div>
@@ -181,6 +219,18 @@
             </div>
             <div id="learning-loop-grid" class="info-grid"></div>
           </article>
+        </section>
+
+        <section class="section-green section-band" id="content-engine">
+          <div class="section-intro section-intro-light">
+            <div>
+              <p class="eyebrow eyebrow-light">Zona 2 · Acción diaria</p>
+              <h3>Contenido y producción</h3>
+            </div>
+            <p class="lead lead-light">
+              Esta zona es para producir y mover piezas: qué publicas, qué grabas y cómo conviertes ideas en activos.
+            </p>
+          </div>
         </section>
 
         <section class="split-grid section-green" id="social">
@@ -300,6 +350,16 @@
             </div>
             <div id="shorts-rules-grid" class="info-grid"></div>
           </article>
+        </section>
+
+        <section class="section-amber section-band" id="growth-pipeline">
+          <div class="section-intro">
+            <div>
+              <p class="eyebrow">Zona 3 · Distribución</p>
+              <h3>Outreach, campañas y tráfico</h3>
+            </div>
+            <p>Cuando ya tienes contenido en marcha, aquí gestionas distribución, campañas y próximos empujes.</p>
+          </div>
         </section>
 
         <section class="split-grid section-amber" id="campaign-tracker">
@@ -499,6 +559,14 @@
         </section>
 
         <section id="strategy-library" class="library-stack">
+          <div class="section-intro">
+            <div>
+              <p class="eyebrow">Zona 4 · Biblioteca</p>
+              <h3>Consulta estratégica</h3>
+            </div>
+            <p>Esta parte es de referencia. Úsala para decidir mensajes, landings, canales y playbooks, no como punto de arranque diario.</p>
+          </div>
+
           <details class="library-section" open>
             <summary>
               <span>Strategy Core</span>
@@ -720,7 +788,7 @@
             </div>
           </details>
 
-          <details class="library-section">
+          <details class="library-section" id="operations-data">
             <summary>
               <span>Operations & Data</span>
               <span class="summary-note">Analytics, automatización y calendario</span>
