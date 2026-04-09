@@ -454,33 +454,33 @@ function buildXAutomationRunbook() {
   const config = state.xAutomationConfig || defaultState.xAutomationConfig;
   return [
     {
-      title: "1. Genera o elige el borrador",
-      body: "Empieza desde la tarea de X, el X Copy Bank o la cola actual.",
+      title: "1. Elige una sola pieza",
+      body: "No pienses en toda la semana. Quédate solo con el siguiente post que aparece en la cola.",
       meta: ["Input"],
       list: [
-        "Abre Automatizaciones",
-        "Copia el siguiente post",
-        "Ajusta solo una frase si hace falta"
+        "Trabaja una pieza cada vez",
+        "No abras varios posts a la vez",
+        "Si hace falta, cambia solo una frase"
       ]
     },
     {
-      title: "2. Programa sin pensar la hora",
+      title: "2. Copia, pega y deja listo",
       body: "Usa la franja ya definida para no decidir cada vez cuándo publicar.",
       meta: [config.frequency, `${config.windowStart} - ${config.windowEnd}`],
       list: [
-        `Scheduler recomendado: ${config.scheduler}`,
-        "Mantén la mezcla de contenidos",
-        "Marca Scheduled en cuanto lo dejes cargado"
+        `Usa ${config.scheduler}`,
+        "Pega el texto tal cual o con un pequeño ajuste",
+        "No te pares a perfeccionarlo demasiado"
       ]
     },
     {
-      title: "3. Cierra el bucle",
-      body: "Después de publicar o programar, vuelve al dashboard y cambia el estado para que la cola se actualice sola.",
+      title: "3. Marca el avance y sigue",
+      body: "Después de dejarlo listo, marca el avance para que el siguiente post suba solo.",
       meta: ["Loop"],
       list: [
-        "Scheduled si ya está programado",
-        "Published cuando salga",
-        "Anota si el ángulo merece repetirse"
+        "Marca como programado",
+        "Luego el siguiente post pasa arriba",
+        "Repite el mismo flujo mañana"
       ]
     }
   ];

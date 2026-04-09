@@ -509,15 +509,32 @@
                 <div class="section-head">
                   <div>
                     <p class="eyebrow">Paso 2</p>
-                    <h3>Siguiente post y cola de X</h3>
+                    <h3>Siguiente post de X</h3>
                   </div>
                 </div>
                 <div id="x-queue-grid" class="info-grid"></div>
-                <div class="quick-actions">
-                  <button id="queue-next-x-post" class="primary" type="button">Programar siguiente post</button>
-                  <button id="copy-next-x-post" class="secondary" type="button">Copiar siguiente post</button>
-                  <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
-                  <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Abrir X</a>
+                <div class="action-flow">
+                  <article class="action-step">
+                    <p class="eyebrow">2.1</p>
+                    <h4>Prepara el texto</h4>
+                    <p>Copia el siguiente post para no escribir desde cero.</p>
+                    <button id="copy-next-x-post" class="primary" type="button">Copiar texto del post</button>
+                  </article>
+                  <article class="action-step">
+                    <p class="eyebrow">2.2</p>
+                    <h4>Ábrelo donde publicas</h4>
+                    <p>Pega el texto en tu herramienta y déjalo listo.</p>
+                    <div class="quick-actions">
+                      <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
+                      <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Abrir X</a>
+                    </div>
+                  </article>
+                  <article class="action-step">
+                    <p class="eyebrow">2.3</p>
+                    <h4>Marca el avance</h4>
+                    <p>Cuando ya esté preparado o publicado, mueve la cola.</p>
+                    <button id="queue-next-x-post" class="secondary" type="button">Marcar como programado</button>
+                  </article>
                 </div>
               </article>
             </div>
@@ -526,7 +543,7 @@
               <div class="section-head">
                 <div>
                   <p class="eyebrow">Paso 3</p>
-                  <h3>Reglas del pipeline</h3>
+                  <h3>Reglas simples del flujo</h3>
                 </div>
               </div>
               <div id="x-automation-runbook" class="info-grid"></div>

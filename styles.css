@@ -334,6 +334,26 @@ select {
   font-weight: 500;
 }
 
+.action-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.action-step {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--muted);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.action-step h4,
+.action-step p {
+  margin: 0;
+}
+
 .automation-lower-grid {
   margin-top: 18px;
 }
