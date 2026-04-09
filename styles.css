@@ -314,6 +314,13 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.quick-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .template-card {
   display: grid;
   gap: 12px;
@@ -920,6 +927,33 @@ blockquote {
 
 .task-instruction {
   font-weight: 500;
+  color: var(--fg);
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.task-selects {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.priority-high {
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--fg);
+}
+
+.priority-medium {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--fg);
+}
+
+.priority-low {
+  background: rgba(16, 185, 129, 0.12);
   color: var(--fg);
 }
 

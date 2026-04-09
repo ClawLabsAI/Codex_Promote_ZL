@@ -206,6 +206,11 @@
               </div>
             </div>
             <div id="project-progress" class="project-progress"></div>
+            <div class="quick-actions">
+              <button id="start-sprint-button" class="secondary" type="button">Reiniciar sprint actual</button>
+              <button id="next-sprint-button" class="secondary" type="button">Cargar siguiente sprint</button>
+              <button id="duplicate-sprint-button" class="secondary" type="button">Duplicar sprint actual</button>
+            </div>
           </article>
 
           <article class="panel">
@@ -276,6 +281,14 @@
                   <option>Todo</option>
                   <option>Doing</option>
                   <option>Done</option>
+                </select>
+              </label>
+              <label class="field">
+                Prioridad
+                <select id="task-priority">
+                  <option>High</option>
+                  <option selected>Medium</option>
+                  <option>Low</option>
                 </select>
               </label>
               <button class="primary" type="submit">Añadir tarea</button>

@@ -220,6 +220,10 @@ function normalizeDate(value) {
   return Number.isNaN(time) ? Number.MAX_SAFE_INTEGER : time;
 }
 
+function priorityWeight(priority) {
+  return { High: 0, Medium: 1, Low: 2 }[priority] ?? 1;
+}
+
 function getTodayTaskCandidates() {
   return [...state.tasks]
     .filter((task) => task.status !== "Done")
@@ -228,6 +232,8 @@ function getTodayTaskCandidates() {
       const left = statusWeight[a.status] ?? 2;
       const right = statusWeight[b.status] ?? 2;
       if (left !== right) return left - right;
+      const priorityDiff = priorityWeight(a.priority) - priorityWeight(b.priority);
+      if (priorityDiff !== 0) return priorityDiff;
       return normalizeDate(a.due) - normalizeDate(b.due);
     })
     .slice(0, 3);
@@ -285,7 +291,7 @@ function renderTodayLayer() {
   renderInfoCards("#today-tasks-grid", getTodayTaskCandidates(), {
     title: (item) => item.title,
     body: (item) => item.instruction || "Define una instrucción clara para esta tarea.",
-    meta: (item) => [item.status, item.channel, item.due],
+    meta: (item) => [item.status, item.priority || "Medium", item.channel, item.due],
     list: (item) => [`Owner: ${item.owner}`]
   });
 
@@ -336,17 +342,31 @@ function renderTaskBoard() {
           <article class="task-card">
             <div class="task-top">
               <h4>${task.title}</h4>
-              <select data-task-id="${task.id}" data-field="status">
-                ${statuses
-                  .map(
-                    (option) =>
-                      `<option value="${option}" ${option === task.status ? "selected" : ""}>${option}</option>`
-                  )
-                  .join("")}
-              </select>
+              <div class="task-selects">
+                <select data-task-id="${task.id}" data-field="status">
+                  ${statuses
+                    .map(
+                      (option) =>
+                        `<option value="${option}" ${option === task.status ? "selected" : ""}>${option}</option>`
+                    )
+                    .join("")}
+                </select>
+                <select data-task-id="${task.id}" data-field="priority">
+                  ${["High", "Medium", "Low"]
+                    .map(
+                      (option) =>
+                        `<option value="${option}" ${option === (task.priority || "Medium") ? "selected" : ""}>${option}</option>`
+                    )
+                    .join("")}
+                </select>
+              </div>
             </div>
             ${task.instruction ? `<p class="task-instruction">${task.instruction}</p>` : ""}
-            <p>${task.channel} · ${task.owner}</p>
+            <div class="task-meta">
+              <span class="pill priority-${String(task.priority || "Medium").toLowerCase()}">${task.priority || "Medium"}</span>
+              <span class="pill">${task.channel}</span>
+              <span class="pill">${task.owner}</span>
+            </div>
             <p class="task-due">Entrega: ${task.due}</p>
           </article>
         `
@@ -479,6 +499,21 @@ function renderSprintTemplates() {
     `;
     container.appendChild(card);
   });
+}
+
+function applySprintTemplate(template) {
+  state.weeklyFocus = {
+    sprint: template.name,
+    objective: template.objective,
+    wins: "",
+    blockers: ""
+  };
+  state.weeklyRoute = structuredClone(template.route);
+  state.tasks = structuredClone(template.tasks).map((task) => ({
+    priority: "Medium",
+    ...task
+  }));
+  state.nextActions = [...template.nextActions];
 }
 
 function renderPublishBoard() {
@@ -1106,6 +1141,7 @@ function bindEditableInputs() {
       const task = state.tasks.find((item) => item.id === target.dataset.taskId);
       task[target.dataset.field] = target.value;
       saveState();
+      renderTodayLayer();
       renderTaskBoard();
       renderProjectManager();
       renderWeeklyReport();
@@ -1159,11 +1195,14 @@ function bindForms() {
       owner: $("#task-owner").value.trim() || "Founder",
       due: $("#task-due").value || "Sin fecha",
       channel: $("#task-channel").value.trim() || "General",
-      status: $("#task-status").value
+      status: $("#task-status").value,
+      priority: $("#task-priority").value
     });
 
     saveState();
+    renderTodayLayer();
     renderTaskBoard();
+    renderProjectManager();
     renderWeeklyReport();
     event.target.reset();
   });
@@ -1298,6 +1337,55 @@ function bindActions() {
     saveState();
   });
 
+  $("#start-sprint-button")?.addEventListener("click", () => {
+    if (!window.confirm("Esto reiniciará el sprint actual y pondrá todas las tareas en Todo. ¿Continuar?")) return;
+    state.tasks = state.tasks.map((task) => ({ ...task, status: "Todo" }));
+    state.weeklyFocus.wins = "";
+    state.weeklyFocus.blockers = "";
+    saveState();
+    renderAll();
+  });
+
+  $("#next-sprint-button")?.addEventListener("click", () => {
+    const currentIndex = state.sprintTemplates.findIndex((template) => template.name === state.weeklyFocus.sprint);
+    const nextTemplate = state.sprintTemplates[currentIndex + 1];
+    if (!nextTemplate) {
+      window.alert("No hay una plantilla siguiente disponible.");
+      return;
+    }
+    applySprintTemplate(nextTemplate);
+    saveState();
+    renderAll();
+    window.alert(`Plantilla aplicada: ${nextTemplate.name}`);
+  });
+
+  $("#duplicate-sprint-button")?.addEventListener("click", () => {
+    const stamp = Date.now();
+    state.weeklyFocus = {
+      ...state.weeklyFocus,
+      sprint: `${state.weeklyFocus.sprint} Copy`,
+      wins: "",
+      blockers: ""
+    };
+    const idMap = new Map();
+    state.tasks = state.tasks.map((task, index) => {
+      const newId = `task-${stamp}-${index}`;
+      idMap.set(task.id, newId);
+      return {
+        ...task,
+        id: newId,
+        status: "Todo"
+      };
+    });
+    state.weeklyRoute = state.weeklyRoute.map((step) => ({
+      ...step,
+      taskIds: (step.taskIds || []).map((taskId) => idMap.get(taskId) || taskId)
+    }));
+    saveState();
+    renderAll();
+    window.alert("Sprint duplicado y reiniciado.");
+  });
+
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
@@ -1305,16 +1393,7 @@ function bindActions() {
     if (target.matches("[data-sprint-template-index]")) {
       const template = state.sprintTemplates[Number(target.dataset.sprintTemplateIndex)];
       if (!template) return;
-
-      state.weeklyFocus = {
-        sprint: template.name,
-        objective: template.objective,
-        wins: "",
-        blockers: ""
-      };
-      state.weeklyRoute = structuredClone(template.route);
-      state.tasks = structuredClone(template.tasks);
-      state.nextActions = [...template.nextActions];
+      applySprintTemplate(template);
       saveState();
       renderAll();
       window.alert(`Plantilla aplicada: ${template.name}`);
