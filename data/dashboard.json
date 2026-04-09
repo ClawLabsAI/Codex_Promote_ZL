@@ -1434,75 +1434,85 @@
   ],
   "outreachTemplates": [
     {
-      "name": "Newsletter intro",
+      "name": "Week 1 · Newsletter pitch",
       "channel": "Email",
       "useCase": "Newsletter",
-      "subject": "Herramienta AI lifetime para power users",
-      "opener": "Hola {{name}}, estoy viendo que en {{newsletter}} cubrís herramientas AI que ayudan a usuarios intensivos a ahorrar tiempo y coste.",
-      "mainAsk": "Quería enseñarte ZeroLimitAI, una alternativa lifetime a ChatGPT/Claude para gente que usa varios modelos, memoria y automatizaciones sin otra suscripción mensual.",
-      "cta": "Si te encaja, te paso acceso y una demo corta para que lo pruebes o lo incluyas en una próxima edición.",
-      "personalize": "Menciona una edición reciente o una categoría concreta de su newsletter."
+      "subject": "Alternativa a ChatGPT para power users",
+      "opener": "Hola {{name}}, he visto que en {{newsletter}} soléis compartir herramientas AI útiles para gente que ya usa ChatGPT, Claude o Perplexity a diario.",
+      "mainAsk": "Estoy empujando ZeroLimitAI desde un ángulo muy concreto: una alternativa más integrada para usuarios intensivos que quieren mejores modelos, memoria y menos suscripciones sueltas.",
+      "cta": "Si te encaja, te paso una comparativa corta + acceso para que lo veas y valores incluirlo.",
+      "personalize": "Menciona una edición reciente donde hayan compartido comparativas o herramientas AI."
     },
     {
-      "name": "Creator collab DM",
+      "name": "Week 1 · Creator DM",
       "channel": "DM",
       "useCase": "Microcreator",
-      "subject": "Colaboración demo ZeroLimitAI",
-      "opener": "Hey {{name}}, me gustó tu contenido sobre {{topic}} y creo que tu audiencia encaja mucho con una demo práctica de ZeroLimitAI.",
-      "mainAsk": "Estamos posicionando el producto como alternativa lifetime para users intensivos que quieren mejores modelos y memoria sin pagar varias suscripciones.",
-      "cta": "Si te interesa, te paso acceso, 3 ángulos de vídeo y una demo de 60 segundos para grabarlo fácil.",
-      "personalize": "Referencia un vídeo/post reciente y el tipo de audiencia que mueve mejor."
+      "subject": "Demo simple para tu audiencia AI",
+      "opener": "Hey {{name}}, me gustó tu contenido sobre {{topic}} y creo que tu audiencia encajaría bastante con una demo muy concreta de ZeroLimitAI.",
+      "mainAsk": "Lo estamos posicionando como una alternativa a ChatGPT para usuarios intensivos: mejores modelos, memoria y menos fricción entre herramientas.",
+      "cta": "Si te interesa, te paso acceso + una demo de 30 segundos + 2 hooks para grabarlo sin perder tiempo.",
+      "personalize": "Referencia una pieza reciente y el tipo de audiencia que mejor le responde."
     },
     {
-      "name": "Community admin pitch",
+      "name": "Week 1 · Community intro",
       "channel": "Email",
       "useCase": "Community",
-      "subject": "Recurso útil para tu comunidad AI/dev",
-      "opener": "Hola {{name}}, sigo la comunidad {{community}} y creo que ZeroLimitAI puede aportar bastante a miembros que comparan modelos, prompts y workflows con IA.",
-      "mainAsk": "No quería hacer spam, sino proponerte un recurso útil: acceso al producto + una guía comparativa corta para que, si lo ves útil, la compartas con la comunidad.",
-      "cta": "Si te encaja, te paso una landing específica para devs o creators y un texto breve para publicarlo fácil.",
-      "personalize": "Menciona una conversación o hilo reciente dentro de la comunidad."
+      "subject": "Idea útil para tu comunidad",
+      "opener": "Hola {{name}}, sigo la comunidad {{community}} y creo que este enfoque puede interesar a la gente que está comparando herramientas AI cada semana.",
+      "mainAsk": "No te escribo para hacer spam sino para compartir un recurso útil: una comparativa corta de ZeroLimitAI frente a ChatGPT/Claude enfocada en usuarios intensivos y coste total.",
+      "cta": "Si lo ves útil, te paso texto breve + landing para compartirlo o pedir feedback dentro de la comunidad.",
+      "personalize": "Menciona un hilo o debate reciente sobre herramientas, precios o workflows."
     },
     {
-      "name": "Partner stack intro",
+      "name": "Week 1 · Builder friendlies",
       "channel": "Email",
       "useCase": "Partner",
-      "subject": "Posible partnership AI tools",
-      "opener": "Hola {{name}}, estoy revisando herramientas complementarias para usuarios que ya trabajan con IA a diario y creo que hay fit entre {{partner}} y ZeroLimitAI.",
-      "mainAsk": "Nuestro ángulo es claro: una alternativa lifetime para centralizar modelos, memoria y automatización. Creo que podríamos hacer un swap de visibilidad, bundle o recurso compartido.",
-      "cta": "Si tiene sentido, coordinamos una llamada corta o intercambiamos ideas por email.",
-      "personalize": "Conecta el partnership con un caso de uso compartido concreto."
+      "subject": "¿Me das feedback rápido?",
+      "opener": "Hey {{name}}, estoy empujando la beta de ZeroLimitAI y quiero validar una cosa muy concreta esta semana.",
+      "mainAsk": "Estamos usando una sola landing principal para ver si el ángulo “alternativa a ChatGPT para power users” se entiende de verdad. Me ayudaría mucho tu feedback sincero.",
+      "cta": "Si tienes 3 minutos, te paso la landing y me dices qué se entiende y qué no.",
+      "personalize": "Usa este mensaje para founders o contactos cercanos."
+    },
+    {
+      "name": "Week 1 · Dev creator intro",
+      "channel": "DM",
+      "useCase": "Developer",
+      "subject": "Comparativa rápida para tu audiencia dev",
+      "opener": "Hey {{name}}, creo que tu audiencia encaja con una comparativa bastante concreta que estamos empujando en ZeroLimitAI.",
+      "mainAsk": "El ángulo no es “otro chatbot”. Es cómo reducir fricción cuando usas varios modelos, quieres memoria y no quieres pagar varias suscripciones para trabajar.",
+      "cta": "Si te interesa, te paso una landing comparativa y una demo técnica corta para que la mires o la compartas.",
+      "personalize": "Haz referencia a un post reciente sobre dev tools, AI workflows o productividad técnica."
     }
   ],
   "xCopyBank": [
     {
-      "title": "Comparativa directa",
+      "title": "Week 1 · X post 1",
       "goal": "Clicks",
-      "copy": "La mayoria de herramientas AI te obligan a elegir entre precio, memoria o buenos modelos. ZeroLimitAI intenta resolver justo eso: mejores modelos, memory y automatizacion sin otra suscripcion mensual. Si eres power user, esta comparativa te puede interesar.",
+      "copy": "Si usas ChatGPT todos los días, probablemente ya has notado esto:\n\n1. acabas abriendo otras tools para tareas distintas\n2. pierdes contexto entre una y otra\n3. terminas pagando varias suscripciones para hacer el mismo trabajo\n\nEse es justo el problema que estamos intentando resolver con ZeroLimitAI.\n\nEstamos empujando una comparativa muy simple para usuarios intensivos.\n\nSi te interesa, aquí está: /chatgpt-alternative",
       "notes": [
-        "CTA a landing comparativa",
-        "Añadir screenshot",
-        "Publicar con reply explicando el caso de uso"
+        "Publicar hoy",
+        "Responder comentarios con el ángulo de coste + memoria",
+        "CTA directo a /chatgpt-alternative"
       ]
     },
     {
-      "title": "Founder opinion",
-      "goal": "Autoridad",
-      "copy": "Mi opinion impopular: el problema no es que falten modelos AI. El problema es que el usuario medio sigue saltando entre herramientas desconectadas, sin memoria, sin contexto y pagando varias suscripciones para hacer el mismo trabajo. Por eso estamos construyendo ZeroLimitAI.",
+      "title": "Week 1 · X thread 2",
+      "goal": "Replies + clicks",
+      "copy": "Mi opinión impopular sobre AI tools:\n\nel problema no es que falten modelos.\nel problema es que el usuario intensivo sigue trabajando con herramientas desconectadas, sin memoria compartida y con varias suscripciones encima.\n\nPor eso estamos empujando ZeroLimitAI desde un ángulo muy concreto:\n\n- mejores modelos\n- memory\n- menos fricción\n- menos coste total\n\nNo estamos intentando parecer “otra app AI”.\nEstamos intentando resolver un workflow más completo.\n\nEstoy probando esta narrativa aquí:\n/chatgpt-alternative\n\nSi lo lees, me interesa saber qué parte se entiende y cuál no.",
       "notes": [
-        "Ideal como post de founder",
+        "Publicar mañana",
         "Terminar con pregunta",
-        "Responder comentarios manualmente"
+        "Ideal para sacar feedback real"
       ]
     },
     {
-      "title": "Lifetime angle",
-      "goal": "Curiosidad",
-      "copy": "Si usas ChatGPT, Claude y otras tools a la vez, seguramente ya sabes lo que duele pagar varias suscripciones. ZeroLimitAI va por otro camino: un AI workspace con enfoque lifetime, memoria y automatizacion. Estamos probando este modelo en abierto.",
+      "title": "Week 1 · X post 3",
+      "goal": "Curiosity",
+      "copy": "Pregunta honesta:\n\n¿Cuántas suscripciones AI tienes activas ahora mismo?\n\nSi usas ChatGPT + otra para imágenes + otra para research + otra para automatizar, no solo estás pagando más.\nTambién estás perdiendo contexto en cada salto.\n\nEse dolor es el que estamos intentando atacar con ZeroLimitAI.\n\nEstamos probando una landing principal esta semana.\nSi eres usuario intensivo y quieres verla, aquí está:\n/chatgpt-alternative",
       "notes": [
-        "No sonar agresivamente comercial",
+        "Publicar 24h después del thread",
         "Buen post para awareness",
-        "Enlazar a home o landing"
+        "Fácil de reutilizar en comentarios"
       ]
     },
     {
@@ -1518,23 +1528,23 @@
   ],
   "linkedinCopyBank": [
     {
-      "title": "Problema de mercado",
+      "title": "Week 1 · LinkedIn post 1",
       "goal": "Autoridad",
-      "copy": "Cada vez veo mas equipos y usuarios intensivos de IA con el mismo problema: demasiadas herramientas, demasiado contexto perdido y demasiadas suscripciones para resolver flujos que deberian vivir en un solo sitio.\n\nEsa es una de las razones por las que estamos construyendo ZeroLimitAI: una experiencia mas unificada, con mejores modelos, memoria y automatizacion.\n\nAntes de escalar distribucion, estamos afinando mensaje, casos de uso y una narrativa clara para power users y developers.",
+      "copy": "Cada vez veo más usuarios intensivos de IA con el mismo problema:\n\ndemasiadas herramientas,\ndemasiado contexto perdido,\ny demasiadas suscripciones para resolver flujos que deberían vivir en un solo sitio.\n\nEse es uno de los motivos por los que estamos empujando ZeroLimitAI desde un ángulo muy concreto:\n\nuna alternativa más integrada para gente que ya usa ChatGPT, Claude o Perplexity a diario.\n\nNuestro foco ahora no es “hacer ruido”.\nEs validar si este mensaje realmente conecta con usuarios intensivos.\n\nEsta semana estamos usando una sola landing principal para eso:\n/chatgpt-alternative\n\nSi la miras, me interesa mucho saber qué parte se entiende rápido y cuál no.",
       "notes": [
-        "Buen post de posicionamiento",
-        "Ideal con una captura de producto",
-        "CTA suave al final"
+        "Publicar hoy o mañana",
+        "Ideal con screenshot de la landing",
+        "Buscar feedback en comentarios"
       ]
     },
     {
-      "title": "Build in public",
+      "title": "Week 1 · LinkedIn post 2",
       "goal": "Confianza",
-      "copy": "Acabamos de convertir nuestro dashboard de growth en un sistema mucho mas operativo.\n\nEn vez de obsesionarnos con visitas antes de tiempo, estamos enfocando ZeroLimitAI en tres cosas:\n\n1. una landing clara\n2. una cadencia de contenido founder-led\n3. una distribucion disciplinada\n\nMi aprendizaje: al principio no necesitas mas analytics. Necesitas mas claridad y mas velocidad de ejecucion.",
+      "copy": "Estamos entrando en una fase distinta con ZeroLimitAI.\n\nLa web ya está publicada y bastante testeada.\nAhora el objetivo no es “diseñar más”.\nEs conseguir las primeras visitas cualificadas, los primeros usuarios beta y aprender rápido.\n\nPor eso esta semana estamos simplificando todo a 4 movimientos:\n\n1. una sola landing principal\n2. contenido founder-led\n3. demos cortas\n4. outreach manual a newsletters, creators y comunidades\n\nMi aprendizaje hasta ahora:\nal principio no necesitas más complejidad.\nNecesitas más foco, más distribución y más feedback real.\n\nSi trabajas en producto o growth, seguramente conoces bien esta fase.",
       "notes": [
-        "Post perfecto para founders",
-        "Terminar con aprendizaje",
-        "Invitar a feedback"
+        "Publicar como build in public",
+        "Buen post para conectar con founders",
+        "CTA suave a conversación"
       ]
     },
     {
