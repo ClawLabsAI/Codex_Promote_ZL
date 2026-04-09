@@ -77,6 +77,246 @@
       ]
     }
   ],
+  "sprintTemplates": [
+    {
+      "name": "Semana 1",
+      "theme": "Primera tracción",
+      "objective": "Elegir una landing principal, publicar la primera tanda de contenido y activar outreach manual.",
+      "highlights": [
+        "1 landing principal",
+        "3 posts X + 2 LinkedIn",
+        "2 demos cortas",
+        "20 outreachs"
+      ],
+      "route": [
+        {
+          "step": "Paso 1",
+          "title": "Prepara el destino",
+          "owner": "Founder",
+          "summary": "Revisa la landing principal y deja claro el CTA antes de mover tráfico.",
+          "taskIds": ["w1-task-1"],
+          "items": ["Revisar landing", "Comprobar CTA", "Usar un solo destino"]
+        },
+        {
+          "step": "Paso 2",
+          "title": "Publica contenido base",
+          "owner": "Founder",
+          "summary": "Publica comparativas, founder posts y el primer short.",
+          "taskIds": ["w1-task-2", "w1-task-3", "w1-task-4"],
+          "items": ["3 X posts", "2 LinkedIn posts", "2 demos cortas"]
+        },
+        {
+          "step": "Paso 3",
+          "title": "Activa distribución manual",
+          "owner": "Founder",
+          "summary": "Empuja el producto con outreach y directorios para conseguir primeras respuestas.",
+          "taskIds": ["w1-task-5", "w1-task-6"],
+          "items": ["20 outreachs", "5 directorios", "Primer follow-up"]
+        },
+        {
+          "step": "Paso 4",
+          "title": "Aprende",
+          "owner": "Founder",
+          "summary": "Cierra la semana con aprendizajes reales sobre mensaje, canal y respuesta.",
+          "taskIds": ["w1-task-7", "w1-task-8"],
+          "items": ["5 aprendizajes", "Review semanal", "Decidir qué repetir"]
+        }
+      ],
+      "tasks": [
+        { "id": "w1-task-1", "title": "Revisar landing principal", "instruction": "Asegúrate de que toda la semana empuja a /chatgpt-alternative.", "owner": "Founder", "due": "2026-04-14", "channel": "Landing", "status": "Todo" },
+        { "id": "w1-task-2", "title": "Publicar 3 piezas en X", "instruction": "Usa comparativas y ahorro de coste.", "owner": "Founder", "due": "2026-04-15", "channel": "Social", "status": "Todo" },
+        { "id": "w1-task-3", "title": "Publicar 2 posts en LinkedIn", "instruction": "Haz uno comparativo y uno founder-led.", "owner": "Founder", "due": "2026-04-15", "channel": "Social", "status": "Todo" },
+        { "id": "w1-task-4", "title": "Grabar 2 demos cortas", "instruction": "Usa Shorts OS para grabar una comparativa y una demo de memory.", "owner": "Founder", "due": "2026-04-16", "channel": "Video", "status": "Todo" },
+        { "id": "w1-task-5", "title": "Enviar 20 outreachs", "instruction": "Personaliza la primera línea y usa plantillas del CRM.", "owner": "Founder", "due": "2026-04-17", "channel": "Outreach", "status": "Todo" },
+        { "id": "w1-task-6", "title": "Enviar 5 directorios", "instruction": "Comprueba que el enlace final y screenshots estén bien.", "owner": "Ops", "due": "2026-04-17", "channel": "Directories", "status": "Todo" },
+        { "id": "w1-task-7", "title": "Recoger 5 aprendizajes", "instruction": "Anota objeciones, replies y primeras señales de mensaje.", "owner": "Founder", "due": "2026-04-18", "channel": "Learning", "status": "Todo" },
+        { "id": "w1-task-8", "title": "Hacer review semanal", "instruction": "Decide qué canal y qué pieza repetir la siguiente semana.", "owner": "Founder", "due": "2026-04-19", "channel": "Review", "status": "Todo" }
+      ],
+      "nextActions": [
+        "Revisar la landing principal antes de publicar.",
+        "Publicar 5 piezas y 2 demos esta semana.",
+        "Enviar 20 outreachs y 5 directorios.",
+        "Cerrar la semana con 5 aprendizajes concretos."
+      ]
+    },
+    {
+      "name": "Semana 2",
+      "theme": "Doblar lo que responde",
+      "objective": "Doblar el mejor ángulo de semana 1, mejorar cadencia y aumentar señales de respuesta.",
+      "highlights": [
+        "Repetir top angle",
+        "3 nuevos shorts",
+        "Follow-up del outreach",
+        "1 mini mejora de landing"
+      ],
+      "route": [
+        {
+          "step": "Paso 1",
+          "title": "Elegir ganador",
+          "owner": "Founder",
+          "summary": "Elige el mensaje, formato o canal que mejor respondió en la semana 1.",
+          "taskIds": ["w2-task-1"],
+          "items": ["Top hook", "Top canal", "Top CTA"]
+        },
+        {
+          "step": "Paso 2",
+          "title": "Repetir con más fuerza",
+          "owner": "Founder",
+          "summary": "Publica más piezas del ángulo ganador y graba nuevos shorts con la misma promesa.",
+          "taskIds": ["w2-task-2", "w2-task-3"],
+          "items": ["3 X/LinkedIn", "3 shorts", "Más foco"]
+        },
+        {
+          "step": "Paso 3",
+          "title": "Hacer follow-up",
+          "owner": "Founder",
+          "summary": "No abras solo nuevos contactos: sigue también a quienes ya mostraron interés.",
+          "taskIds": ["w2-task-4", "w2-task-5"],
+          "items": ["Follow-up CRM", "Nuevos outreachs", "Directorios extra"]
+        },
+        {
+          "step": "Paso 4",
+          "title": "Afinar conversión",
+          "owner": "Founder",
+          "summary": "Mejora una sola cosa de la landing o del onboarding según el feedback recibido.",
+          "taskIds": ["w2-task-6"],
+          "items": ["1 mejora visible", "CTA más claro", "Bloque de confianza"]
+        }
+      ],
+      "tasks": [
+        { "id": "w2-task-1", "title": "Elegir el mejor ángulo de semana 1", "instruction": "Usa replies, clics y sensaciones para decidir una sola promesa ganadora.", "owner": "Founder", "due": "2026-04-21", "channel": "Review", "status": "Todo" },
+        { "id": "w2-task-2", "title": "Publicar 3 piezas sobre el ángulo ganador", "instruction": "Repite el mejor hook en X y LinkedIn con variantes.", "owner": "Founder", "due": "2026-04-22", "channel": "Social", "status": "Todo" },
+        { "id": "w2-task-3", "title": "Grabar 3 nuevos shorts", "instruction": "Haz 3 versiones del tema ganador con distintos hooks.", "owner": "Founder", "due": "2026-04-23", "channel": "Video", "status": "Todo" },
+        { "id": "w2-task-4", "title": "Hacer follow-up al outreach previo", "instruction": "Sigue a quienes no respondieron y ofrece demo o comparativa.", "owner": "Founder", "due": "2026-04-24", "channel": "Outreach", "status": "Todo" },
+        { "id": "w2-task-5", "title": "Enviar 10 outreachs nuevos y 5 directorios extra", "instruction": "Amplía distribución sin perder calidad del mensaje.", "owner": "Founder", "due": "2026-04-24", "channel": "Distribution", "status": "Todo" },
+        { "id": "w2-task-6", "title": "Mejorar 1 punto de conversión", "instruction": "Cambia solo una parte de landing o onboarding para aprender más claro.", "owner": "Founder", "due": "2026-04-25", "channel": "Conversion", "status": "Todo" }
+      ],
+      "nextActions": [
+        "Elegir el mejor ángulo de la semana anterior.",
+        "Repetirlo en contenido y shorts.",
+        "Hacer follow-up al outreach existente.",
+        "Mejorar un solo punto de conversión."
+      ]
+    },
+    {
+      "name": "Semana 3",
+      "theme": "Sistema repetible",
+      "objective": "Convertir el proceso en una cadencia repetible con plantillas, automatización ligera y mejor seguimiento.",
+      "highlights": [
+        "Plantillas de shorts",
+        "Factory de borradores",
+        "CRM más ordenado",
+        "1 landing secundaria"
+      ],
+      "route": [
+        {
+          "step": "Paso 1",
+          "title": "Plantillizar producción",
+          "owner": "Founder",
+          "summary": "Convierte lo que ya funciona en plantillas reutilizables.",
+          "taskIds": ["w3-task-1", "w3-task-2"],
+          "items": ["Plantilla short", "Plantilla X/LinkedIn", "Checklist reusable"]
+        },
+        {
+          "step": "Paso 2",
+          "title": "Ordenar el CRM",
+          "owner": "Founder",
+          "summary": "Clasifica contactos y deja claro quién necesita follow-up, demo o cierre.",
+          "taskIds": ["w3-task-3"],
+          "items": ["Pendiente", "Follow-up", "Interesado"]
+        },
+        {
+          "step": "Paso 3",
+          "title": "Abrir segunda landing",
+          "owner": "Founder",
+          "summary": "Crea una segunda landing basada en el segundo ángulo más prometedor.",
+          "taskIds": ["w3-task-4", "w3-task-5"],
+          "items": ["Nueva comparativa", "CTA claro", "Distinto caso de uso"]
+        },
+        {
+          "step": "Paso 4",
+          "title": "Medir mejor",
+          "owner": "Founder",
+          "summary": "Deja una mínima capa de medición manual o semiautomática para aprender sin perder velocidad.",
+          "taskIds": ["w3-task-6"],
+          "items": ["Clics", "Replies", "Signups", "Top contenido"]
+        }
+      ],
+      "tasks": [
+        { "id": "w3-task-1", "title": "Crear plantilla reusable de short", "instruction": "Deja fija la estructura hook -> demo -> CTA en tu editor.", "owner": "Founder", "due": "2026-04-28", "channel": "Video", "status": "Todo" },
+        { "id": "w3-task-2", "title": "Crear plantilla de copy para X y LinkedIn", "instruction": "Convierte el mejor post en una estructura que puedas reutilizar.", "owner": "Founder", "due": "2026-04-28", "channel": "Content", "status": "Todo" },
+        { "id": "w3-task-3", "title": "Ordenar el CRM de outreach", "instruction": "Clasifica contactos por estado y próximos pasos claros.", "owner": "Founder", "due": "2026-04-29", "channel": "Outreach", "status": "Todo" },
+        { "id": "w3-task-4", "title": "Definir segunda landing", "instruction": "Elige un segundo ángulo con suficiente señal para testear.", "owner": "Founder", "due": "2026-04-30", "channel": "Landing", "status": "Todo" },
+        { "id": "w3-task-5", "title": "Publicar la segunda landing", "instruction": "Lanza una nueva landing centrada en un caso de uso distinto.", "owner": "Founder", "due": "2026-05-01", "channel": "Landing", "status": "Todo" },
+        { "id": "w3-task-6", "title": "Montar tracking mínimo", "instruction": "Registra manualmente top piezas, replies y signups para la review semanal.", "owner": "Founder", "due": "2026-05-02", "channel": "Analytics", "status": "Todo" }
+      ],
+      "nextActions": [
+        "Crear una plantilla reusable de shorts.",
+        "Ordenar el CRM y próximos pasos.",
+        "Abrir una segunda landing con señal.",
+        "Registrar métricas mínimas cada semana."
+      ]
+    },
+    {
+      "name": "Semana 4",
+      "theme": "Escalar con cuidado",
+      "objective": "Consolidar el sistema, mejorar conversión y preparar un pequeño empuje adicional con más confianza.",
+      "highlights": [
+        "Review de 4 semanas",
+        "Top 2 canales",
+        "Mejora de onboarding",
+        "Pequeño test extra de distribución"
+      ],
+      "route": [
+        {
+          "step": "Paso 1",
+          "title": "Review de 4 semanas",
+          "owner": "Founder",
+          "summary": "Reúne aprendizajes y decide claramente qué 2 canales o mensajes merecen más energía.",
+          "taskIds": ["w4-task-1"],
+          "items": ["Top mensaje", "Top canal", "Top landing"]
+        },
+        {
+          "step": "Paso 2",
+          "title": "Mejorar conversión",
+          "owner": "Founder",
+          "summary": "Optimiza onboarding, CTA o confianza según lo que viste en estas semanas.",
+          "taskIds": ["w4-task-2", "w4-task-3"],
+          "items": ["Onboarding", "CTA", "Trust block"]
+        },
+        {
+          "step": "Paso 3",
+          "title": "Doblar distribución",
+          "owner": "Founder",
+          "summary": "Aumenta un poco el output en el mejor canal y prueba una palanca extra pequeña.",
+          "taskIds": ["w4-task-4", "w4-task-5"],
+          "items": ["Más contenido", "Más follow-up", "Nuevo push pequeño"]
+        },
+        {
+          "step": "Paso 4",
+          "title": "Definir siguiente ciclo",
+          "owner": "Founder",
+          "summary": "Cierra el primer mes con un sistema más claro y decide el enfoque del mes 2.",
+          "taskIds": ["w4-task-6"],
+          "items": ["Qué doblar", "Qué pausar", "Qué automatizar más"]
+        }
+      ],
+      "tasks": [
+        { "id": "w4-task-1", "title": "Hacer review completa del primer mes", "instruction": "Elige top 2 mensajes, top 2 canales y top landing.", "owner": "Founder", "due": "2026-05-05", "channel": "Review", "status": "Todo" },
+        { "id": "w4-task-2", "title": "Mejorar onboarding inicial", "instruction": "Haz más claro el primer caso de uso o email de bienvenida.", "owner": "Founder", "due": "2026-05-06", "channel": "Onboarding", "status": "Todo" },
+        { "id": "w4-task-3", "title": "Mejorar trust y CTA", "instruction": "Refuerza la confianza con mejor copy, prueba o comparativa visible.", "owner": "Founder", "due": "2026-05-06", "channel": "Conversion", "status": "Todo" },
+        { "id": "w4-task-4", "title": "Doblar output en el canal ganador", "instruction": "Publica más piezas en el canal con mejor respuesta.", "owner": "Founder", "due": "2026-05-07", "channel": "Distribution", "status": "Todo" },
+        { "id": "w4-task-5", "title": "Probar un push pequeño extra", "instruction": "Haz una prueba pequeña adicional: microcreator, newsletter o retargeting warm.", "owner": "Founder", "due": "2026-05-08", "channel": "Experiment", "status": "Todo" },
+        { "id": "w4-task-6", "title": "Definir el plan del mes 2", "instruction": "Decide qué automatizar, qué canal priorizar y qué landing seguir empujando.", "owner": "Founder", "due": "2026-05-09", "channel": "Planning", "status": "Todo" }
+      ],
+      "nextActions": [
+        "Hacer una review completa de las primeras 4 semanas.",
+        "Mejorar onboarding y confianza.",
+        "Doblar output en el canal ganador.",
+        "Definir el sistema del siguiente mes."
+      ]
+    }
+  ],
   "launchPriorities": [
     {
       "name": "Landing principal de adquisicion",

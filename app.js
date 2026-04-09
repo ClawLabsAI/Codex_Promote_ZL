@@ -27,6 +27,7 @@ const defaultState = {
     blockers: ""
   },
   weeklyRoute: [],
+  sprintTemplates: [],
   launchPriorities: [],
   assetPipeline: [],
   firstUsersPipeline: [],
@@ -451,6 +452,32 @@ function renderProjectManager() {
     body: (item) => item.summary,
     meta: (item) => [item.status, item.owner, item.progressNote],
     list: (item) => item.items
+  });
+}
+
+function renderSprintTemplates() {
+  const container = $("#sprint-template-grid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  state.sprintTemplates.forEach((template, index) => {
+    const card = document.createElement("article");
+    card.className = "info-card template-card";
+    card.innerHTML = `
+      <h4>${template.name}</h4>
+      <p>${template.objective}</p>
+      <div class="info-meta">
+        <span class="pill">${template.theme}</span>
+        <span class="pill">${template.tasks.length} tareas</span>
+      </div>
+      <ul>
+        ${template.highlights.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+      <button class="secondary" type="button" data-sprint-template-index="${index}">
+        Usar esta plantilla
+      </button>
+    `;
+    container.appendChild(card);
   });
 }
 
@@ -1024,6 +1051,7 @@ function renderAll() {
   renderTodayLayer();
   renderWeeklyScorecard();
   renderKpis();
+  renderSprintTemplates();
   renderPlanSections();
   renderTaskBoard();
   renderProjectManager();
@@ -1268,6 +1296,29 @@ function bindActions() {
   $("#notes").addEventListener("input", (event) => {
     state.notes = event.target.value;
     saveState();
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    if (target.matches("[data-sprint-template-index]")) {
+      const template = state.sprintTemplates[Number(target.dataset.sprintTemplateIndex)];
+      if (!template) return;
+
+      state.weeklyFocus = {
+        sprint: template.name,
+        objective: template.objective,
+        wins: "",
+        blockers: ""
+      };
+      state.weeklyRoute = structuredClone(template.route);
+      state.tasks = structuredClone(template.tasks);
+      state.nextActions = [...template.nextActions];
+      saveState();
+      renderAll();
+      window.alert(`Plantilla aplicada: ${template.name}`);
+    }
   });
 }
 

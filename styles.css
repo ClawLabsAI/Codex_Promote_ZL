@@ -314,6 +314,16 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.template-card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.template-card button {
+  justify-self: start;
+}
+
 .section-blue,
 .section-green,
 .section-amber,
