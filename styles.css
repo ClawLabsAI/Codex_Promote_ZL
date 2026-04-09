@@ -331,6 +331,48 @@ select {
   justify-self: start;
 }
 
+.today-only-panel {
+  display: grid;
+  gap: 20px;
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.inline-button {
+  text-decoration: none;
+}
+
+.today-only-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.today-only-card {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  display: grid;
+  gap: 10px;
+}
+
+.today-only-content {
+  display: grid;
+  gap: 10px;
+}
+
+.today-only-content h4,
+.today-only-content p {
+  margin: 0;
+}
+
+.today-only-task {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
 .section-blue,
 .section-green,
 .section-amber,
@@ -1055,6 +1097,7 @@ code {
 
   .overview-grid,
   .quickstart-grid,
+  .today-only-grid,
   .metrics-grid,
   .split-grid,
   .roadmap-grid,

@@ -29,6 +29,7 @@
         </div>
 
         <nav class="nav">
+          <a href="#today-only">Solo hoy</a>
           <a href="#today">Hoy</a>
           <a href="#week">Esta semana</a>
           <a href="#weekly-planner">Ruta guiada</a>
@@ -64,6 +65,35 @@
       </aside>
 
       <main class="main-content">
+        <section class="section-white" id="today-only">
+          <article class="panel today-only-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Solo Hoy</p>
+                <h3>Abre esto y ejecuta sin pensar demasiado</h3>
+              </div>
+              <a class="secondary inline-button" href="#execution">Ir a tareas</a>
+            </div>
+
+            <div class="today-only-grid">
+              <article class="today-only-card">
+                <p class="eyebrow">Paso actual</p>
+                <div id="today-only-step" class="today-only-content"></div>
+              </article>
+
+              <article class="today-only-card">
+                <p class="eyebrow">Tus 3 prioridades</p>
+                <div id="today-only-tasks" class="today-only-content"></div>
+              </article>
+
+              <article class="today-only-card">
+                <p class="eyebrow">Automatiza esto primero</p>
+                <div id="today-only-autopilot" class="today-only-content"></div>
+              </article>
+            </div>
+          </article>
+        </section>
+
         <section class="hero-card section-blue" id="today">
           <div class="hero-copy">
             <p class="eyebrow eyebrow-light">Beta Launch Dashboard</p>

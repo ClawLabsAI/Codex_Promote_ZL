@@ -288,6 +288,10 @@ function buildAutopilotRecommendations() {
 }
 
 function renderTodayLayer() {
+  const todayTasks = getTodayTaskCandidates();
+  const autopilot = buildAutopilotRecommendations();
+  const progress = buildProjectProgress();
+
   renderInfoCards("#today-tasks-grid", getTodayTaskCandidates(), {
     title: (item) => item.title,
     body: (item) => item.instruction || "Define una instrucción clara para esta tarea.",
@@ -295,12 +299,56 @@ function renderTodayLayer() {
     list: (item) => [`Owner: ${item.owner}`]
   });
 
-  renderInfoCards("#autopilot-grid", buildAutopilotRecommendations(), {
+  renderInfoCards("#autopilot-grid", autopilot, {
     title: (item) => item.title,
     body: (item) => item.body,
     meta: (item) => [item.meta],
     list: (item) => item.list
   });
+
+  const stepContainer = $("#today-only-step");
+  if (stepContainer) {
+    stepContainer.innerHTML = `
+      <h4>${progress.currentStep.step} · ${progress.currentStep.title}</h4>
+      <p>${progress.currentStep.summary}</p>
+      <div class="info-meta">
+        <span class="pill">${progress.currentStep.status || "Todo"}</span>
+        ${progress.currentStep.progressNote ? `<span class="pill">${progress.currentStep.progressNote}</span>` : ""}
+      </div>
+    `;
+  }
+
+  const tasksContainer = $("#today-only-tasks");
+  if (tasksContainer) {
+    tasksContainer.innerHTML = todayTasks
+      .map(
+        (task) => `
+          <article class="today-only-task">
+            <h4>${task.title}</h4>
+            <p>${task.instruction || "Sin instrucción definida."}</p>
+            <div class="info-meta">
+              <span class="pill">${task.status}</span>
+              <span class="pill">${task.priority || "Medium"}</span>
+              <span class="pill">${task.due}</span>
+            </div>
+          </article>
+        `
+      )
+      .join("");
+  }
+
+  const autopilotContainer = $("#today-only-autopilot");
+  if (autopilotContainer) {
+    const firstAutopilot = autopilot[0];
+    autopilotContainer.innerHTML = firstAutopilot
+      ? `
+          <h4>${firstAutopilot.title}</h4>
+          <p>${firstAutopilot.body}</p>
+          <div class="info-meta"><span class="pill">${firstAutopilot.meta}</span></div>
+          <ul>${firstAutopilot.list.map((item) => `<li>${item}</li>`).join("")}</ul>
+        `
+      : "<p>No hay recomendación automática todavía.</p>";
+  }
 }
 
 function renderInfoCards(containerId, items, config) {
