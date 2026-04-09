@@ -996,6 +996,90 @@
       "owner": "Founder"
     }
   ],
+  "xPostingWorkflow": [
+    {
+      "name": "1. Elegir el ángulo",
+      "stage": "Input",
+      "output": "Idea clara",
+      "summary": "No empieces escribiendo. Primero decide qué quieres mover: comparativa, ahorro, workflow o founder insight.",
+      "items": [
+        "Usa Message Testing",
+        "Elige una sola promesa",
+        "Apunta a una landing concreta"
+      ]
+    },
+    {
+      "name": "2. Coger un copy base",
+      "stage": "Draft",
+      "output": "Borrador listo",
+      "summary": "Usa el X Copy Bank como punto de partida y ajusta una frase para que suene más natural.",
+      "items": [
+        "Abrir X Copy Bank",
+        "Adaptar hook",
+        "Mantener CTA corto"
+      ]
+    },
+    {
+      "name": "3. Validar el post",
+      "stage": "Review",
+      "output": "Versión final",
+      "summary": "Antes de publicar, asegúrate de que el post tiene una sola idea, una CTA y un tono claro.",
+      "items": [
+        "¿Se entiende en 5 segundos?",
+        "¿Hay una sola promesa?",
+        "¿La CTA empuja a la landing correcta?"
+      ]
+    },
+    {
+      "name": "4. Programar o publicar",
+      "stage": "Publish",
+      "output": "Post live o scheduled",
+      "summary": "Publica manualmente o programa la pieza en Buffer/Metricool y luego marca el estado en el dashboard.",
+      "items": [
+        "Buffer o Metricool",
+        "Cambiar estado a Scheduled/Published",
+        "Añadir follow-up si funciona"
+      ]
+    }
+  ],
+  "publishingAutomation": [
+    {
+      "name": "Modo simple",
+      "tool": "Buffer / Metricool",
+      "stage": "Recommended",
+      "summary": "La mejor opción ahora: usar el dashboard para preparar el copy y luego programarlo manualmente.",
+      "items": [
+        "Copiar copy base",
+        "Pegar en scheduler",
+        "Programar 2-3 posts",
+        "Volver y marcar Published"
+      ]
+    },
+    {
+      "name": "Modo semiautomático",
+      "tool": "IA + scheduler",
+      "stage": "Next",
+      "summary": "Genera variantes del post con IA, elige una y prográmala con revisión humana.",
+      "items": [
+        "Idea -> 3 variantes",
+        "Elegir la mejor",
+        "Programar",
+        "Guardar aprendizaje"
+      ]
+    },
+    {
+      "name": "Modo avanzado",
+      "tool": "n8n / Make",
+      "stage": "Later",
+      "summary": "Cuando el proceso ya funcione, automatiza generación de variantes y cola de publicación, pero no autopubliques sin revisar.",
+      "items": [
+        "Generar borradores",
+        "Mandar a cola",
+        "Revisión humana",
+        "Programación final"
+      ]
+    }
+  ],
   "campaignTracker": [
     {
       "id": "campaign-1",

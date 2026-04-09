@@ -41,6 +41,8 @@ const defaultState = {
   socialSystem: [],
   weeklyAssets: [],
   publishingWorkflow: [],
+  xPostingWorkflow: [],
+  publishingAutomation: [],
   campaignTracker: [],
   paidAcquisition: [],
   budgetPlanner: [],
@@ -426,6 +428,28 @@ function renderInfoCards(containerId, items, config) {
   });
 }
 
+function getTaskWorkflowLink(task) {
+  const text = `${task.title} ${task.instruction || ""} ${task.channel || ""}`.toLowerCase();
+
+  if (/\bx\b|thread|tweet|post en x/.test(text)) {
+    return { href: "#x-posting-workflow", label: "Abrir workflow X" };
+  }
+  if (/short|reel|video|demo/.test(text)) {
+    return { href: "#shorts-os", label: "Abrir workflow Shorts" };
+  }
+  if (/outreach|creator|newsletter|community|crm/.test(text)) {
+    return { href: "#outreach-crm-grid", label: "Abrir outreach CRM" };
+  }
+  if (/landing|hero|home|pricing|faq/.test(text)) {
+    return { href: "#landing-audit-grid", label: "Abrir landing workspace" };
+  }
+  if (/director|listing/.test(text)) {
+    return { href: "#directory-launch-grid", label: "Abrir directorios" };
+  }
+
+  return { href: "#execution", label: "Abrir siguiente paso" };
+}
+
 function renderTaskBoard() {
   const statuses = ["Todo", "Doing", "Done"];
   const board = $("#task-board");
@@ -437,7 +461,9 @@ function renderTaskBoard() {
     const tasks = state.tasks.filter((task) => task.status === status);
     const cards = tasks
       .map(
-        (task) => `
+        (task) => {
+          const workflow = getTaskWorkflowLink(task);
+          return `
           <article class="task-card">
             <div class="task-top">
               <h4>${task.title}</h4>
@@ -467,8 +493,10 @@ function renderTaskBoard() {
               <span class="pill">${task.owner}</span>
             </div>
             <p class="task-due">Entrega: ${task.due}</p>
+            <a class="secondary inline-button task-link" href="${workflow.href}">${workflow.label}</a>
           </article>
-        `
+        `;
+        }
       )
       .join("");
 
@@ -1011,6 +1039,20 @@ function renderPlanSections() {
     body: (item) => item.description,
     meta: (item) => [item.frequency],
     list: (item) => item.examples
+  });
+
+  renderInfoCards("#x-workflow-grid", state.xPostingWorkflow, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.stage, item.output],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#publishing-automation-grid", state.publishingAutomation, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.tool, item.stage],
+    list: (item) => item.items
   });
 
   renderInfoCards("#month-plan-grid", state.monthPlan, {
