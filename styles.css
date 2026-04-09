@@ -384,6 +384,10 @@ select {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.automation-control-bar {
+  margin-top: 18px;
+}
+
 .automation-lower-grid {
   margin-top: 18px;
 }

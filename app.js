@@ -1271,6 +1271,9 @@ function renderAutomationCenter() {
 
   $("#x-manual-mode")?.classList.toggle("screen-hidden", !manualMode);
   $("#x-autopilot-mode")?.classList.toggle("screen-hidden", manualMode);
+  $$(".automation-autopilot-field").forEach((field) => {
+    field.classList.toggle("screen-hidden", manualMode);
+  });
 
   renderInfoCards("#x-queue-grid", queue, {
     title: (item) => item.title,
