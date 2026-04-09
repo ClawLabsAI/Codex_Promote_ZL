@@ -1091,6 +1091,110 @@
     "mix": "Comparativas 50% · Founder 30% · Producto 20%",
     "defaultCta": "Mira la comparativa"
   },
+  "channelAutomationPlan": [
+    {
+      "name": "X",
+      "priority": "P1",
+      "role": "Distribucion y aprendizaje rapido",
+      "mode": "Semi-auto",
+      "cadence": "1 post diario + 2-3 replies utiles",
+      "automation": "Cola de posts, variantes de copy y programacion en Buffer o Metricool.",
+      "guardrail": "No autopublicar hilos largos ni posts sin revisar."
+    },
+    {
+      "name": "LinkedIn",
+      "priority": "P1",
+      "role": "Autoridad y confianza",
+      "mode": "Semi-auto",
+      "cadence": "2-3 posts por semana",
+      "automation": "Reaprovechar mejores posts de X y convertirlos en founder posts o carruseles.",
+      "guardrail": "No sonar corporativo ni publicar demasiado sin opinion propia."
+    },
+    {
+      "name": "Instagram Reels",
+      "priority": "P2",
+      "role": "Reciclaje visual de demos",
+      "mode": "Template-ready",
+      "cadence": "2 reels por semana",
+      "automation": "Reutilizar shorts ya grabados, subtitulos y CTA cortos.",
+      "guardrail": "No dedicarle tiempo si aun no tienes shorts buenos."
+    },
+    {
+      "name": "TikTok",
+      "priority": "P2",
+      "role": "Descubrimiento con demos cortas",
+      "mode": "Template-ready",
+      "cadence": "2-3 videos por semana",
+      "automation": "Publicar la misma demo que en Reels y Shorts con hooks distintos.",
+      "guardrail": "No hacer contenido generico tipo AI news sin relacion con el producto."
+    },
+    {
+      "name": "YouTube Shorts",
+      "priority": "P2",
+      "role": "Archivador de demos y busqueda",
+      "mode": "Semi-auto",
+      "cadence": "2 shorts por semana",
+      "automation": "Subir demos reutilizadas y agrupar por tema o workflow.",
+      "guardrail": "No intentar videos largos hasta tener señal de que los shorts funcionan."
+    },
+    {
+      "name": "Email y outreach",
+      "priority": "P1",
+      "role": "Primeras respuestas y demos",
+      "mode": "Semi-auto",
+      "cadence": "Bloque diario de outreach + 1 follow-up",
+      "automation": "Plantillas, CRM y secuencias de follow-up ligeras.",
+      "guardrail": "No enviar mensajes sin personalizar la primera linea."
+    }
+  ],
+  "linkedinSetup": [
+    {
+      "name": "Empieza por dos perfiles",
+      "priority": "P1",
+      "summary": "Usa una pagina de empresa para presencia de marca y un perfil personal del founder para conseguir alcance real.",
+      "items": [
+        "Pagina empresa: ZeroLimitAI",
+        "Perfil founder: posts en primera persona",
+        "No depender solo de la pagina al principio"
+      ]
+    },
+    {
+      "name": "Datos para la pagina",
+      "priority": "P1",
+      "summary": "Prepara la informacion minima para que la pagina quede profesional desde el dia 1.",
+      "items": [
+        "Nombre: ZeroLimitAI",
+        "URL publica: linkedin.com/company/zerolimitai",
+        "Website: https://www.zerolimitai.com",
+        "Industry: Software Development o Technology, Information and Internet",
+        "Company size: 1-10",
+        "Company type: Privately Held",
+        "Tagline corta: AI workspace lifetime para usuarios intensivos"
+      ]
+    },
+    {
+      "name": "Visuales minimos",
+      "priority": "P2",
+      "summary": "No hace falta hacerlo perfecto, pero si limpio y consistente.",
+      "items": [
+        "Logo cuadrado",
+        "Banner simple con promesa principal",
+        "Descripcion corta de 2-3 lineas",
+        "Boton a la web"
+      ]
+    },
+    {
+      "name": "Uso recomendado",
+      "priority": "P1",
+      "summary": "LinkedIn te sirve para confianza, no tanto para volumen bruto.",
+      "items": [
+        "Publica founder insights y comparativas",
+        "Convierte mejores posts de X en version LinkedIn",
+        "Usa 2-3 posts por semana, no diario",
+        "Empuja a una sola landing por semana"
+      ]
+    }
+  ],
   "campaignTracker": [
     {
       "id": "campaign-1",

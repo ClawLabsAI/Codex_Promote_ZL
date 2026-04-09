@@ -54,6 +54,8 @@ const defaultState = {
     mix: "Comparativas 50% · Founder 30% · Producto 20%",
     defaultCta: "Mira la comparativa"
   },
+  channelAutomationPlan: [],
+  linkedinSetup: [],
   campaignTracker: [],
   paidAcquisition: [],
   budgetPlanner: [],
@@ -590,8 +592,8 @@ function renderInfoCards(containerId, items, config) {
 function getTaskWorkflowLink(task) {
   const text = `${task.title} ${task.instruction || ""} ${task.channel || ""}`.toLowerCase();
 
-  if (/\bx\b|thread|tweet|post en x/.test(text)) {
-    return { href: "#automation-center", label: "Abrir automatización X" };
+  if (/\bx\b|thread|tweet|post en x|linkedin|instagram|tiktok|youtube/.test(text)) {
+    return { href: "#automation-center", label: "Abrir automatizaciones" };
   }
   if (/short|reel|video|demo/.test(text)) {
     return { href: "#shorts-os", label: "Abrir workflow Shorts" };
@@ -1085,6 +1087,24 @@ function renderAutomationCenter() {
     body: (item) => item.body,
     meta: (item) => item.meta,
     list: (item) => item.list
+  });
+
+  renderInfoCards("#channel-automation-grid", state.channelAutomationPlan, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.priority, item.role, item.mode],
+    list: (item) => [
+      `Cadencia: ${item.cadence}`,
+      `Automatiza: ${item.automation}`,
+      `No automatices aun: ${item.guardrail}`
+    ]
+  });
+
+  renderInfoCards("#linkedin-setup-grid", state.linkedinSetup, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.priority],
+    list: (item) => item.items
   });
 }
 
