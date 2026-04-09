@@ -53,6 +53,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .brand-lockup h1,
@@ -427,9 +429,9 @@ select {
 }
 
 .hero-copy h2 {
-  max-width: 10ch;
-  font-size: clamp(2.6rem, 5vw, 5rem);
-  line-height: 0.9;
+  max-width: 11ch;
+  font-size: clamp(2.3rem, 4.2vw, 4.4rem);
+  line-height: 0.92;
   font-weight: 800;
 }
 
