@@ -30,7 +30,6 @@
 
         <nav class="nav">
           <a href="#today-only">Solo hoy</a>
-          <a href="#today">Hoy</a>
           <a href="#week">Esta semana</a>
           <a href="#weekly-planner">Ruta guiada</a>
           <a href="#execution">Tareas</a>
@@ -72,7 +71,17 @@
                 <p class="eyebrow">Solo Hoy</p>
                 <h3>Abre esto y ejecuta sin pensar demasiado</h3>
               </div>
-              <a class="secondary inline-button" href="#execution">Ir a tareas</a>
+              <div class="today-only-actions">
+                <button id="focus-button" class="primary">Ver paso actual</button>
+                <a class="secondary inline-button" href="#execution">Ir a tareas</a>
+                <button id="export-button" class="secondary" type="button">Copiar estado</button>
+                <button id="report-button" class="secondary" type="button">Copiar reporte</button>
+                <button id="reset-button" class="secondary" type="button">Reset</button>
+                <label class="file-button secondary">
+                  Importar JSON
+                  <input id="import-file" type="file" accept="application/json" />
+                </label>
+              </div>
             </div>
 
             <div class="today-only-grid">
@@ -91,94 +100,6 @@
                 <div id="today-only-autopilot" class="today-only-content"></div>
               </article>
             </div>
-          </article>
-        </section>
-
-        <section class="hero-card section-blue" id="today">
-          <div class="hero-copy">
-            <p class="eyebrow eyebrow-light">Beta Launch Dashboard</p>
-            <h2 id="hero-title">Sprint activo de beta launch</h2>
-            <p class="lead lead-light">
-              <span id="hero-subtitle">Organiza contenido, outreach y landings para activar el arranque sin perderte en el proceso.</span>
-            </p>
-            <div class="hero-meta">
-              <span class="meta-pill meta-pill-light" id="hero-pill-sprint">Semana 1</span>
-              <span class="meta-pill meta-pill-light" id="hero-pill-focus">Marketing-led</span>
-              <span class="meta-pill meta-pill-light" id="hero-pill-stage">First users</span>
-            </div>
-
-            <div class="hero-status-grid">
-              <article class="hero-status-card">
-                <p class="eyebrow eyebrow-light">Paso actual</p>
-                <h3 id="hero-current-step">Preparar el destino</h3>
-                <p id="hero-current-summary" class="hero-status-copy"></p>
-              </article>
-
-              <article class="hero-status-card">
-                <p class="eyebrow eyebrow-light">Progreso</p>
-                <h3 id="hero-progress-value">0% completado</h3>
-                <p id="hero-progress-meta" class="hero-status-copy"></p>
-              </article>
-            </div>
-          </div>
-
-          <div class="hero-graphic" aria-hidden="true">
-            <div class="shape shape-circle"></div>
-            <div class="shape shape-square"></div>
-            <div class="shape shape-rect"></div>
-          </div>
-
-          <div class="hero-actions">
-            <button id="focus-button" class="primary">Ver paso actual</button>
-            <button id="export-button" class="secondary light">Copiar estado</button>
-            <button id="report-button" class="secondary light">Copiar reporte</button>
-            <button id="reset-button" class="secondary light">Reset</button>
-            <label class="file-button secondary light">
-              Importar JSON
-              <input id="import-file" type="file" accept="application/json" />
-            </label>
-          </div>
-        </section>
-
-        <section class="quickstart-grid section-white">
-          <article class="panel guide-card guide-card-primary">
-            <p class="eyebrow">1. Haz Ahora</p>
-            <h3>Abre este panel para decidir qué publicas y qué envías hoy.</h3>
-            <p>Empieza por foco semanal, próximos pasos y una sola landing principal.</p>
-          </article>
-
-          <article class="panel guide-card guide-card-secondary">
-            <p class="eyebrow">2. Ejecuta Después</p>
-            <h3>Contenido, shorts, outreach y campañas viven en la zona operativa.</h3>
-            <p>Ahí es donde mueves piezas, grabas demos y sigues campañas activas.</p>
-          </article>
-
-          <article class="panel guide-card">
-            <p class="eyebrow">3. Consulta Luego</p>
-            <h3>Biblioteca, lanzamientos y setup son material de apoyo.</h3>
-            <p>No hace falta leerlo todo cada día: úsalo solo cuando te bloquee una decisión.</p>
-          </article>
-        </section>
-
-        <section class="split-grid section-white" id="today-actions">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Qué Hacer Hoy</p>
-                <h3>Tus 3 tareas más importantes</h3>
-              </div>
-            </div>
-            <div id="today-tasks-grid" class="info-grid"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Autopilot</p>
-                <h3>Qué automatizar primero</h3>
-              </div>
-            </div>
-            <div id="autopilot-grid" class="info-grid"></div>
           </article>
         </section>
 
