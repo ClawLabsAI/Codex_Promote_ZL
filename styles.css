@@ -325,6 +325,15 @@ select {
   justify-items: start;
 }
 
+.automation-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(59, 130, 246, 0.08);
+  color: var(--fg);
+  font-weight: 500;
+}
+
 .automation-lower-grid {
   margin-top: 18px;
 }

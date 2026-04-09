@@ -130,6 +130,39 @@ function renderSourceStatus() {
   $("#source-status").textContent = sourceLabel;
 }
 
+function setAutomationFeedback(message) {
+  const node = $("#automation-feedback");
+  if (node) node.textContent = `Estado: ${message}`;
+}
+
+async function copyToClipboard(text, successMessage) {
+  try {
+    await navigator.clipboard.writeText(text);
+    setAutomationFeedback(successMessage);
+    window.alert(successMessage);
+    return true;
+  } catch {
+    try {
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "absolute";
+      helper.style.left = "-9999px";
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand("copy");
+      document.body.removeChild(helper);
+      setAutomationFeedback(successMessage);
+      window.alert(successMessage);
+      return true;
+    } catch {
+      setAutomationFeedback("No pude copiar automáticamente.");
+      window.alert("No pude copiar automáticamente.");
+      return false;
+    }
+  }
+}
+
 function getScreensForElement(element) {
   return (element.dataset.screen || "")
     .split(/\s+/)
@@ -1904,46 +1937,33 @@ function bindActions() {
     }
 
     const text = `${firstXPost.title}\n\n${firstXPost.hook}`;
-    try {
-      await navigator.clipboard.writeText(text);
-      window.alert(`Copiado al portapapeles: ${firstXPost.title}`);
-    } catch {
-      window.alert("No pude copiar el post automáticamente.");
-    }
+    await copyToClipboard(text, `Copiado al portapapeles: ${firstXPost.title}`);
   });
 
   $("#copy-next-x-post")?.addEventListener("click", async () => {
     const nextXPost = buildXAutomationQueue().find((item) => item.stage !== "Published");
 
     if (!nextXPost) {
+      setAutomationFeedback("No queda ningún post pendiente en la cola de X.");
       window.alert("No queda ningún post pendiente en la cola de X.");
       return;
     }
 
     const text = `${nextXPost.title}\n\n${nextXPost.hook}\n\nCTA: ${state.xAutomationConfig.defaultCta}`;
-    try {
-      await navigator.clipboard.writeText(text);
-      window.alert(`Copiado el siguiente post: ${nextXPost.title}`);
-    } catch {
-      window.alert("No pude copiar el siguiente post.");
-    }
+    await copyToClipboard(text, `Copiado el siguiente post: ${nextXPost.title}`);
   });
 
   $("#copy-next-x-post-quick")?.addEventListener("click", async () => {
     const nextXPost = buildXAutomationQueue().find((item) => item.stage !== "Published");
 
     if (!nextXPost) {
+      setAutomationFeedback("No queda ningún post pendiente en X.");
       window.alert("No queda ningún post pendiente en X.");
       return;
     }
 
     const text = `${nextXPost.title}\n\n${nextXPost.hook}\n\nCTA: ${state.xAutomationConfig.defaultCta}`;
-    try {
-      await navigator.clipboard.writeText(text);
-      window.alert(`Copiado el siguiente post de X: ${nextXPost.title}`);
-    } catch {
-      window.alert("No pude copiar el post de X.");
-    }
+    await copyToClipboard(text, `Copiado el siguiente post de X: ${nextXPost.title}`);
   });
 
   $("#copy-next-linkedin-post")?.addEventListener("click", async () => {
@@ -1954,12 +1974,7 @@ function bindActions() {
     }
 
     const text = `${item.title}\n\n${item.hook}`;
-    try {
-      await navigator.clipboard.writeText(text);
-      window.alert(`Copiado el siguiente post de LinkedIn: ${item.title}`);
-    } catch {
-      window.alert("No pude copiar el post de LinkedIn.");
-    }
+    await copyToClipboard(text, `Copiado el siguiente post de LinkedIn: ${item.title}`);
   });
 
   $("#copy-next-short-script")?.addEventListener("click", async () => {
@@ -1979,18 +1994,14 @@ function bindActions() {
       `CTA: ${item.cta}`
     ].join("\n");
 
-    try {
-      await navigator.clipboard.writeText(text);
-      window.alert(`Copiado el siguiente guion short: ${item.title}`);
-    } catch {
-      window.alert("No pude copiar el guion del short.");
-    }
+    await copyToClipboard(text, `Copiado el siguiente guion short: ${item.title}`);
   });
 
   $("#queue-next-x-post")?.addEventListener("click", () => {
     const nextXPost = buildXAutomationQueue().find((item) => ["Idea", "Draft"].includes(item.stage));
 
     if (!nextXPost) {
+      setAutomationFeedback("No hay posts en Idea o Draft para programar.");
       window.alert("No hay posts en Idea o Draft para programar.");
       return;
     }
@@ -2001,6 +2012,7 @@ function bindActions() {
     saveState();
     renderPublishBoard();
     renderAutomationCenter();
+    setAutomationFeedback(`Marcado como Scheduled: ${item.title}`);
     window.alert(`Post movido a Scheduled: ${item.title}`);
   });
 
@@ -2024,12 +2036,7 @@ function bindActions() {
       ...queue.map((item) => `- ${item.slotLabel} · ${item.title} [${item.stage}]`)
     ].join("\n");
 
-    try {
-      await navigator.clipboard.writeText(text);
-      window.alert("Plan de programación copiado.");
-    } catch {
-      window.alert("No pude copiar el plan de programación.");
-    }
+    await copyToClipboard(text, "Plan de programación copiado.");
   });
 
   $("#start-sprint-button")?.addEventListener("click", () => {
