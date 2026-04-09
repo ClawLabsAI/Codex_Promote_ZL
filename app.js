@@ -389,21 +389,20 @@ function getNextXSeed() {
 function buildManualXVariants(seed) {
   const cta = (state.xAutomationConfig || defaultState.xAutomationConfig).defaultCta;
   const baseTitle = seed?.title || "Base post";
-  const englishSeedHook = "If you use ChatGPT every day, the real problem is not just the model. It is how many tools, tabs, and subscriptions you end up stacking around it.";
-  const baseHook = englishSeedHook;
+  const comparisonLink = "/chatgpt-alternative";
 
   return [
     {
       title: `${baseTitle} · Pain-first`,
-      text: `${baseHook}\n\nIf you use several AI tools, you are probably also paying more than you need and losing context every time you switch.\n\nThat is exactly the problem we are trying to solve with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+      text: `If you use ChatGPT every day, the problem is not just the model.\n\nIt is how many tools, tabs, and subscriptions you end up stacking around it.\n\nThat is the workflow problem we are trying to fix with ZeroLimitAI.\n\n${cta}: ${comparisonLink}`
     },
     {
       title: `${baseTitle} · Founder opinion`,
-      text: `Honest question:\n\nHow many AI tools do you use to get one real job done?\n\nIf the answer is several, it is usually not because you want more complexity. It is because your workflow is fragmented.\n\nWe are trying to simplify that with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+      text: `Hot take:\n\nMost AI power users do not need another tool.\nThey need fewer disconnected tools, less context switching, and lower total cost.\n\nThat is the angle we are testing with ZeroLimitAI.\n\n${cta}: ${comparisonLink}`
     },
     {
       title: `${baseTitle} · Comparison CTA`,
-      text: `My view is getting clearer every week:\n\nthe problem is not access to one more AI model.\nThe problem is still working with disconnected tools, no shared memory, and several subscriptions on top.\n\nThat is the angle we are testing with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+      text: `ChatGPT is not the only cost.\n\nThe real cost is ChatGPT + other tools + lost context between them.\n\nWe are testing ZeroLimitAI as a simpler alternative for heavy users.\n\n${cta}: ${comparisonLink}`
     }
   ];
 }
