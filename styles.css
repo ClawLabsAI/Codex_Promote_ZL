@@ -804,7 +804,8 @@ blockquote {
 #campaign-tracker,
 #paid-tracker,
 #execution,
-#budget-planner {
+#budget-planner,
+#shorts-automation-system {
   grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
 }
 

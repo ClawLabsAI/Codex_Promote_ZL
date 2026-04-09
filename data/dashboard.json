@@ -1610,6 +1610,198 @@
       "cta": "Invitar a visitar la comparativa o probar el trial."
     }
   ],
+  "shortsAutomationSystem": [
+    {
+      "name": "Input pack semanal",
+      "owner": "Founder",
+      "output": "3 ideas listas",
+      "summary": "Cada short debe salir de un input mínimo muy simple para que no te frene producirlo.",
+      "items": [
+        "Una promesa clara",
+        "Una pantalla o demo concreta",
+        "Una landing destino",
+        "Un CTA suave"
+      ]
+    },
+    {
+      "name": "Script generation",
+      "owner": "IA",
+      "output": "Hook + escenas + CTA",
+      "summary": "La IA genera el primer borrador del short a partir del ángulo, la demo y la landing.",
+      "items": [
+        "Hook de 1 frase",
+        "Texto en pantalla",
+        "Guion corto para voz IA",
+        "Versión para X o LinkedIn"
+      ]
+    },
+    {
+      "name": "Capture + template",
+      "owner": "Founder",
+      "output": "Vídeo base reutilizable",
+      "summary": "Tu parte manual se reduce a grabar pantalla una vez y montarla sobre una plantilla fija.",
+      "items": [
+        "Grabación de 20-35 segundos",
+        "Cursor visible",
+        "Una sola idea por vídeo",
+        "Formato vertical"
+      ]
+    },
+    {
+      "name": "Review + publish",
+      "owner": "Founder",
+      "output": "Pieza publicada",
+      "summary": "No hace falta perfección; solo una revisión rápida para comprobar claridad y CTA.",
+      "items": [
+        "Se entiende sin audio",
+        "Gancho visible en 2 segundos",
+        "CTA alineado a landing",
+        "Programar en Buffer o Metricool"
+      ]
+    }
+  ],
+  "shortsWorkflow": [
+    {
+      "step": "1. Elegir ángulo",
+      "timing": "10 min",
+      "tool": "Dashboard + IA",
+      "summary": "Cada semana elige 2-3 ángulos basados en comparativas, memory o workflows reales.",
+      "items": [
+        "Comparativa de herramientas",
+        "Memory / contexto",
+        "Developer workflow",
+        "Lifetime vs suscripciones"
+      ]
+    },
+    {
+      "step": "2. Generar guion",
+      "timing": "10 min",
+      "tool": "ChatGPT / Claude",
+      "summary": "Convierte cada ángulo en un hook, 3 escenas, texto en pantalla y CTA final.",
+      "items": [
+        "20-35 segundos",
+        "Una sola promesa",
+        "CTA a /chatgpt-alternative",
+        "Sin explicar todo el producto"
+      ]
+    },
+    {
+      "step": "3. Grabar pantalla",
+      "timing": "15 min",
+      "tool": "Screen Studio / Loom / QuickTime",
+      "summary": "Graba una demo limpia del producto sin intentar enseñar demasiadas cosas a la vez.",
+      "items": [
+        "Una sola acción",
+        "Sin scroll caótico",
+        "Texto legible",
+        "Tomar 2 versiones máximas"
+      ]
+    },
+    {
+      "step": "4. Montar plantilla",
+      "timing": "15 min",
+      "tool": "CapCut / Descript / VEED",
+      "summary": "Usa una plantilla fija con subtítulos grandes, CTA final y branding mínimo.",
+      "items": [
+        "Intro con hook",
+        "Cuerpo con demo",
+        "Cierre con CTA",
+        "Export vertical 1080x1920"
+      ]
+    },
+    {
+      "step": "5. Publicar y reciclar",
+      "timing": "10 min",
+      "tool": "Buffer / Metricool",
+      "summary": "Publica la misma pieza en 2-3 plataformas y reutiliza el guion para post escrito.",
+      "items": [
+        "Shorts",
+        "Reels",
+        "TikTok",
+        "X post de apoyo"
+      ]
+    }
+  ],
+  "shortsToolStack": [
+    {
+      "name": "ChatGPT o Claude",
+      "role": "Script",
+      "mode": "IA",
+      "summary": "Genera hooks, estructura, textos en pantalla y CTA a partir del ángulo elegido.",
+      "items": [
+        "Hook inicial",
+        "Guion 20-35s",
+        "Texto en pantalla",
+        "Repurpose a X / LinkedIn"
+      ]
+    },
+    {
+      "name": "ElevenLabs",
+      "role": "Voice AI",
+      "mode": "Opcional",
+      "summary": "Añade voz IA si quieres más claridad sin salir tú en cámara ni grabar tu voz.",
+      "items": [
+        "Pegas el guion",
+        "Generas voz limpia",
+        "Exportas audio corto",
+        "Lo montas sobre la demo"
+      ]
+    },
+    {
+      "name": "CapCut o Descript",
+      "role": "Edición",
+      "mode": "Base",
+      "summary": "Sirve para aplicar siempre la misma plantilla, subtítulos y cierre con CTA.",
+      "items": [
+        "Plantilla reusable",
+        "Subtítulos grandes",
+        "CTA final",
+        "Export a vertical"
+      ]
+    },
+    {
+      "name": "Buffer o Metricool",
+      "role": "Publishing",
+      "mode": "Programación",
+      "summary": "Te permite programar la distribución y mantener cadencia sin publicar todo manualmente.",
+      "items": [
+        "Programación semanal",
+        "Reutilización de copy",
+        "Historial de piezas",
+        "Menos fricción operativa"
+      ]
+    }
+  ],
+  "shortsReviewRules": [
+    {
+      "name": "Hook first",
+      "priority": "Alta",
+      "rule": "Si el gancho no se entiende en los primeros 2 segundos, no publiques todavía.",
+      "check": "¿La primera frase explica un problema claro?",
+      "action": "Reescribe el hook antes de editar más."
+    },
+    {
+      "name": "One promise only",
+      "priority": "Alta",
+      "rule": "Cada short debe vender una sola promesa, no cinco features a la vez.",
+      "check": "¿El vídeo se puede resumir en una frase?",
+      "action": "Quita escenas o claims extra."
+    },
+    {
+      "name": "Silent clarity",
+      "priority": "Alta",
+      "rule": "La demo debe entenderse sin audio porque mucha gente ve estos vídeos en silencio.",
+      "check": "¿Los textos en pantalla bastan para seguir la idea?",
+      "action": "Añade subtítulos o simplifica el montaje."
+    },
+    {
+      "name": "Soft CTA",
+      "priority": "Media",
+      "rule": "El CTA debe empujar a curiosidad y prueba, no sonar demasiado agresivo.",
+      "check": "¿Apunta a una landing concreta o comparativa?",
+      "action": "Usa CTA tipo 'mira la comparativa' o 'estamos probando esto en beta'."
+    }
+  ],
   "landingMessaging": [
     {
       "name": "ChatGPT alternative landing",
@@ -1893,6 +2085,12 @@
   ],
   "automations": [
     {
+      "name": "Shorts script factory",
+      "tool": "n8n + ChatGPT + ElevenLabs",
+      "status": "Recommended",
+      "description": "Recibe ángulo + landing + demo, genera hook, escenas, texto en pantalla, voz IA opcional y copy de apoyo para redes."
+    },
+    {
       "name": "Feature to content",
       "tool": "n8n",
       "status": "Planned",
@@ -2118,11 +2316,12 @@
   "nextActions": [
     "Elegir una sola landing principal para todo el tráfico beta.",
     "Publicar 3 piezas founder-led y 2 demos cortas esta semana.",
+    "Montar una plantilla reusable para shorts con subtítulos y CTA final.",
     "Enviar 20 outreachs a newsletters, creators y communities.",
     "Conseguir los primeros 10 signups beta.",
     "Recoger 5 aprendizajes reales de usuarios o replies."
   ],
-  "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
+  "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. Para shorts, usa un sistema simple: angulo -> guion IA -> grabacion de pantalla -> plantilla -> publicacion en 2-3 redes. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
     "updatedAt": "2026-04-09T09:59:50.477Z",
     "updatedBy": "scripts/sync-data.mjs",

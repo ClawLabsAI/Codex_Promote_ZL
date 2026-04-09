@@ -52,6 +52,10 @@ const defaultState = {
   xCopyBank: [],
   linkedinCopyBank: [],
   videoScriptBank: [],
+  shortsAutomationSystem: [],
+  shortsWorkflow: [],
+  shortsToolStack: [],
+  shortsReviewRules: [],
   landingMessaging: [],
   ctaBank: [],
   experiments: [],
@@ -739,6 +743,34 @@ function renderPlanSections() {
       `Scene 3: ${item.scene3}`,
       `CTA: ${item.cta}`
     ]
+  });
+
+  renderInfoCards("#shorts-system-grid", state.shortsAutomationSystem, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.owner, item.output],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#shorts-workflow-grid", state.shortsWorkflow, {
+    title: (item) => item.step,
+    body: (item) => item.summary,
+    meta: (item) => [item.timing, item.tool],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#shorts-tools-grid", state.shortsToolStack, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.role, item.mode],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#shorts-rules-grid", state.shortsReviewRules, {
+    title: (item) => item.name,
+    body: (item) => item.rule,
+    meta: (item) => [item.priority],
+    list: (item) => [`Check: ${item.check}`, `Action: ${item.action}`]
   });
 
   renderInfoCards("#landing-copy-grid", state.landingMessaging, {
