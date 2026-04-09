@@ -98,8 +98,10 @@ const defaultState = {
 
 let state = structuredClone(defaultState);
 let sourceLabel = "defaultState";
+let activeView = "today";
 
 const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
 function deepMerge(base, patch) {
   if (Array.isArray(base)) return Array.isArray(patch) ? patch : base;
@@ -126,6 +128,77 @@ function saveState() {
 
 function renderSourceStatus() {
   $("#source-status").textContent = sourceLabel;
+}
+
+function getScreensForElement(element) {
+  return (element.dataset.screen || "")
+    .split(/\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function setLibraryMode(view) {
+  const strategyLibrary = $("#strategy-library");
+  if (!strategyLibrary) return;
+
+  const details = Array.from(strategyLibrary.querySelectorAll(".library-section"));
+  const operationsDetail = $("#operations-data");
+
+  if (view === "ops") {
+    details.forEach((item) => {
+      item.open = item === operationsDetail;
+    });
+    operationsDetail?.scrollIntoView({ block: "start" });
+    return;
+  }
+
+  if (view === "library") {
+    details.forEach((item, index) => {
+      item.open = index === 0;
+    });
+  }
+}
+
+function setActiveView(view, { scroll = true } = {}) {
+  activeView = view;
+
+  $$("[data-screen]").forEach((section) => {
+    const screens = getScreensForElement(section);
+    section.classList.toggle("screen-hidden", !screens.includes(view));
+  });
+
+  $$(".nav a[data-view]").forEach((link) => {
+    link.classList.toggle("is-active", link.dataset.view === view);
+  });
+
+  setLibraryMode(view);
+
+  if (scroll) {
+    $(".main-content")?.scrollTo?.({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function resolveViewFromHash(hash) {
+  if (!hash) return null;
+  const element = document.querySelector(hash);
+  if (!element) return null;
+
+  const navMatch = document.querySelector(`.nav a[href="${hash}"]`);
+  if (navMatch?.dataset.view) return navMatch.dataset.view;
+
+  const screenOwner = element.closest("[data-screen]");
+  if (screenOwner) {
+    const screens = getScreensForElement(screenOwner);
+    if (element.id === "operations-data" || screens.includes("ops")) return "ops";
+    return screens[0] || null;
+  }
+
+  if (element.closest("#strategy-library")) {
+    return element.closest("#operations-data") || element.id === "operations-data" ? "ops" : "library";
+  }
+
+  return null;
 }
 
 function renderSummary() {
@@ -1779,6 +1852,21 @@ function buildReportText() {
 }
 
 function bindActions() {
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    const anchor = event.target.closest('a[href^="#"]');
+    if (!anchor) return;
+
+    const view = anchor.dataset.view || resolveViewFromHash(anchor.getAttribute("href"));
+    if (!view) return;
+
+    event.preventDefault();
+    setActiveView(view, { scroll: false });
+
+    const target = document.querySelector(anchor.getAttribute("href"));
+    target?.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+
   $("#focus-button").addEventListener("click", () => {
     window.alert(`${state.weeklyFocus.sprint}: ${state.weeklyFocus.objective}`);
   });
@@ -2072,6 +2160,8 @@ async function init() {
   }
 
   renderAll();
+  const initialView = resolveViewFromHash(window.location.hash) || "today";
+  setActiveView(initialView, { scroll: false });
   bindEditableInputs();
   bindForms();
   bindActions();

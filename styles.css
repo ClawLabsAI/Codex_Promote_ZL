@@ -145,6 +145,11 @@ select {
   outline: none;
 }
 
+.nav a.is-active {
+  background: var(--primary);
+  color: var(--white);
+}
+
 .sidebar-card {
   padding: 16px;
   border-radius: var(--radius-lg);
@@ -168,6 +173,10 @@ select {
   margin: 0 auto;
   display: grid;
   gap: 24px;
+}
+
+.screen-hidden {
+  display: none !important;
 }
 
 .hero-card,

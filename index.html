@@ -29,16 +29,16 @@
         </div>
 
         <nav class="nav">
-          <a href="#today-only">Solo hoy</a>
-          <a href="#week">Esta semana</a>
-          <a href="#weekly-planner">Ruta guiada</a>
-          <a href="#execution">Tareas</a>
-          <a href="#content-engine">Contenido</a>
-          <a href="#automation-center">Automatizaciones</a>
-          <a href="#growth-pipeline">Outreach y campañas</a>
-          <a href="#strategy-library">Biblioteca</a>
-          <a href="#launches-library">Lanzamientos</a>
-          <a href="#operations-data">Setup y datos</a>
+          <a href="#today-only" data-view="today">Solo hoy</a>
+          <a href="#week" data-view="week">Esta semana</a>
+          <a href="#weekly-planner" data-view="route">Ruta guiada</a>
+          <a href="#execution" data-view="tasks">Tareas</a>
+          <a href="#content-engine" data-view="content">Contenido</a>
+          <a href="#automation-center" data-view="automation">Automatizaciones</a>
+          <a href="#growth-pipeline" data-view="growth">Outreach y campañas</a>
+          <a href="#strategy-library" data-view="library">Biblioteca</a>
+          <a href="#launches-library" data-view="launches">Lanzamientos</a>
+          <a href="#operations-data" data-view="ops">Setup y datos</a>
         </nav>
 
         <section class="sidebar-card">
@@ -65,7 +65,7 @@
       </aside>
 
       <main class="main-content">
-        <section class="section-white" id="today-only">
+        <section class="section-white" id="today-only" data-screen="today">
           <article class="panel today-only-panel">
             <div class="section-head">
               <div>
@@ -104,7 +104,7 @@
           </article>
         </section>
 
-        <section class="overview-grid section-white" id="week">
+        <section class="overview-grid section-white" id="week" data-screen="week">
           <div class="section-intro section-intro-inline">
             <div>
               <p class="eyebrow">Zona 1 · Operación semanal</p>
@@ -162,7 +162,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-white" id="weekly-planner">
+        <section class="split-grid section-white" id="weekly-planner" data-screen="route">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -189,7 +189,7 @@
           </article>
         </section>
 
-        <section class="section-white" id="sprint-templates">
+        <section class="section-white" id="sprint-templates" data-screen="route">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -201,7 +201,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-muted" id="execution">
+        <section class="split-grid section-muted" id="execution" data-screen="tasks">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -261,11 +261,11 @@
           </article>
         </section>
 
-        <section class="metrics-grid section-white" id="weekly-scorecard"></section>
+        <section class="metrics-grid section-white" id="weekly-scorecard" data-screen="week"></section>
 
-        <section class="metrics-grid section-white" id="metrics"></section>
+        <section class="metrics-grid section-white" id="metrics" data-screen="week"></section>
 
-        <section class="split-grid section-muted" id="priorities">
+        <section class="split-grid section-muted" id="priorities" data-screen="week">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -287,7 +287,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-white" id="first-users">
+        <section class="split-grid section-white" id="first-users" data-screen="week">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -309,7 +309,7 @@
           </article>
         </section>
 
-        <section class="section-green section-band" id="content-engine">
+        <section class="section-green section-band" id="content-engine" data-screen="content">
           <div class="section-intro section-intro-light">
             <div>
               <p class="eyebrow eyebrow-light">Zona 2 · Acción diaria</p>
@@ -321,7 +321,7 @@
           </div>
         </section>
 
-        <section class="split-grid section-green" id="social">
+        <section class="split-grid section-green" id="social" data-screen="content">
           <article class="panel panel-contrast">
             <div class="section-head">
               <div>
@@ -343,7 +343,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-white" id="publishing-workflow">
+        <section class="split-grid section-white" id="publishing-workflow" data-screen="content">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -396,7 +396,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-white" id="x-posting-workflow">
+        <section class="split-grid section-white" id="x-posting-workflow" data-screen="content">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -423,7 +423,7 @@
           </article>
         </section>
 
-        <section class="section-muted" id="automation-center">
+        <section class="section-muted" id="automation-center" data-screen="automation">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -587,7 +587,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-muted" id="shorts-os">
+        <section class="split-grid section-muted" id="shorts-os" data-screen="content">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -609,7 +609,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-white" id="shorts-stack">
+        <section class="split-grid section-white" id="shorts-stack" data-screen="content">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -631,7 +631,7 @@
           </article>
         </section>
 
-        <section class="section-amber section-band" id="growth-pipeline">
+        <section class="section-amber section-band" id="growth-pipeline" data-screen="growth">
           <div class="section-intro">
             <div>
               <p class="eyebrow">Zona 3 · Distribución</p>
@@ -641,7 +641,7 @@
           </div>
         </section>
 
-        <section class="split-grid section-amber" id="campaign-tracker">
+        <section class="split-grid section-amber" id="campaign-tracker" data-screen="growth">
           <article class="panel panel-contrast">
             <div class="section-head">
               <div>
@@ -698,7 +698,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-green" id="paid-tracker">
+        <section class="split-grid section-green" id="paid-tracker" data-screen="growth">
           <article class="panel panel-contrast">
             <div class="section-head">
               <div>
@@ -755,7 +755,7 @@
           </article>
         </section>
 
-        <section class="split-grid section-white" id="budget-planner">
+        <section class="split-grid section-white" id="budget-planner" data-screen="growth">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -777,7 +777,7 @@
           </article>
         </section>
 
-        <section class="section-white" id="editorial-sprint">
+        <section class="section-white" id="editorial-sprint" data-screen="growth">
           <article class="panel">
             <div class="section-head">
               <div>
@@ -789,7 +789,7 @@
           </article>
         </section>
 
-        <section id="strategy-library" class="library-stack">
+        <section id="strategy-library" class="library-stack" data-screen="library ops">
           <div class="section-intro">
             <div>
               <p class="eyebrow">Zona 4 · Biblioteca</p>
@@ -1162,7 +1162,7 @@
           </details>
         </section>
 
-        <section id="launches-library" class="library-stack">
+        <section id="launches-library" class="library-stack" data-screen="launches">
           <details class="library-section">
             <summary>
               <span>Launch Playbooks</span>
