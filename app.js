@@ -279,21 +279,50 @@ function renderTaskBoard() {
   });
 }
 
+function getDerivedWeeklyRoute() {
+  return state.weeklyRoute.map((step) => {
+    const linkedTasks = (step.taskIds || [])
+      .map((taskId) => state.tasks.find((task) => task.id === taskId))
+      .filter(Boolean);
+
+    let status = step.status || "Todo";
+
+    if (linkedTasks.length) {
+      const allDone = linkedTasks.every((task) => task.status === "Done");
+      const anyDoing = linkedTasks.some((task) => task.status === "Doing");
+      const anyDone = linkedTasks.some((task) => task.status === "Done");
+
+      if (allDone) status = "Done";
+      else if (anyDoing || anyDone) status = "Doing";
+      else status = "Todo";
+    }
+
+    return {
+      ...step,
+      status,
+      progressNote: linkedTasks.length
+        ? `${linkedTasks.filter((task) => task.status === "Done").length}/${linkedTasks.length} tareas done`
+        : null
+    };
+  });
+}
+
 function buildProjectProgress() {
   const total = state.tasks.length;
   const done = state.tasks.filter((task) => task.status === "Done").length;
   const doing = state.tasks.filter((task) => task.status === "Doing").length;
   const todo = state.tasks.filter((task) => task.status === "Todo").length;
   const progress = total ? Math.round((done / total) * 100) : 0;
+  const derivedRoute = getDerivedWeeklyRoute();
   const currentStep =
-    state.weeklyRoute.find((step) => step.status !== "Done") ||
-    state.weeklyRoute[0] || {
+    derivedRoute.find((step) => step.status !== "Done") ||
+    derivedRoute[0] || {
       step: "Paso actual",
       title: "Empieza por la primera tarea prioritaria",
       summary: state.weeklyFocus.objective
     };
 
-  return { total, done, doing, todo, progress, currentStep };
+  return { total, done, doing, todo, progress, currentStep, derivedRoute };
 }
 
 function renderProjectManager() {
@@ -333,10 +362,10 @@ function renderProjectManager() {
     `;
   }
 
-  renderInfoCards("#route-grid", state.weeklyRoute, {
+  renderInfoCards("#route-grid", progress.derivedRoute, {
     title: (item) => `${item.step} · ${item.title}`,
     body: (item) => item.summary,
-    meta: (item) => [item.status, item.owner],
+    meta: (item) => [item.status, item.owner, item.progressNote],
     list: (item) => item.items
   });
 }

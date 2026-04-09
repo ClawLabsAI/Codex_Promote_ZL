@@ -19,9 +19,11 @@
     {
       "step": "Paso 1",
       "title": "Prepara el destino",
-      "status": "Doing",
       "owner": "Founder",
       "summary": "Antes de publicar nada, asegúrate de que toda la semana empuja a una sola landing principal.",
+      "taskIds": [
+        "task-1"
+      ],
       "items": [
         "Revisar /chatgpt-alternative",
         "Comprobar que el CTA principal está claro",
@@ -31,9 +33,13 @@
     {
       "step": "Paso 2",
       "title": "Publica la primera tanda de contenido",
-      "status": "Todo",
       "owner": "Founder",
       "summary": "Empieza con piezas fáciles: comparativa en X, post en LinkedIn y 1 demo corta.",
+      "taskIds": [
+        "task-2",
+        "task-3",
+        "task-4"
+      ],
       "items": [
         "Publicar 3 piezas en X",
         "Publicar 2 posts en LinkedIn",
@@ -43,9 +49,12 @@
     {
       "step": "Paso 3",
       "title": "Activa distribución manual",
-      "status": "Doing",
       "owner": "Founder",
       "summary": "No esperes a tener volumen. Usa outreach y directorios para conseguir las primeras visitas y replies.",
+      "taskIds": [
+        "task-5",
+        "task-6"
+      ],
       "items": [
         "Enviar 20 outreachs",
         "Mandar 5 directorios prioritarios",
@@ -55,9 +64,12 @@
     {
       "step": "Paso 4",
       "title": "Aprende y ajusta",
-      "status": "Todo",
       "owner": "Founder",
       "summary": "Cierra la semana con una revisión simple: qué mensaje atrajo más atención y qué repetirás la siguiente semana.",
+      "taskIds": [
+        "task-7",
+        "task-8"
+      ],
       "items": [
         "Recoger 5 aprendizajes reales",
         "Revisar qué pieza funcionó mejor",
