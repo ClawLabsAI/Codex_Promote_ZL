@@ -311,6 +311,11 @@ select {
   gap: 10px;
 }
 
+.quick-actions-vertical {
+  display: grid;
+  justify-items: start;
+}
+
 .automation-lower-grid {
   margin-top: 18px;
 }

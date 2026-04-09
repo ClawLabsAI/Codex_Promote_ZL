@@ -380,6 +380,68 @@ function buildXAutomationRunbook() {
   ];
 }
 
+function getNextPublishingItem(channelMatcher) {
+  return [...state.publishingWorkflow]
+    .filter((item) => channelMatcher(item))
+    .sort((a, b) => {
+      const stageDiff = stageWeight(a.stage) - stageWeight(b.stage);
+      if (stageDiff !== 0) return stageDiff;
+      return a.title.localeCompare(b.title, "es");
+    })[0];
+}
+
+function getNextVideoScript() {
+  return state.videoScriptBank[0] || null;
+}
+
+function buildChannelPostCards() {
+  const nextX = getNextPublishingItem((item) => item.channel === "X");
+  const nextLinkedIn = getNextPublishingItem((item) => item.channel === "LinkedIn");
+  const nextShort = getNextPublishingItem((item) => /short/i.test(item.channel) || /video/i.test(item.format));
+
+  return [
+    nextX
+      ? {
+          title: "X",
+          body: nextX.hook,
+          meta: [nextX.stage, nextX.format],
+          list: [`Post: ${nextX.title}`, "Usa el boton de copiar y luego abre X"]
+        }
+      : {
+          title: "X",
+          body: "No hay post de X listo ahora mismo.",
+          meta: ["Sin cola"],
+          list: ["Crea un nuevo post en Publishing Workflow"]
+        },
+    nextLinkedIn
+      ? {
+          title: "LinkedIn",
+          body: nextLinkedIn.hook,
+          meta: [nextLinkedIn.stage, nextLinkedIn.format],
+          list: [`Post: ${nextLinkedIn.title}`, "Adapta el tono a founder insight o comparativa"]
+        }
+      : {
+          title: "LinkedIn",
+          body: "No hay post de LinkedIn listo ahora mismo.",
+          meta: ["Sin cola"],
+          list: ["Reutiliza el mejor post de X"]
+        },
+    nextShort
+      ? {
+          title: "Shorts / Reels",
+          body: nextShort.hook,
+          meta: [nextShort.stage, nextShort.format],
+          list: [`Pieza: ${nextShort.title}`, "Graba una sola idea y recicla en 3 plataformas"]
+        }
+      : {
+          title: "Shorts / Reels",
+          body: "No hay demo corta lista ahora mismo.",
+          meta: ["Sin cola"],
+          list: ["Usa Short Video Scripts para grabar el siguiente demo"]
+        }
+  ];
+}
+
 function getTodayTaskCandidates() {
   return [...state.tasks]
     .filter((task) => task.status !== "Done")
@@ -1083,6 +1145,13 @@ function renderAutomationCenter() {
   });
 
   renderInfoCards("#x-automation-runbook", buildXAutomationRunbook(), {
+    title: (item) => item.title,
+    body: (item) => item.body,
+    meta: (item) => item.meta,
+    list: (item) => item.list
+  });
+
+  renderInfoCards("#channel-posts-grid", buildChannelPostCards(), {
     title: (item) => item.title,
     body: (item) => item.body,
     meta: (item) => item.meta,
@@ -1794,6 +1863,64 @@ function bindActions() {
       window.alert(`Copiado el siguiente post: ${nextXPost.title}`);
     } catch {
       window.alert("No pude copiar el siguiente post.");
+    }
+  });
+
+  $("#copy-next-x-post-quick")?.addEventListener("click", async () => {
+    const nextXPost = buildXAutomationQueue().find((item) => item.stage !== "Published");
+
+    if (!nextXPost) {
+      window.alert("No queda ningún post pendiente en X.");
+      return;
+    }
+
+    const text = `${nextXPost.title}\n\n${nextXPost.hook}\n\nCTA: ${state.xAutomationConfig.defaultCta}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert(`Copiado el siguiente post de X: ${nextXPost.title}`);
+    } catch {
+      window.alert("No pude copiar el post de X.");
+    }
+  });
+
+  $("#copy-next-linkedin-post")?.addEventListener("click", async () => {
+    const item = getNextPublishingItem((entry) => entry.channel === "LinkedIn");
+    if (!item) {
+      window.alert("No hay post de LinkedIn listo ahora mismo.");
+      return;
+    }
+
+    const text = `${item.title}\n\n${item.hook}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert(`Copiado el siguiente post de LinkedIn: ${item.title}`);
+    } catch {
+      window.alert("No pude copiar el post de LinkedIn.");
+    }
+  });
+
+  $("#copy-next-short-script")?.addEventListener("click", async () => {
+    const item = getNextVideoScript();
+    if (!item) {
+      window.alert("No hay guion de short disponible.");
+      return;
+    }
+
+    const text = [
+      item.title,
+      "",
+      `Hook: ${item.hook}`,
+      `Scene 1: ${item.scene1}`,
+      `Scene 2: ${item.scene2}`,
+      `Scene 3: ${item.scene3}`,
+      `CTA: ${item.cta}`
+    ].join("\n");
+
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert(`Copiado el siguiente guion short: ${item.title}`);
+    } catch {
+      window.alert("No pude copiar el guion del short.");
     }
   });
 
