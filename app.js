@@ -125,6 +125,17 @@ function renderSummary() {
     li.textContent = item;
     points.appendChild(li);
   });
+
+  const progress = buildProjectProgress();
+  $("#hero-title").textContent = state.weeklyFocus.sprint;
+  $("#hero-subtitle").textContent = state.weeklyFocus.objective;
+  $("#hero-pill-sprint").textContent = state.weeklyFocus.sprint;
+  $("#hero-pill-focus").textContent = "Marketing-first";
+  $("#hero-pill-stage").textContent = `${progress.progress}% completado`;
+  $("#hero-current-step").textContent = `${progress.currentStep.step} · ${progress.currentStep.title}`;
+  $("#hero-current-summary").textContent = progress.currentStep.summary;
+  $("#hero-progress-value").textContent = `${progress.progress}% completado`;
+  $("#hero-progress-meta").textContent = `${progress.done}/${progress.total} tareas done · ${progress.doing} en curso · ${progress.todo} pendientes`;
 }
 
 function renderKpis() {

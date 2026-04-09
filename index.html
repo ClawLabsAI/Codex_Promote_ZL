@@ -97,14 +97,28 @@
         <section class="hero-card section-blue" id="today">
           <div class="hero-copy">
             <p class="eyebrow eyebrow-light">Beta Launch Dashboard</p>
-            <h2>Consigue primeras visitas y usuarios beta</h2>
+            <h2 id="hero-title">Sprint activo de beta launch</h2>
             <p class="lead lead-light">
-              Organiza contenido, outreach y landings para activar el arranque sin perderte en el proceso.
+              <span id="hero-subtitle">Organiza contenido, outreach y landings para activar el arranque sin perderte en el proceso.</span>
             </p>
             <div class="hero-meta">
-              <span class="meta-pill meta-pill-light">Beta first</span>
-              <span class="meta-pill meta-pill-light">Marketing-led</span>
-              <span class="meta-pill meta-pill-light">First users</span>
+              <span class="meta-pill meta-pill-light" id="hero-pill-sprint">Semana 1</span>
+              <span class="meta-pill meta-pill-light" id="hero-pill-focus">Marketing-led</span>
+              <span class="meta-pill meta-pill-light" id="hero-pill-stage">First users</span>
+            </div>
+
+            <div class="hero-status-grid">
+              <article class="hero-status-card">
+                <p class="eyebrow eyebrow-light">Paso actual</p>
+                <h3 id="hero-current-step">Preparar el destino</h3>
+                <p id="hero-current-summary" class="hero-status-copy"></p>
+              </article>
+
+              <article class="hero-status-card">
+                <p class="eyebrow eyebrow-light">Progreso</p>
+                <h3 id="hero-progress-value">0% completado</h3>
+                <p id="hero-progress-meta" class="hero-status-copy"></p>
+              </article>
             </div>
           </div>
 
@@ -115,7 +129,7 @@
           </div>
 
           <div class="hero-actions">
-            <button id="focus-button" class="primary">Ver foco</button>
+            <button id="focus-button" class="primary">Ver paso actual</button>
             <button id="export-button" class="secondary light">Copiar estado</button>
             <button id="report-button" class="secondary light">Copiar reporte</button>
             <button id="reset-button" class="secondary light">Reset</button>
