@@ -247,6 +247,47 @@ function getTodayTaskCandidates() {
     .slice(0, 3);
 }
 
+function getExecutionQueue() {
+  const ordered = [];
+  const seen = new Set();
+  const route = getDerivedWeeklyRoute();
+
+  route.forEach((step) => {
+    const linkedTasks = (step.taskIds || [])
+      .map((taskId) => state.tasks.find((task) => task.id === taskId))
+      .filter((task) => task && task.status !== "Done")
+      .sort((a, b) => {
+        const statusWeight = { Doing: 0, Todo: 1 };
+        const left = statusWeight[a.status] ?? 2;
+        const right = statusWeight[b.status] ?? 2;
+        if (left !== right) return left - right;
+        return priorityWeight(a.priority) - priorityWeight(b.priority);
+      });
+
+    linkedTasks.forEach((task) => {
+      if (!seen.has(task.id)) {
+        ordered.push(task);
+        seen.add(task.id);
+      }
+    });
+  });
+
+  state.tasks
+    .filter((task) => task.status !== "Done" && !seen.has(task.id))
+    .sort((a, b) => {
+      const statusWeight = { Doing: 0, Todo: 1 };
+      const left = statusWeight[a.status] ?? 2;
+      const right = statusWeight[b.status] ?? 2;
+      if (left !== right) return left - right;
+      const priorityDiff = priorityWeight(a.priority) - priorityWeight(b.priority);
+      if (priorityDiff !== 0) return priorityDiff;
+      return normalizeDate(a.due) - normalizeDate(b.due);
+    })
+    .forEach((task) => ordered.push(task));
+
+  return ordered.slice(0, 3);
+}
+
 function buildAutopilotRecommendations() {
   const drafts = state.publishingWorkflow.filter((item) => item.stage === "Draft").length;
   const contactQueue = state.outreachCRM.filter((item) => item.stage === "Pendiente").length;
@@ -296,7 +337,7 @@ function buildAutopilotRecommendations() {
 }
 
 function renderTodayLayer() {
-  const todayTasks = getTodayTaskCandidates();
+  const todayTasks = getExecutionQueue();
   const autopilot = buildAutopilotRecommendations();
   const progress = buildProjectProgress();
 
@@ -328,16 +369,18 @@ function renderTodayLayer() {
 
   const tasksContainer = $("#today-only-tasks");
   if (tasksContainer) {
+    const labels = ["Haz ahora", "Haz después", "Más tarde"];
     tasksContainer.innerHTML = todayTasks
       .map(
-        (task) => `
+        (task, index) => `
           <article class="today-only-task">
+            <p class="eyebrow">${labels[index] || "En cola"}</p>
             <h4>${task.title}</h4>
             <p>${task.instruction || "Sin instrucción definida."}</p>
             <div class="info-meta">
               <span class="pill">${task.status}</span>
               <span class="pill">${task.priority || "Medium"}</span>
-              <span class="pill">${task.due}</span>
+              <span class="pill">${task.channel}</span>
             </div>
           </article>
         `
