@@ -213,8 +213,92 @@ function renderWeeklyScorecard() {
   });
 }
 
+function normalizeDate(value) {
+  if (!value || value === "Sin fecha") return Number.MAX_SAFE_INTEGER;
+  const time = Date.parse(value);
+  return Number.isNaN(time) ? Number.MAX_SAFE_INTEGER : time;
+}
+
+function getTodayTaskCandidates() {
+  return [...state.tasks]
+    .filter((task) => task.status !== "Done")
+    .sort((a, b) => {
+      const statusWeight = { Doing: 0, Todo: 1 };
+      const left = statusWeight[a.status] ?? 2;
+      const right = statusWeight[b.status] ?? 2;
+      if (left !== right) return left - right;
+      return normalizeDate(a.due) - normalizeDate(b.due);
+    })
+    .slice(0, 3);
+}
+
+function buildAutopilotRecommendations() {
+  const drafts = state.publishingWorkflow.filter((item) => item.stage === "Draft").length;
+  const contactQueue = state.outreachCRM.filter((item) => item.stage === "Pendiente").length;
+  const hasPublishedShort = state.publishingWorkflow.some(
+    (item) => item.stage === "Published" && /short|reel|video/i.test(`${item.channel} ${item.format}`)
+  );
+
+  return [
+    {
+      title: "Plantilla de shorts",
+      body: hasPublishedShort
+        ? "Ya tienes base para repetirla. Convierte el último short en plantilla reusable."
+        : "Monta una plantilla única para grabar y publicar demos cortas sin empezar desde cero.",
+      meta: "Alta prioridad",
+      list: [
+        "CapCut o Descript",
+        "Hook + demo + CTA fijo",
+        "Subtítulos grandes",
+        "Export vertical"
+      ]
+    },
+    {
+      title: "Factory de borradores",
+      body: drafts
+        ? `Ahora mismo tienes ${drafts} borradores: automatiza hook -> draft -> scheduling.`
+        : "Configura un flujo simple para pasar de idea a borrador sin bloquearte.",
+      meta: "Contenido",
+      list: [
+        "Input: ángulo + landing",
+        "Output: X, LinkedIn y short",
+        "Revisión humana final"
+      ]
+    },
+    {
+      title: "Outreach semiautomático",
+      body: contactQueue
+        ? `Tienes ${contactQueue} contactos pendientes: prepara primeras líneas y follow-ups reutilizables.`
+        : "Deja preparada una secuencia para outreach y follow-up cuando crezca el CRM.",
+      meta: "Distribución",
+      list: [
+        "Template por tipo de contacto",
+        "Primer follow-up",
+        "Estado en CRM"
+      ]
+    }
+  ];
+}
+
+function renderTodayLayer() {
+  renderInfoCards("#today-tasks-grid", getTodayTaskCandidates(), {
+    title: (item) => item.title,
+    body: (item) => item.instruction || "Define una instrucción clara para esta tarea.",
+    meta: (item) => [item.status, item.channel, item.due],
+    list: (item) => [`Owner: ${item.owner}`]
+  });
+
+  renderInfoCards("#autopilot-grid", buildAutopilotRecommendations(), {
+    title: (item) => item.title,
+    body: (item) => item.body,
+    meta: (item) => [item.meta],
+    list: (item) => item.list
+  });
+}
+
 function renderInfoCards(containerId, items, config) {
   const container = $(containerId);
+  if (!container) return;
   container.innerHTML = "";
 
   items.forEach((item) => {
@@ -937,6 +1021,7 @@ function renderPlanSections() {
 function renderAll() {
   renderSourceStatus();
   renderSummary();
+  renderTodayLayer();
   renderWeeklyScorecard();
   renderKpis();
   renderPlanSections();

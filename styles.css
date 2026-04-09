@@ -310,6 +310,10 @@ select {
   margin: 0;
 }
 
+#today-actions .info-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .section-blue,
 .section-green,
 .section-amber,
