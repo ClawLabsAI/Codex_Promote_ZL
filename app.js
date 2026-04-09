@@ -138,7 +138,7 @@ function renderSourceStatus() {
 
 function setAutomationFeedback(message) {
   const node = $("#automation-feedback");
-  if (node) node.textContent = `Estado: ${message}`;
+  if (node) node.textContent = `Status: ${message}`;
 }
 
 async function copyToClipboard(text, successMessage) {
@@ -1301,7 +1301,7 @@ function renderAutomationCenter() {
         <div class="info-meta"><span class="pill">${variantHint}</span></div>
         <p>${variant.text.replace(/\n/g, "<br />")}</p>
         <button class="${index === (manualComposer.selectedIndex || 0) ? "primary" : "secondary"}" type="button" data-x-variant-index="${index}">
-          ${index === (manualComposer.selectedIndex || 0) ? "Seleccionada" : "Elegir esta"}
+          ${index === (manualComposer.selectedIndex || 0) ? "Selected" : "Choose this"}
         </button>
       `;
       variantsContainer.appendChild(card);
@@ -1908,7 +1908,7 @@ function bindForms() {
 
     saveState();
     renderAutomationCenter();
-    window.alert("Configuración de X guardada.");
+    window.alert("X settings saved.");
   });
 
   $("#x-review-text")?.addEventListener("input", (event) => {
@@ -2017,8 +2017,8 @@ function bindActions() {
     const nextXPost = buildXAutomationQueue().find((item) => item.stage !== "Published");
 
     if (!nextXPost) {
-      setAutomationFeedback("No queda ningún post pendiente en la cola de X.");
-      window.alert("No queda ningún post pendiente en la cola de X.");
+      setAutomationFeedback("No pending posts left in the X queue.");
+      window.alert("No pending posts left in the X queue.");
       return;
     }
 
@@ -2037,37 +2037,37 @@ function bindActions() {
     };
     saveState();
     renderAutomationCenter();
-    setAutomationFeedback("Se han generado 3 opciones para revisar.");
+    setAutomationFeedback("3 post options generated for review.");
   });
 
   $("#copy-reviewed-x-post")?.addEventListener("click", async () => {
     const text = getReviewedXText();
     if (!text) {
-      setAutomationFeedback("Primero genera y revisa un post.");
-      window.alert("Primero genera y revisa un post.");
+      setAutomationFeedback("Generate and review a post first.");
+      window.alert("Generate and review a post first.");
       return;
     }
-    await copyToClipboard(text, "Post revisado copiado.");
+    await copyToClipboard(text, "Reviewed post copied.");
   });
 
   $("#publish-reviewed-x-post")?.addEventListener("click", () => {
     const text = getReviewedXText();
     if (!text) {
-      setAutomationFeedback("Primero genera y revisa un post.");
-      window.alert("Primero genera y revisa un post.");
+      setAutomationFeedback("Generate and review a post first.");
+      window.alert("Generate and review a post first.");
       return;
     }
 
     const url = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
-    setAutomationFeedback("Abierto X con el post cargado.");
+    setAutomationFeedback("Opened X with the post loaded.");
   });
 
   $("#save-manual-x-post")?.addEventListener("click", () => {
     const text = getReviewedXText();
     if (!text) {
-      setAutomationFeedback("Primero genera y revisa un post.");
-      window.alert("Primero genera y revisa un post.");
+      setAutomationFeedback("Generate and review a post first.");
+      window.alert("Generate and review a post first.");
       return;
     }
 
@@ -2084,8 +2084,8 @@ function bindActions() {
     saveState();
     renderPublishBoard();
     renderAutomationCenter();
-    setAutomationFeedback("Post guardado en la cola de X.");
-    window.alert("Post guardado en la cola de X.");
+    setAutomationFeedback("Post saved to the X queue.");
+    window.alert("Post saved to the X queue.");
   });
 
   $("#copy-next-x-post-quick")?.addEventListener("click", async () => {
@@ -2136,8 +2136,8 @@ function bindActions() {
     const nextXPost = buildXAutomationQueue().find((item) => ["Idea", "Draft"].includes(item.stage));
 
     if (!nextXPost) {
-      setAutomationFeedback("No hay posts en Idea o Draft para programar.");
-      window.alert("No hay posts en Idea o Draft para programar.");
+      setAutomationFeedback("There are no Idea or Draft posts to schedule.");
+      window.alert("There are no Idea or Draft posts to schedule.");
       return;
     }
 
@@ -2154,7 +2154,7 @@ function bindActions() {
   $("#copy-x-schedule-plan")?.addEventListener("click", async () => {
     const queue = buildXAutomationQueue().filter((item) => item.stage !== "Published");
     if (!queue.length) {
-      window.alert("No hay cola pendiente para X.");
+      window.alert("There is no pending X queue.");
       return;
     }
 
@@ -2244,7 +2244,7 @@ function bindActions() {
       state.xManualComposer.reviewText = variant.text;
       saveState();
       renderAutomationCenter();
-      setAutomationFeedback("Opción seleccionada para revisar.");
+      setAutomationFeedback("Option selected for review.");
     }
   });
 }
