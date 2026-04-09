@@ -427,46 +427,27 @@
           <article class="panel">
             <div class="section-head">
               <div>
-                <p class="eyebrow">Automatizaciones</p>
-                <h3>Centro de control para automatizar X sin perder el control</h3>
+                <p class="eyebrow">Pipeline X</p>
+                <h3>Configura, copia, programa y marca</h3>
               </div>
             </div>
 
-            <div class="split-grid automation-lower-grid">
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Posts listos</p>
-                    <h3>Qué publicar ahora por canal</h3>
-                  </div>
-                </div>
-                <div id="channel-posts-grid" class="info-grid"></div>
-              </article>
-
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Atajos</p>
-                    <h3>Copiar y abrir sin buscar más</h3>
-                  </div>
-                </div>
-                <div class="quick-actions quick-actions-vertical">
-                  <button id="copy-next-x-post-quick" class="primary" type="button">Copiar siguiente post X</button>
-                  <button id="copy-next-linkedin-post" class="secondary" type="button">Copiar siguiente post LinkedIn</button>
-                  <button id="copy-next-short-script" class="secondary" type="button">Copiar siguiente guion short</button>
-                  <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Abrir X</a>
-                  <a class="secondary inline-button" href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer">Abrir LinkedIn</a>
-                  <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
-                </div>
-              </article>
-            </div>
+            <article class="panel compact-panel automation-simple-intro">
+              <p class="eyebrow">Como usarlo</p>
+              <ol class="list numbered">
+                <li>Define la frecuencia y guarda la configuración.</li>
+                <li>Copia el siguiente post de la cola.</li>
+                <li>Ábrelo en Buffer o en X y prográmalo.</li>
+                <li>Vuelve y pulsa `Programar siguiente post` para mover la cola.</li>
+              </ol>
+            </article>
 
             <div class="split-grid">
               <article class="panel compact-panel">
                 <div class="section-head">
                   <div>
-                    <p class="eyebrow">X Autopilot</p>
-                    <h3>Configura frecuencia y ventanas</h3>
+                    <p class="eyebrow">Paso 1</p>
+                    <h3>Configura la automatización de X</h3>
                   </div>
                 </div>
                 <form id="x-automation-form" class="form-grid">
@@ -526,64 +507,29 @@
               <article class="panel compact-panel">
                 <div class="section-head">
                   <div>
-                    <p class="eyebrow">Queue</p>
-                    <h3>Cola actual de posts de X</h3>
+                    <p class="eyebrow">Paso 2</p>
+                    <h3>Siguiente post y cola de X</h3>
                   </div>
                 </div>
                 <div id="x-queue-grid" class="info-grid"></div>
                 <div class="quick-actions">
                   <button id="queue-next-x-post" class="primary" type="button">Programar siguiente post</button>
                   <button id="copy-next-x-post" class="secondary" type="button">Copiar siguiente post</button>
-                  <button id="copy-x-schedule-plan" class="secondary" type="button">Copiar plan de programación</button>
                   <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
-                  <a class="secondary inline-button" href="https://app.metricool.com" target="_blank" rel="noreferrer">Abrir Metricool</a>
+                  <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Abrir X</a>
                 </div>
               </article>
             </div>
 
-            <div class="split-grid automation-lower-grid">
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Autopilot status</p>
-                    <h3>Qué hace el sistema y qué haces tú</h3>
-                  </div>
+            <article class="panel compact-panel automation-lower-grid">
+              <div class="section-head">
+                <div>
+                  <p class="eyebrow">Paso 3</p>
+                  <h3>Reglas del pipeline</h3>
                 </div>
-                <div id="x-automation-status" class="info-grid"></div>
-              </article>
-
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Runbook</p>
-                    <h3>Flujo recomendado para usarlo cada día</h3>
-                  </div>
-                </div>
-                <div id="x-automation-runbook" class="info-grid"></div>
-              </article>
-            </div>
-
-            <div class="split-grid automation-lower-grid">
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Canales</p>
-                    <h3>Qué canales priorizar y para qué usar cada uno</h3>
-                  </div>
-                </div>
-                <div id="channel-automation-grid" class="info-grid"></div>
-              </article>
-
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Cuenta LinkedIn</p>
-                    <h3>Qué montar primero</h3>
-                  </div>
-                </div>
-                <div id="linkedin-setup-grid" class="info-grid"></div>
-              </article>
-            </div>
+              </div>
+              <div id="x-automation-runbook" class="info-grid"></div>
+            </article>
           </article>
         </section>
 

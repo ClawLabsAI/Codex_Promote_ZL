@@ -1180,7 +1180,7 @@ function renderAutomations() {
 
 function renderAutomationCenter() {
   const config = state.xAutomationConfig || defaultState.xAutomationConfig;
-  const queue = buildXAutomationQueue();
+  const queue = buildXAutomationQueue().filter((item) => item.stage !== "Published").slice(0, 3);
 
   const mapping = [
     ["#x-mode", config.mode],
@@ -1222,31 +1222,6 @@ function renderAutomationCenter() {
     body: (item) => item.body,
     meta: (item) => item.meta,
     list: (item) => item.list
-  });
-
-  renderInfoCards("#channel-posts-grid", buildChannelPostCards(), {
-    title: (item) => item.title,
-    body: (item) => item.body,
-    meta: (item) => item.meta,
-    list: (item) => item.list
-  });
-
-  renderInfoCards("#channel-automation-grid", state.channelAutomationPlan, {
-    title: (item) => item.name,
-    body: (item) => item.summary,
-    meta: (item) => [item.priority, item.role, item.mode],
-    list: (item) => [
-      `Cadencia: ${item.cadence}`,
-      `Automatiza: ${item.automation}`,
-      `No automatices aun: ${item.guardrail}`
-    ]
-  });
-
-  renderInfoCards("#linkedin-setup-grid", state.linkedinSetup, {
-    title: (item) => item.name,
-    body: (item) => item.summary,
-    meta: (item) => [item.priority],
-    list: (item) => item.items
   });
 }
 
