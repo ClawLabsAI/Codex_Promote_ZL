@@ -43,6 +43,17 @@ const defaultState = {
   publishingWorkflow: [],
   xPostingWorkflow: [],
   publishingAutomation: [],
+  xAutomationConfig: {
+    mode: "Semi-auto",
+    frequency: "1/day",
+    windowStart: "10:00",
+    windowEnd: "18:00",
+    days: "Mon-Fri",
+    scheduler: "Buffer / Metricool",
+    approval: "Manual",
+    mix: "Comparativas 50% · Founder 30% · Producto 20%",
+    defaultCta: "Mira la comparativa"
+  },
   campaignTracker: [],
   paidAcquisition: [],
   budgetPlanner: [],
@@ -232,6 +243,139 @@ function normalizeDate(value) {
 
 function priorityWeight(priority) {
   return { High: 0, Medium: 1, Low: 2 }[priority] ?? 1;
+}
+
+function stageWeight(stage) {
+  return { Draft: 0, Idea: 1, Scheduled: 2, Published: 3 }[stage] ?? 4;
+}
+
+function buildXAutomationQueue() {
+  return [...state.publishingWorkflow]
+    .filter((item) => item.channel === "X")
+    .sort((a, b) => {
+      const stageDiff = stageWeight(a.stage) - stageWeight(b.stage);
+      if (stageDiff !== 0) return stageDiff;
+      return a.title.localeCompare(b.title, "es");
+    })
+    .map((item, index) => {
+      const config = state.xAutomationConfig || defaultState.xAutomationConfig;
+      const slot = buildSuggestedSlot(index, config);
+      return {
+        ...item,
+        slotLabel: slot.label,
+        slotMeta: slot.meta
+      };
+    });
+}
+
+function buildSuggestedSlot(index, config) {
+  const frequency = config.frequency || "1/day";
+  const start = config.windowStart || "10:00";
+  const end = config.windowEnd || "18:00";
+  const days = config.days || "Mon-Fri";
+  const dayNames = days === "Mon-Fri" ? ["Lun", "Mar", "Mie", "Jue", "Vie"] : days.split(/[,\s]+/).filter(Boolean);
+
+  if (frequency === "2/day") {
+    const slots = [start, end];
+    return {
+      label: `${dayNames[Math.floor(index / 2) % dayNames.length]} · ${slots[index % 2] || start}`,
+      meta: "2 publicaciones por dia"
+    };
+  }
+
+  if (frequency === "3/week") {
+    const days3 = dayNames.slice(0, 3);
+    return {
+      label: `${days3[index % days3.length] || "Lun"} · ${start}`,
+      meta: "Cadencia ligera"
+    };
+  }
+
+  if (frequency === "5/week") {
+    return {
+      label: `${dayNames[index % dayNames.length] || "Lun"} · ${start}`,
+      meta: "Cadencia diaria laborable"
+    };
+  }
+
+  return {
+    label: `${dayNames[index % dayNames.length] || "Lun"} · ${start}`,
+    meta: "1 publicacion por dia"
+  };
+}
+
+function buildXAutomationStatusCards() {
+  const config = state.xAutomationConfig || defaultState.xAutomationConfig;
+  const queue = buildXAutomationQueue();
+  const pending = queue.filter((item) => item.stage !== "Published");
+  const scheduled = queue.filter((item) => item.stage === "Scheduled").length;
+
+  return [
+    {
+      title: "Modo activo",
+      body:
+        config.mode === "Manual"
+          ? "Tu revisas y publicas todo manualmente."
+          : config.mode === "Semi-auto"
+            ? "El sistema te prepara la cola y tu solo revisas antes de programar."
+            : "La estructura queda lista para autopilot parcial cuando conectes un scheduler.",
+      meta: [config.mode, `${pending.length} pendientes`],
+      list: [
+        `Frecuencia: ${config.frequency}`,
+        `Ventana: ${config.windowStart} - ${config.windowEnd}`,
+        `Revisión: ${config.approval}`
+      ]
+    },
+    {
+      title: "Siguiente recomendación",
+      body:
+        pending[0]
+          ? `El siguiente post a mover es "${pending[0].title}".`
+          : "No quedan posts pendientes en la cola de X.",
+      meta: [scheduled ? `${scheduled} scheduled` : "Sin scheduled"],
+      list: [
+        `Scheduler: ${config.scheduler}`,
+        `Mix: ${config.mix}`,
+        `CTA base: ${config.defaultCta}`
+      ]
+    }
+  ];
+}
+
+function buildXAutomationRunbook() {
+  const config = state.xAutomationConfig || defaultState.xAutomationConfig;
+  return [
+    {
+      title: "1. Genera o elige el borrador",
+      body: "Empieza desde la tarea de X, el X Copy Bank o la cola actual.",
+      meta: ["Input"],
+      list: [
+        "Abre Automatizaciones",
+        "Copia el siguiente post",
+        "Ajusta solo una frase si hace falta"
+      ]
+    },
+    {
+      title: "2. Programa sin pensar la hora",
+      body: "Usa la franja ya definida para no decidir cada vez cuándo publicar.",
+      meta: [config.frequency, `${config.windowStart} - ${config.windowEnd}`],
+      list: [
+        `Scheduler recomendado: ${config.scheduler}`,
+        "Mantén la mezcla de contenidos",
+        "Marca Scheduled en cuanto lo dejes cargado"
+      ]
+    },
+    {
+      title: "3. Cierra el bucle",
+      body: "Después de publicar o programar, vuelve al dashboard y cambia el estado para que la cola se actualice sola.",
+      meta: ["Loop"],
+      list: [
+        "Scheduled si ya está programado",
+        "Published cuando salga",
+        "Anota si el ángulo merece repetirse"
+      ]
+    }
+  ];
 }
 
 function getTodayTaskCandidates() {
@@ -447,7 +591,7 @@ function getTaskWorkflowLink(task) {
   const text = `${task.title} ${task.instruction || ""} ${task.channel || ""}`.toLowerCase();
 
   if (/\bx\b|thread|tweet|post en x/.test(text)) {
-    return { href: "#x-posting-workflow", label: "Abrir workflow X" };
+    return { href: "#automation-center", label: "Abrir automatización X" };
   }
   if (/short|reel|video|demo/.test(text)) {
     return { href: "#shorts-os", label: "Abrir workflow Shorts" };
@@ -897,6 +1041,53 @@ function renderAutomations() {
   });
 }
 
+function renderAutomationCenter() {
+  const config = state.xAutomationConfig || defaultState.xAutomationConfig;
+  const queue = buildXAutomationQueue();
+
+  const mapping = [
+    ["#x-mode", config.mode],
+    ["#x-frequency", config.frequency],
+    ["#x-window-start", config.windowStart],
+    ["#x-window-end", config.windowEnd],
+    ["#x-days", config.days],
+    ["#x-scheduler", config.scheduler],
+    ["#x-approval", config.approval],
+    ["#x-mix", config.mix],
+    ["#x-default-cta", config.defaultCta]
+  ];
+
+  mapping.forEach(([selector, value]) => {
+    const input = $(selector);
+    if (input) input.value = value;
+  });
+
+  renderInfoCards("#x-queue-grid", queue, {
+    title: (item) => item.title,
+    body: (item) => item.hook,
+    meta: (item) => [item.stage, item.slotLabel, item.slotMeta],
+    list: (item) => [
+      `Formato: ${item.format}`,
+      `Owner: ${item.owner}`,
+      `CTA: ${(state.xAutomationConfig || defaultState.xAutomationConfig).defaultCta}`
+    ]
+  });
+
+  renderInfoCards("#x-automation-status", buildXAutomationStatusCards(), {
+    title: (item) => item.title,
+    body: (item) => item.body,
+    meta: (item) => item.meta,
+    list: (item) => item.list
+  });
+
+  renderInfoCards("#x-automation-runbook", buildXAutomationRunbook(), {
+    title: (item) => item.title,
+    body: (item) => item.body,
+    meta: (item) => item.meta,
+    list: (item) => item.list
+  });
+}
+
 function renderRoadmap() {
   const container = $("#roadmap-columns");
   container.innerHTML = "";
@@ -1289,6 +1480,7 @@ function renderAll() {
   renderChannels();
   renderCalendar();
   renderAutomations();
+  renderAutomationCenter();
   renderRoadmap();
   renderChecklists();
   renderWeeklyReport();
@@ -1343,6 +1535,7 @@ function bindEditableInputs() {
       item[target.dataset.field] = target.value;
       saveState();
       renderPublishBoard();
+      renderAutomationCenter();
     }
 
     if (target.matches("[data-campaign-id]")) {
@@ -1415,6 +1608,7 @@ function bindForms() {
 
     saveState();
     renderPublishBoard();
+    renderAutomationCenter();
     event.target.reset();
   });
 
@@ -1458,6 +1652,25 @@ function bindForms() {
     saveState();
     renderPaidBoard();
     event.target.reset();
+  });
+
+  $("#x-automation-form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    state.xAutomationConfig = {
+      mode: $("#x-mode").value,
+      frequency: $("#x-frequency").value,
+      windowStart: $("#x-window-start").value.trim() || "10:00",
+      windowEnd: $("#x-window-end").value.trim() || "18:00",
+      days: $("#x-days").value.trim() || "Mon-Fri",
+      scheduler: $("#x-scheduler").value.trim() || "Buffer / Metricool",
+      approval: $("#x-approval").value,
+      mix: $("#x-mix").value.trim() || "Comparativas 50% · Founder 30% · Producto 20%",
+      defaultCta: $("#x-default-cta").value.trim() || "Mira la comparativa"
+    };
+
+    saveState();
+    renderAutomationCenter();
+    window.alert("Configuración de X guardada.");
   });
 }
 
@@ -1544,6 +1757,68 @@ function bindActions() {
       window.alert(`Copiado al portapapeles: ${firstXPost.title}`);
     } catch {
       window.alert("No pude copiar el post automáticamente.");
+    }
+  });
+
+  $("#copy-next-x-post")?.addEventListener("click", async () => {
+    const nextXPost = buildXAutomationQueue().find((item) => item.stage !== "Published");
+
+    if (!nextXPost) {
+      window.alert("No queda ningún post pendiente en la cola de X.");
+      return;
+    }
+
+    const text = `${nextXPost.title}\n\n${nextXPost.hook}\n\nCTA: ${state.xAutomationConfig.defaultCta}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert(`Copiado el siguiente post: ${nextXPost.title}`);
+    } catch {
+      window.alert("No pude copiar el siguiente post.");
+    }
+  });
+
+  $("#queue-next-x-post")?.addEventListener("click", () => {
+    const nextXPost = buildXAutomationQueue().find((item) => ["Idea", "Draft"].includes(item.stage));
+
+    if (!nextXPost) {
+      window.alert("No hay posts en Idea o Draft para programar.");
+      return;
+    }
+
+    const item = state.publishingWorkflow.find((entry) => entry.id === nextXPost.id);
+    if (!item) return;
+    item.stage = "Scheduled";
+    saveState();
+    renderPublishBoard();
+    renderAutomationCenter();
+    window.alert(`Post movido a Scheduled: ${item.title}`);
+  });
+
+  $("#copy-x-schedule-plan")?.addEventListener("click", async () => {
+    const queue = buildXAutomationQueue().filter((item) => item.stage !== "Published");
+    if (!queue.length) {
+      window.alert("No hay cola pendiente para X.");
+      return;
+    }
+
+    const config = state.xAutomationConfig || defaultState.xAutomationConfig;
+    const text = [
+      "Plan de programacion X",
+      "",
+      `Modo: ${config.mode}`,
+      `Frecuencia: ${config.frequency}`,
+      `Ventana: ${config.windowStart} - ${config.windowEnd}`,
+      `Dias: ${config.days}`,
+      `Scheduler: ${config.scheduler}`,
+      "",
+      ...queue.map((item) => `- ${item.slotLabel} · ${item.title} [${item.stage}]`)
+    ].join("\n");
+
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert("Plan de programación copiado.");
+    } catch {
+      window.alert("No pude copiar el plan de programación.");
     }
   });
 

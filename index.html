@@ -34,6 +34,7 @@
           <a href="#weekly-planner">Ruta guiada</a>
           <a href="#execution">Tareas</a>
           <a href="#content-engine">Contenido</a>
+          <a href="#automation-center">Automatizaciones</a>
           <a href="#growth-pipeline">Outreach y campañas</a>
           <a href="#strategy-library">Biblioteca</a>
           <a href="#launches-library">Lanzamientos</a>
@@ -418,6 +419,119 @@
               <button id="copy-x-post-button" class="primary" type="button">Copiar primer post X</button>
               <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Abrir X para publicar</a>
               <a class="secondary inline-button" href="https://x.com/zerolimitaicom" target="_blank" rel="noreferrer">Abrir perfil X</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-muted" id="automation-center">
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Automatizaciones</p>
+                <h3>Centro de control para automatizar X sin perder el control</h3>
+              </div>
+            </div>
+
+            <div class="split-grid">
+              <article class="panel compact-panel">
+                <div class="section-head">
+                  <div>
+                    <p class="eyebrow">X Autopilot</p>
+                    <h3>Configura frecuencia y ventanas</h3>
+                  </div>
+                </div>
+                <form id="x-automation-form" class="form-grid">
+                  <label class="field">
+                    Modo
+                    <select id="x-mode">
+                      <option>Manual</option>
+                      <option>Semi-auto</option>
+                      <option>Auto-ready</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    Frecuencia
+                    <select id="x-frequency">
+                      <option>1/day</option>
+                      <option>2/day</option>
+                      <option>3/week</option>
+                      <option>5/week</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    Ventana inicio
+                    <input id="x-window-start" placeholder="10:00" />
+                  </label>
+                  <label class="field">
+                    Ventana fin
+                    <input id="x-window-end" placeholder="18:00" />
+                  </label>
+                  <label class="field">
+                    Días
+                    <input id="x-days" placeholder="Mon-Fri" />
+                  </label>
+                  <label class="field">
+                    Scheduler
+                    <input id="x-scheduler" placeholder="Buffer / Metricool" />
+                  </label>
+                  <label class="field">
+                    Revisión
+                    <select id="x-approval">
+                      <option>Manual</option>
+                      <option>Semi-auto</option>
+                      <option>Auto-ready</option>
+                    </select>
+                  </label>
+                  <label class="field field-full">
+                    Mezcla de contenido
+                    <input id="x-mix" placeholder="Comparativas 50% · Founder 30% · Producto 20%" />
+                  </label>
+                  <label class="field field-full">
+                    CTA por defecto
+                    <input id="x-default-cta" placeholder="Mira la comparativa" />
+                  </label>
+                  <button class="primary" type="submit">Guardar configuración X</button>
+                </form>
+              </article>
+
+              <article class="panel compact-panel">
+                <div class="section-head">
+                  <div>
+                    <p class="eyebrow">Queue</p>
+                    <h3>Cola actual de posts de X</h3>
+                  </div>
+                </div>
+                <div id="x-queue-grid" class="info-grid"></div>
+                <div class="quick-actions">
+                  <button id="queue-next-x-post" class="primary" type="button">Programar siguiente post</button>
+                  <button id="copy-next-x-post" class="secondary" type="button">Copiar siguiente post</button>
+                  <button id="copy-x-schedule-plan" class="secondary" type="button">Copiar plan de programación</button>
+                  <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
+                  <a class="secondary inline-button" href="https://app.metricool.com" target="_blank" rel="noreferrer">Abrir Metricool</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="split-grid automation-lower-grid">
+              <article class="panel compact-panel">
+                <div class="section-head">
+                  <div>
+                    <p class="eyebrow">Autopilot status</p>
+                    <h3>Qué hace el sistema y qué haces tú</h3>
+                  </div>
+                </div>
+                <div id="x-automation-status" class="info-grid"></div>
+              </article>
+
+              <article class="panel compact-panel">
+                <div class="section-head">
+                  <div>
+                    <p class="eyebrow">Runbook</p>
+                    <h3>Flujo recomendado para usarlo cada día</h3>
+                  </div>
+                </div>
+                <div id="x-automation-runbook" class="info-grid"></div>
+              </article>
             </div>
           </article>
         </section>

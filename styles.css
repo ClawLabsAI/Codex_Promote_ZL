@@ -311,6 +311,10 @@ select {
   gap: 10px;
 }
 
+.automation-lower-grid {
+  margin-top: 18px;
+}
+
 .template-card {
   display: grid;
   gap: 12px;
@@ -395,6 +399,10 @@ select {
 .panel-contrast {
   background: rgba(255, 255, 255, 0.92);
   color: var(--fg);
+}
+
+#automation-center .info-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .hero-card {
