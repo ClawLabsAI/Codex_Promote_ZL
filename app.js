@@ -52,7 +52,7 @@ const defaultState = {
     scheduler: "Buffer / Metricool",
     approval: "Manual",
     mix: "Comparativas 50% · Founder 30% · Producto 20%",
-    defaultCta: "Mira la comparativa"
+    defaultCta: "See the comparison"
   },
   xManualComposer: {
     sourceId: "",
@@ -388,21 +388,22 @@ function getNextXSeed() {
 
 function buildManualXVariants(seed) {
   const cta = (state.xAutomationConfig || defaultState.xAutomationConfig).defaultCta;
-  const baseTitle = seed?.title || "Post base";
-  const baseHook = seed?.hook || "Estamos probando una alternativa más integrada para usuarios intensivos de IA.";
+  const baseTitle = seed?.title || "Base post";
+  const baseHook =
+    seed?.hook || "We are testing a more integrated AI workflow for heavy users who are tired of tool sprawl.";
 
   return [
     {
-      title: `${baseTitle} · Opción 1`,
-      text: `${baseHook}\n\nSi usas varias tools AI, probablemente también estás pagando de más y perdiendo contexto en cada salto.\n\nEso es justo lo que estamos intentando resolver con ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+      title: `${baseTitle} · Option 1`,
+      text: `${baseHook}\n\nIf you use several AI tools, you are probably also paying more than you need and losing context every time you switch.\n\nThat is exactly the problem we are trying to solve with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
     },
     {
-      title: `${baseTitle} · Opción 2`,
-      text: `Pregunta honesta:\n\n¿Cuántas herramientas AI usas para hacer un mismo trabajo?\n\nSi necesitas varias, normalmente no es porque quieras más complejidad. Es porque tu flujo está roto.\n\nEstamos intentando simplificar eso con ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+      title: `${baseTitle} · Option 2`,
+      text: `Honest question:\n\nHow many AI tools do you use to get one real job done?\n\nIf the answer is several, it is usually not because you want more complexity. It is because your workflow is fragmented.\n\nWe are trying to simplify that with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
     },
     {
-      title: `${baseTitle} · Opción 3`,
-      text: `Mi impresión cada vez es más clara:\n\nel problema no es tener acceso a otro modelo AI.\nel problema es seguir trabajando con herramientas desconectadas, sin memoria compartida y con varias suscripciones encima.\n\nEse es el ángulo que estamos probando con ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+      title: `${baseTitle} · Option 3`,
+      text: `My view is getting clearer every week:\n\nthe problem is not access to one more AI model.\nThe problem is still working with disconnected tools, no shared memory, and several subscriptions on top.\n\nThat is the angle we are testing with ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
     }
   ];
 }
@@ -1895,7 +1896,7 @@ function bindForms() {
       scheduler: $("#x-scheduler").value.trim() || "Buffer / Metricool",
       approval: $("#x-approval").value,
       mix: $("#x-mix").value.trim() || "Comparativas 50% · Founder 30% · Producto 20%",
-      defaultCta: $("#x-default-cta").value.trim() || "Mira la comparativa"
+      defaultCta: $("#x-default-cta").value.trim() || "See the comparison"
     };
 
     saveState();
