@@ -11,9 +11,9 @@
   ],
   "weeklyFocus": {
     "sprint": "Semana 1",
-    "objective": "Lanzar el motor de marketing beta: una landing principal, contenido founder-led y outreach manual para los primeros usuarios.",
+    "objective": "Instrumentar embudo, lanzar una landing comparativa y activar contenido founder-led.",
     "wins": "Dashboard live en Vercel y proyecto centralizado en GitHub.",
-    "blockers": "Falta elegir una sola landing principal y empezar outreach manual de forma consistente."
+    "blockers": "Pendiente conectar PostHog y definir una sola landing prioritaria para paid."
   },
   "launchPriorities": [
     {
@@ -1903,7 +1903,7 @@
   ],
   "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
-    "updatedAt": "2026-04-08T13:41:49.967Z",
+    "updatedAt": "2026-04-09T09:59:50.477Z",
     "updatedBy": "scripts/sync-data.mjs",
     "sourceFilesApplied": [
       "posthog",
