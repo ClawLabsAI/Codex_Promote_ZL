@@ -44,7 +44,7 @@ const defaultState = {
   xPostingWorkflow: [],
   publishingAutomation: [],
   xAutomationConfig: {
-    mode: "Semi-auto",
+    mode: "Manual",
     frequency: "1/day",
     windowStart: "10:00",
     windowEnd: "18:00",
@@ -53,6 +53,12 @@ const defaultState = {
     approval: "Manual",
     mix: "Comparativas 50% · Founder 30% · Producto 20%",
     defaultCta: "Mira la comparativa"
+  },
+  xManualComposer: {
+    sourceId: "",
+    variants: [],
+    selectedIndex: 0,
+    reviewText: ""
   },
   channelAutomationPlan: [],
   linkedinSetup: [],
@@ -376,6 +382,31 @@ function buildXAutomationQueue() {
     });
 }
 
+function getNextXSeed() {
+  return buildXAutomationQueue().find((item) => item.stage !== "Published") || null;
+}
+
+function buildManualXVariants(seed) {
+  const cta = (state.xAutomationConfig || defaultState.xAutomationConfig).defaultCta;
+  const baseTitle = seed?.title || "Post base";
+  const baseHook = seed?.hook || "Estamos probando una alternativa más integrada para usuarios intensivos de IA.";
+
+  return [
+    {
+      title: `${baseTitle} · Opción 1`,
+      text: `${baseHook}\n\nSi usas varias tools AI, probablemente también estás pagando de más y perdiendo contexto en cada salto.\n\nEso es justo lo que estamos intentando resolver con ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+    },
+    {
+      title: `${baseTitle} · Opción 2`,
+      text: `Pregunta honesta:\n\n¿Cuántas herramientas AI usas para hacer un mismo trabajo?\n\nSi necesitas varias, normalmente no es porque quieras más complejidad. Es porque tu flujo está roto.\n\nEstamos intentando simplificar eso con ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+    },
+    {
+      title: `${baseTitle} · Opción 3`,
+      text: `Mi impresión cada vez es más clara:\n\nel problema no es tener acceso a otro modelo AI.\nel problema es seguir trabajando con herramientas desconectadas, sin memoria compartida y con varias suscripciones encima.\n\nEse es el ángulo que estamos probando con ZeroLimitAI.\n\n${cta}: /chatgpt-alternative`
+    }
+  ];
+}
+
 function buildSuggestedSlot(index, config) {
   const frequency = config.frequency || "1/day";
   const start = config.windowStart || "10:00";
@@ -423,10 +454,8 @@ function buildXAutomationStatusCards() {
       title: "Modo activo",
       body:
         config.mode === "Manual"
-          ? "Tu revisas y publicas todo manualmente."
-          : config.mode === "Semi-auto"
-            ? "El sistema te prepara la cola y tu solo revisas antes de programar."
-            : "La estructura queda lista para autopilot parcial cuando conectes un scheduler.",
+          ? "Generas 3 opciones, eliges una y la revisas antes de publicar."
+          : "La cola queda preparada para que se publique con tu herramienta de programación.",
       meta: [config.mode, `${pending.length} pendientes`],
       list: [
         `Frecuencia: ${config.frequency}`,
@@ -484,6 +513,10 @@ function buildXAutomationRunbook() {
       ]
     }
   ];
+}
+
+function getReviewedXText() {
+  return (state.xManualComposer?.reviewText || "").trim();
 }
 
 function getNextPublishingItem(channelMatcher) {
@@ -1213,10 +1246,13 @@ function renderAutomations() {
 
 function renderAutomationCenter() {
   const config = state.xAutomationConfig || defaultState.xAutomationConfig;
+  const normalizedMode = config.mode === "Manual" ? "Manual" : "Auto-pilot";
   const queue = buildXAutomationQueue().filter((item) => item.stage !== "Published").slice(0, 3);
+  const manualMode = normalizedMode === "Manual";
+  const manualComposer = state.xManualComposer || defaultState.xManualComposer;
 
   const mapping = [
-    ["#x-mode", config.mode],
+    ["#x-mode", normalizedMode],
     ["#x-frequency", config.frequency],
     ["#x-window-start", config.windowStart],
     ["#x-window-end", config.windowEnd],
@@ -1232,6 +1268,9 @@ function renderAutomationCenter() {
     if (input) input.value = value;
   });
 
+  $("#x-manual-mode")?.classList.toggle("screen-hidden", !manualMode);
+  $("#x-autopilot-mode")?.classList.toggle("screen-hidden", manualMode);
+
   renderInfoCards("#x-queue-grid", queue, {
     title: (item) => item.title,
     body: (item) => item.hook,
@@ -1242,6 +1281,27 @@ function renderAutomationCenter() {
       `CTA: ${(state.xAutomationConfig || defaultState.xAutomationConfig).defaultCta}`
     ]
   });
+
+  const variantsContainer = $("#x-manual-variants");
+  if (variantsContainer) {
+    variantsContainer.innerHTML = "";
+    manualComposer.variants.forEach((variant, index) => {
+      const card = document.createElement("article");
+      card.className = "info-card manual-variant-card";
+      if (index === (manualComposer.selectedIndex || 0)) card.classList.add("manual-variant-selected");
+      card.innerHTML = `
+        <h4>${variant.title}</h4>
+        <p>${variant.text.replace(/\n/g, "<br />")}</p>
+        <button class="${index === (manualComposer.selectedIndex || 0) ? "primary" : "secondary"}" type="button" data-x-variant-index="${index}">
+          ${index === (manualComposer.selectedIndex || 0) ? "Seleccionada" : "Elegir esta"}
+        </button>
+      `;
+      variantsContainer.appendChild(card);
+    });
+  }
+
+  const reviewBox = $("#x-review-text");
+  if (reviewBox) reviewBox.value = manualComposer.reviewText || "";
 
   renderInfoCards("#x-automation-status", buildXAutomationStatusCards(), {
     title: (item) => item.title,
@@ -1842,6 +1902,11 @@ function bindForms() {
     renderAutomationCenter();
     window.alert("Configuración de X guardada.");
   });
+
+  $("#x-review-text")?.addEventListener("input", (event) => {
+    state.xManualComposer.reviewText = event.target.value;
+    saveState();
+  });
 }
 
 function buildReportText() {
@@ -1951,6 +2016,68 @@ function bindActions() {
 
     const text = `${nextXPost.title}\n\n${nextXPost.hook}\n\nCTA: ${state.xAutomationConfig.defaultCta}`;
     await copyToClipboard(text, `Copiado el siguiente post: ${nextXPost.title}`);
+  });
+
+  $("#generate-x-variants")?.addEventListener("click", () => {
+    const seed = getNextXSeed();
+    const variants = buildManualXVariants(seed);
+    state.xManualComposer = {
+      sourceId: seed?.id || "",
+      variants,
+      selectedIndex: 0,
+      reviewText: variants[0]?.text || ""
+    };
+    saveState();
+    renderAutomationCenter();
+    setAutomationFeedback("Se han generado 3 opciones para revisar.");
+  });
+
+  $("#copy-reviewed-x-post")?.addEventListener("click", async () => {
+    const text = getReviewedXText();
+    if (!text) {
+      setAutomationFeedback("Primero genera y revisa un post.");
+      window.alert("Primero genera y revisa un post.");
+      return;
+    }
+    await copyToClipboard(text, "Post revisado copiado.");
+  });
+
+  $("#publish-reviewed-x-post")?.addEventListener("click", () => {
+    const text = getReviewedXText();
+    if (!text) {
+      setAutomationFeedback("Primero genera y revisa un post.");
+      window.alert("Primero genera y revisa un post.");
+      return;
+    }
+
+    const url = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    setAutomationFeedback("Abierto X con el post cargado.");
+  });
+
+  $("#save-manual-x-post")?.addEventListener("click", () => {
+    const text = getReviewedXText();
+    if (!text) {
+      setAutomationFeedback("Primero genera y revisa un post.");
+      window.alert("Primero genera y revisa un post.");
+      return;
+    }
+
+    state.publishingWorkflow.unshift({
+      id: `publish-x-manual-${Date.now()}`,
+      title: `X manual · ${new Date().toLocaleDateString("es-ES")}`,
+      channel: "X",
+      format: "Post",
+      hook: text,
+      stage: "Draft",
+      owner: "Founder"
+    });
+
+    saveState();
+    renderPublishBoard();
+    renderAutomationCenter();
+    setAutomationFeedback("Post guardado en la cola de X.");
+    window.alert("Post guardado en la cola de X.");
   });
 
   $("#copy-next-x-post-quick")?.addEventListener("click", async () => {
@@ -2099,6 +2226,17 @@ function bindActions() {
       saveState();
       renderAll();
       window.alert(`Plantilla aplicada: ${template.name}`);
+    }
+
+    if (target.matches("[data-x-variant-index]")) {
+      const index = Number(target.dataset.xVariantIndex);
+      const variant = state.xManualComposer?.variants?.[index];
+      if (!variant) return;
+      state.xManualComposer.selectedIndex = index;
+      state.xManualComposer.reviewText = variant.text;
+      saveState();
+      renderAutomationCenter();
+      setAutomationFeedback("Opción seleccionada para revisar.");
     }
   });
 }

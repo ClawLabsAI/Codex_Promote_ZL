@@ -1081,7 +1081,7 @@
     }
   ],
   "xAutomationConfig": {
-    "mode": "Semi-auto",
+    "mode": "Manual",
     "frequency": "1/day",
     "windowStart": "10:00",
     "windowEnd": "18:00",
@@ -1090,6 +1090,12 @@
     "approval": "Manual",
     "mix": "Comparativas 50% · Founder 30% · Producto 20%",
     "defaultCta": "Mira la comparativa"
+  },
+  "xManualComposer": {
+    "sourceId": "",
+    "variants": [],
+    "selectedIndex": 0,
+    "reviewText": ""
   },
   "channelAutomationPlan": [
     {

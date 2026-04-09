@@ -354,6 +354,14 @@ select {
   margin: 0;
 }
 
+.manual-variant-card {
+  align-content: start;
+}
+
+.manual-variant-selected {
+  background: rgba(59, 130, 246, 0.08);
+}
+
 .automation-lower-grid {
   margin-top: 18px;
 }

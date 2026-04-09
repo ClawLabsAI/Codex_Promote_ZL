@@ -456,8 +456,7 @@
                     Modo
                     <select id="x-mode">
                       <option>Manual</option>
-                      <option>Semi-auto</option>
-                      <option>Auto-ready</option>
+                      <option>Auto-pilot</option>
                     </select>
                   </label>
                   <label class="field">
@@ -489,8 +488,7 @@
                     Revisión
                     <select id="x-approval">
                       <option>Manual</option>
-                      <option>Semi-auto</option>
-                      <option>Auto-ready</option>
+                      <option>Ligera</option>
                     </select>
                   </label>
                   <label class="field field-full">
@@ -505,25 +503,65 @@
                 </form>
               </article>
 
-              <article class="panel compact-panel">
+              <article class="panel compact-panel" id="x-manual-mode">
                 <div class="section-head">
                   <div>
                     <p class="eyebrow">Paso 2</p>
-                    <h3>Siguiente post de X</h3>
+                    <h3>Modo manual: genera 3 opciones y elige 1</h3>
+                  </div>
+                </div>
+                <div class="quick-actions">
+                  <button id="generate-x-variants" class="primary" type="button">Generar 3 posts</button>
+                </div>
+                <div id="x-manual-variants" class="info-grid"></div>
+                <label class="field field-full">
+                  Revisión final
+                  <textarea id="x-review-text" rows="8" placeholder="Aquí puedes ajustar el post elegido antes de publicarlo"></textarea>
+                </label>
+                <div class="action-flow">
+                  <article class="action-step">
+                    <p class="eyebrow">2.1</p>
+                    <h4>Elige una opción</h4>
+                    <p>Selecciona la mejor de las 3 y revísala arriba.</p>
+                    <button id="copy-reviewed-x-post" class="primary" type="button">Copiar post revisado</button>
+                  </article>
+                  <article class="action-step">
+                    <p class="eyebrow">2.2</p>
+                    <h4>Publícalo</h4>
+                    <p>Ábrelo ya con el texto preparado y publícalo o prográmalo.</p>
+                    <div class="quick-actions">
+                      <button id="publish-reviewed-x-post" class="secondary" type="button">Abrir X con este post</button>
+                      <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
+                    </div>
+                  </article>
+                  <article class="action-step">
+                    <p class="eyebrow">2.3</p>
+                    <h4>Marca el avance</h4>
+                    <p>Cuando ya esté publicado o listo, guárdalo y sigue con el siguiente.</p>
+                    <button id="save-manual-x-post" class="secondary" type="button">Guardar en la cola</button>
+                  </article>
+                </div>
+              </article>
+
+              <article class="panel compact-panel" id="x-autopilot-mode">
+                <div class="section-head">
+                  <div>
+                    <p class="eyebrow">Paso 2</p>
+                    <h3>Modo auto-pilot: cola programada</h3>
                   </div>
                 </div>
                 <div id="x-queue-grid" class="info-grid"></div>
                 <div class="action-flow">
                   <article class="action-step">
                     <p class="eyebrow">2.1</p>
-                    <h4>Prepara el texto</h4>
-                    <p>Copia el siguiente post para no escribir desde cero.</p>
-                    <button id="copy-next-x-post" class="primary" type="button">Copiar texto del post</button>
+                    <h4>Revisa la cola</h4>
+                    <p>Mira qué posts saldrán y en qué orden.</p>
+                    <button id="copy-next-x-post" class="primary" type="button">Copiar siguiente post</button>
                   </article>
                   <article class="action-step">
                     <p class="eyebrow">2.2</p>
-                    <h4>Ábrelo donde publicas</h4>
-                    <p>Pega el texto en tu herramienta y déjalo listo.</p>
+                    <h4>Déjalo programado</h4>
+                    <p>Usa Buffer o X para dejar el siguiente post listo.</p>
                     <div class="quick-actions">
                       <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Abrir Buffer</a>
                       <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Abrir X</a>
@@ -531,9 +569,9 @@
                   </article>
                   <article class="action-step">
                     <p class="eyebrow">2.3</p>
-                    <h4>Marca el avance</h4>
-                    <p>Cuando ya esté preparado o publicado, mueve la cola.</p>
-                    <button id="queue-next-x-post" class="secondary" type="button">Marcar como programado</button>
+                    <h4>Mueve la cola</h4>
+                    <p>Marca el siguiente como programado y el sistema avanza solo.</p>
+                    <button id="queue-next-x-post" class="secondary" type="button">Marcar siguiente como programado</button>
                   </article>
                 </div>
               </article>
