@@ -389,8 +389,8 @@ function getNextXSeed() {
 function buildManualXVariants(seed) {
   const cta = (state.xAutomationConfig || defaultState.xAutomationConfig).defaultCta;
   const baseTitle = seed?.title || "Base post";
-  const baseHook =
-    seed?.hook || "We are testing a more integrated AI workflow for heavy users who are tired of tool sprawl.";
+  const englishSeedHook = "If you use ChatGPT every day, the real problem is not just the model. It is how many tools, tabs, and subscriptions you end up stacking around it.";
+  const baseHook = englishSeedHook;
 
   return [
     {
