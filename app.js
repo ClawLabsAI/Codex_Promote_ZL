@@ -1284,12 +1284,26 @@ function renderAutomationCenter() {
   });
 
   const variantsContainer = $("#x-manual-variants");
+  const variantTabs = $("#x-variant-tabs");
+  if (variantTabs) {
+    variantTabs.innerHTML = "";
+    manualComposer.variants.forEach((variant, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = index === (manualComposer.selectedIndex || 0) ? "primary" : "secondary";
+      button.dataset.xVariantIndex = String(index);
+      button.textContent = variant.title;
+      variantTabs.appendChild(button);
+    });
+  }
+
   if (variantsContainer) {
     variantsContainer.innerHTML = "";
-    manualComposer.variants.forEach((variant, index) => {
+    const index = manualComposer.selectedIndex || 0;
+    const variant = manualComposer.variants[index];
+    if (variant) {
       const card = document.createElement("article");
-      card.className = "info-card manual-variant-card";
-      if (index === (manualComposer.selectedIndex || 0)) card.classList.add("manual-variant-selected");
+      card.className = "info-card manual-variant-card manual-variant-selected";
       const variantHint =
         index === 0
           ? "Starts with the pain and why it matters."
@@ -1300,12 +1314,9 @@ function renderAutomationCenter() {
         <h4>${variant.title}</h4>
         <div class="info-meta"><span class="pill">${variantHint}</span></div>
         <p>${variant.text.replace(/\n/g, "<br />")}</p>
-        <button class="${index === (manualComposer.selectedIndex || 0) ? "primary" : "secondary"}" type="button" data-x-variant-index="${index}">
-          ${index === (manualComposer.selectedIndex || 0) ? "Selected" : "Choose this"}
-        </button>
       `;
       variantsContainer.appendChild(card);
-    });
+    }
   }
 
   const reviewBox = $("#x-review-text");

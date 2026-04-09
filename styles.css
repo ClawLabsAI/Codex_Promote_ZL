@@ -362,6 +362,28 @@ select {
   background: rgba(59, 130, 246, 0.08);
 }
 
+.variant-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.variant-preview {
+  display: grid;
+}
+
+.automation-control-bar .form-grid {
+  align-items: end;
+}
+
+.automation-main-flow {
+  margin-top: 18px;
+}
+
+.action-flow-manual {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .automation-lower-grid {
   margin-top: 18px;
 }

@@ -428,164 +428,94 @@
             <div class="section-head">
               <div>
                 <p class="eyebrow">Pipeline X</p>
-                <h3>Set up, review, publish, repeat</h3>
+                <h3>X posting pipeline</h3>
               </div>
             </div>
 
             <article class="panel compact-panel automation-simple-intro">
-              <p class="eyebrow">How to use it</p>
-              <ol class="list numbered">
-                <li>Set the posting rhythm and save the configuration.</li>
-                <li>In Manual mode, generate 3 options and choose 1.</li>
-                <li>Review the text, then publish it or schedule it.</li>
-                <li>In Auto-pilot mode, move the queue forward after scheduling.</li>
-              </ol>
+              <p>Use this page for one thing only: prepare the next X post and move the queue forward.</p>
               <div id="automation-feedback" class="automation-feedback">Status: ready to publish.</div>
             </article>
 
-            <div class="split-grid">
-              <article class="panel compact-panel">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Step 1</p>
-                    <h3>Set up your X workflow</h3>
-                  </div>
-                </div>
-                <form id="x-automation-form" class="form-grid">
-                  <label class="field">
-                    Mode
-                    <select id="x-mode">
-                      <option>Manual</option>
-                      <option>Auto-pilot</option>
-                    </select>
-                  </label>
-                  <label class="field">
-                    Frequency
-                    <select id="x-frequency">
-                      <option>1/day</option>
-                      <option>2/day</option>
-                      <option>3/week</option>
-                      <option>5/week</option>
-                    </select>
-                  </label>
-                  <label class="field">
-                    Start window
-                    <input id="x-window-start" placeholder="10:00" />
-                  </label>
-                  <label class="field">
-                    End window
-                    <input id="x-window-end" placeholder="18:00" />
-                  </label>
-                  <label class="field">
-                    Days
-                    <input id="x-days" placeholder="Mon-Fri" />
-                  </label>
-                  <label class="field">
-                    Scheduler
-                    <input id="x-scheduler" placeholder="Buffer / Metricool" />
-                  </label>
-                  <label class="field">
-                    Review
-                    <select id="x-approval">
-                      <option>Manual</option>
-                      <option>Ligera</option>
-                    </select>
-                  </label>
-                  <label class="field field-full">
-                    Content mix
-                    <input id="x-mix" placeholder="Comparativas 50% · Founder 30% · Producto 20%" />
-                  </label>
-                  <label class="field field-full">
-                    Default CTA
-                    <input id="x-default-cta" placeholder="See the comparison" />
-                  </label>
-                  <button class="primary" type="submit">Save X settings</button>
-                </form>
-              </article>
-
-              <article class="panel compact-panel" id="x-manual-mode">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Step 2</p>
-                    <h3>Manual mode: generate 3 options and pick 1</h3>
-                  </div>
-                </div>
-                <div class="quick-actions">
-                  <button id="generate-x-variants" class="primary" type="button">Generate 3 posts</button>
-                </div>
-                <div id="x-manual-variants" class="info-grid"></div>
-                <label class="field field-full">
-                  Final review
-                  <textarea id="x-review-text" rows="8" placeholder="Edit the selected post here before publishing it"></textarea>
+            <article class="panel compact-panel automation-control-bar">
+              <form id="x-automation-form" class="form-grid">
+                <label class="field">
+                  Mode
+                  <select id="x-mode">
+                    <option>Manual</option>
+                    <option>Auto-pilot</option>
+                  </select>
                 </label>
-                <div class="action-flow">
-                  <article class="action-step">
-                    <p class="eyebrow">2.1</p>
-                    <h4>Choose one</h4>
-                    <p>Select the best option and review it above.</p>
-                    <button id="copy-reviewed-x-post" class="primary" type="button">Copy reviewed post</button>
-                  </article>
-                  <article class="action-step">
-                    <p class="eyebrow">2.2</p>
-                    <h4>Publish it</h4>
-                    <p>Open X with the reviewed text or schedule it in Buffer.</p>
-                    <div class="quick-actions">
-                      <button id="publish-reviewed-x-post" class="secondary" type="button">Open X with this post</button>
-                      <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Open Buffer</a>
-                    </div>
-                  </article>
-                  <article class="action-step">
-                    <p class="eyebrow">2.3</p>
-                    <h4>Save progress</h4>
-                    <p>When it is ready, save it into the queue and move on.</p>
-                    <button id="save-manual-x-post" class="secondary" type="button">Save to queue</button>
-                  </article>
-                </div>
-              </article>
+                <label class="field">
+                  Frequency
+                  <select id="x-frequency">
+                    <option>1/day</option>
+                    <option>2/day</option>
+                    <option>3/week</option>
+                    <option>5/week</option>
+                  </select>
+                </label>
+                <label class="field">
+                  Scheduler
+                  <input id="x-scheduler" placeholder="Buffer / Metricool" />
+                </label>
+                <label class="field">
+                  Default CTA
+                  <input id="x-default-cta" placeholder="See the comparison" />
+                </label>
+                <button class="primary" type="submit">Save settings</button>
+              </form>
+            </article>
 
-              <article class="panel compact-panel" id="x-autopilot-mode">
-                <div class="section-head">
-                  <div>
-                    <p class="eyebrow">Step 2</p>
-                    <h3>Auto-pilot mode: scheduled queue</h3>
-                  </div>
-                </div>
-                <div id="x-queue-grid" class="info-grid"></div>
-                <div class="action-flow">
-                  <article class="action-step">
-                    <p class="eyebrow">2.1</p>
-                    <h4>Review the queue</h4>
-                    <p>See what is coming next and in what order.</p>
-                    <button id="copy-next-x-post" class="primary" type="button">Copy next post</button>
-                  </article>
-                  <article class="action-step">
-                    <p class="eyebrow">2.2</p>
-                    <h4>Schedule it</h4>
-                    <p>Use Buffer or X to leave the next post ready.</p>
-                    <div class="quick-actions">
-                      <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">Open Buffer</a>
-                      <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">Open X</a>
-                    </div>
-                  </article>
-                  <article class="action-step">
-                    <p class="eyebrow">2.3</p>
-                    <h4>Move the queue</h4>
-                    <p>Mark the next post as scheduled and let the queue advance.</p>
-                    <button id="queue-next-x-post" class="secondary" type="button">Mark next as scheduled</button>
-                  </article>
-                </div>
-              </article>
-            </div>
-
-            <article class="panel compact-panel automation-lower-grid">
+            <article class="panel compact-panel automation-main-flow" id="x-manual-mode">
               <div class="section-head">
                 <div>
-                  <p class="eyebrow">Step 3</p>
-                  <h3>Simple rules for the flow</h3>
+                  <p class="eyebrow">Manual</p>
+                  <h3>Generate, choose, review, publish</h3>
                 </div>
               </div>
-              <div id="x-automation-runbook" class="info-grid"></div>
+              <div class="quick-actions">
+                <button id="generate-x-variants" class="primary" type="button">Generate 3 posts</button>
+              </div>
+              <div id="x-variant-tabs" class="variant-tabs"></div>
+              <div id="x-manual-variants" class="variant-preview"></div>
+              <label class="field field-full">
+                Final review
+                <textarea id="x-review-text" rows="10" placeholder="Edit the selected post here before publishing it"></textarea>
+              </label>
+              <div class="action-flow action-flow-manual">
+                <button id="copy-reviewed-x-post" class="primary" type="button">1. Copy reviewed post</button>
+                <button id="publish-reviewed-x-post" class="secondary" type="button">2. Open X with this post</button>
+                <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">3. Open Buffer</a>
+                <button id="save-manual-x-post" class="secondary" type="button">4. Save to queue</button>
+              </div>
             </article>
+
+            <article class="panel compact-panel automation-main-flow" id="x-autopilot-mode">
+              <div class="section-head">
+                <div>
+                  <p class="eyebrow">Auto-pilot</p>
+                  <h3>Review queue, schedule next, move forward</h3>
+                </div>
+              </div>
+              <div id="x-queue-grid" class="info-grid"></div>
+              <div class="action-flow action-flow-manual">
+                <button id="copy-next-x-post" class="primary" type="button">1. Copy next post</button>
+                <a class="secondary inline-button" href="https://app.buffer.com" target="_blank" rel="noreferrer">2. Open Buffer</a>
+                <a class="secondary inline-button" href="https://x.com/compose/post" target="_blank" rel="noreferrer">3. Open X</a>
+                <button id="queue-next-x-post" class="secondary" type="button">4. Mark next as scheduled</button>
+              </div>
+            </article>
+
+            <details class="library-section automation-lower-grid">
+              <summary>
+                <span>Simple rules</span>
+                <span class="summary-note">Only open this if you need help</span>
+              </summary>
+              <div class="library-content section-white">
+                <div id="x-automation-runbook" class="info-grid"></div>
+              </div>
+            </details>
           </article>
         </section>
 
