@@ -26,6 +26,7 @@ const defaultState = {
     wins: "",
     blockers: ""
   },
+  weeklyRoute: [],
   launchPriorities: [],
   assetPipeline: [],
   firstUsersPipeline: [],
@@ -259,6 +260,7 @@ function renderTaskBoard() {
                   .join("")}
               </select>
             </div>
+            ${task.instruction ? `<p class="task-instruction">${task.instruction}</p>` : ""}
             <p>${task.channel} · ${task.owner}</p>
             <p class="task-due">Entrega: ${task.due}</p>
           </article>
@@ -274,6 +276,68 @@ function renderTaskBoard() {
       <div class="task-stack">${cards || '<p class="empty">Sin tareas</p>'}</div>
     `;
     board.appendChild(column);
+  });
+}
+
+function buildProjectProgress() {
+  const total = state.tasks.length;
+  const done = state.tasks.filter((task) => task.status === "Done").length;
+  const doing = state.tasks.filter((task) => task.status === "Doing").length;
+  const todo = state.tasks.filter((task) => task.status === "Todo").length;
+  const progress = total ? Math.round((done / total) * 100) : 0;
+  const currentStep =
+    state.weeklyRoute.find((step) => step.status !== "Done") ||
+    state.weeklyRoute[0] || {
+      step: "Paso actual",
+      title: "Empieza por la primera tarea prioritaria",
+      summary: state.weeklyFocus.objective
+    };
+
+  return { total, done, doing, todo, progress, currentStep };
+}
+
+function renderProjectManager() {
+  const progress = buildProjectProgress();
+  const container = $("#project-progress");
+  if (container) {
+    container.innerHTML = `
+      <div class="progress-top">
+        <div>
+          <p class="eyebrow">Progreso actual</p>
+          <h3>${progress.progress}% completado</h3>
+        </div>
+        <span class="pill">${progress.done}/${progress.total} tareas done</span>
+      </div>
+      <div class="progress-bar">
+        <span style="width: ${progress.progress}%"></span>
+      </div>
+      <div class="progress-stats">
+        <article class="metric-mini">
+          <strong>${progress.todo}</strong>
+          <span>Por hacer</span>
+        </article>
+        <article class="metric-mini">
+          <strong>${progress.doing}</strong>
+          <span>En curso</span>
+        </article>
+        <article class="metric-mini">
+          <strong>${progress.done}</strong>
+          <span>Hechas</span>
+        </article>
+      </div>
+      <article class="current-step-card">
+        <p class="eyebrow">Paso actual recomendado</p>
+        <h4>${progress.currentStep.step} · ${progress.currentStep.title}</h4>
+        <p>${progress.currentStep.summary}</p>
+      </article>
+    `;
+  }
+
+  renderInfoCards("#route-grid", state.weeklyRoute, {
+    title: (item) => `${item.step} · ${item.title}`,
+    body: (item) => item.summary,
+    meta: (item) => [item.status, item.owner],
+    list: (item) => item.items
   });
 }
 
@@ -848,6 +912,7 @@ function renderAll() {
   renderKpis();
   renderPlanSections();
   renderTaskBoard();
+  renderProjectManager();
   renderPublishBoard();
   renderCampaignBoard();
   renderPaidBoard();
@@ -900,6 +965,7 @@ function bindEditableInputs() {
       task[target.dataset.field] = target.value;
       saveState();
       renderTaskBoard();
+      renderProjectManager();
       renderWeeklyReport();
     }
 
@@ -947,6 +1013,7 @@ function bindForms() {
     state.tasks.push({
       id: `task-${Date.now()}`,
       title,
+      instruction: $("#task-instruction").value.trim(),
       owner: $("#task-owner").value.trim() || "Founder",
       due: $("#task-due").value || "Sin fecha",
       channel: $("#task-channel").value.trim() || "General",

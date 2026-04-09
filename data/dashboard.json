@@ -15,6 +15,56 @@
     "wins": "Dashboard live en Vercel, sistema de marketing montado y landing principal ya definida.",
     "blockers": "Falta publicar la primera tanda de contenido y enviar outreach de forma diaria."
   },
+  "weeklyRoute": [
+    {
+      "step": "Paso 1",
+      "title": "Prepara el destino",
+      "status": "Doing",
+      "owner": "Founder",
+      "summary": "Antes de publicar nada, asegúrate de que toda la semana empuja a una sola landing principal.",
+      "items": [
+        "Revisar /chatgpt-alternative",
+        "Comprobar que el CTA principal está claro",
+        "Usar esa landing en contenido y outreach"
+      ]
+    },
+    {
+      "step": "Paso 2",
+      "title": "Publica la primera tanda de contenido",
+      "status": "Todo",
+      "owner": "Founder",
+      "summary": "Empieza con piezas fáciles: comparativa en X, post en LinkedIn y 1 demo corta.",
+      "items": [
+        "Publicar 3 piezas en X",
+        "Publicar 2 posts en LinkedIn",
+        "Grabar 2 demos cortas"
+      ]
+    },
+    {
+      "step": "Paso 3",
+      "title": "Activa distribución manual",
+      "status": "Doing",
+      "owner": "Founder",
+      "summary": "No esperes a tener volumen. Usa outreach y directorios para conseguir las primeras visitas y replies.",
+      "items": [
+        "Enviar 20 outreachs",
+        "Mandar 5 directorios prioritarios",
+        "Hacer follow-up a las primeras respuestas"
+      ]
+    },
+    {
+      "step": "Paso 4",
+      "title": "Aprende y ajusta",
+      "status": "Todo",
+      "owner": "Founder",
+      "summary": "Cierra la semana con una revisión simple: qué mensaje atrajo más atención y qué repetirás la siguiente semana.",
+      "items": [
+        "Recoger 5 aprendizajes reales",
+        "Revisar qué pieza funcionó mejor",
+        "Decidir qué repetir y qué pausar"
+      ]
+    }
+  ],
   "launchPriorities": [
     {
       "name": "Landing principal de adquisicion",
@@ -1964,6 +2014,7 @@
     {
       "id": "task-1",
       "title": "Publicar o revisar la landing principal /chatgpt-alternative",
+      "instruction": "Abre la landing principal, revisa hero, CTA y claridad del mensaje antes de enviar tráfico.",
       "owner": "Founder",
       "due": "2026-04-09",
       "channel": "Landing",
@@ -1972,6 +2023,7 @@
     {
       "id": "task-2",
       "title": "Escribir y publicar 3 piezas en X",
+      "instruction": "Usa los copies ya preparados y publica piezas de comparativa y ahorro de coste.",
       "owner": "Founder",
       "due": "2026-04-10",
       "channel": "Social",
@@ -1980,6 +2032,7 @@
     {
       "id": "task-3",
       "title": "Escribir y publicar 2 posts en LinkedIn",
+      "instruction": "Publica un post comparativo y otro founder-led explicando el ángulo lifetime.",
       "owner": "Founder",
       "due": "2026-04-10",
       "channel": "Social",
@@ -1988,6 +2041,7 @@
     {
       "id": "task-4",
       "title": "Grabar y publicar 2 demos cortas",
+      "instruction": "Empieza por un short de comparativa y otro de memory usando la plantilla de Shorts OS.",
       "owner": "Founder",
       "due": "2026-04-11",
       "channel": "Social",
@@ -1996,6 +2050,7 @@
     {
       "id": "task-5",
       "title": "Enviar 20 outreachs a newsletters, creators y communities",
+      "instruction": "Usa las plantillas del CRM, personaliza la primera línea y manda los primeros 20 contactos.",
       "owner": "Founder",
       "due": "2026-04-11",
       "channel": "Outreach",
@@ -2004,6 +2059,7 @@
     {
       "id": "task-6",
       "title": "Enviar 5 directorios prioritarios con CTA a la landing principal",
+      "instruction": "Envía el producto a listados prioritarios y comprueba que el enlace final apunta a la landing correcta.",
       "owner": "Ops",
       "due": "2026-04-12",
       "channel": "Directories",
@@ -2012,6 +2068,7 @@
     {
       "id": "task-7",
       "title": "Recoger 5 respuestas o feedbacks reales y anotarlos",
+      "instruction": "Anota por qué llegó cada persona, qué entendió primero y qué objeción apareció.",
       "owner": "Founder",
       "due": "2026-04-13",
       "channel": "Learning",
@@ -2020,6 +2077,7 @@
     {
       "id": "task-8",
       "title": "Revisar el viernes qué mensaje y qué canal funcionaron mejor",
+      "instruction": "Compara contenido, replies y visitas para decidir qué vas a repetir la semana siguiente.",
       "owner": "Founder",
       "due": "2026-04-14",
       "channel": "Review",

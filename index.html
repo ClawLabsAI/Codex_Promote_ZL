@@ -31,6 +31,8 @@
         <nav class="nav">
           <a href="#today">Hoy</a>
           <a href="#week">Esta semana</a>
+          <a href="#weekly-planner">Ruta guiada</a>
+          <a href="#execution">Tareas</a>
           <a href="#content-engine">Contenido</a>
           <a href="#growth-pipeline">Outreach y campañas</a>
           <a href="#strategy-library">Biblioteca</a>
@@ -170,6 +172,80 @@
               </div>
             </div>
             <div id="weekly-report" class="report-box"></div>
+          </article>
+        </section>
+
+        <section class="split-grid section-white" id="weekly-planner">
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Ruta Guiada</p>
+                <h3>Project manager semanal</h3>
+              </div>
+            </div>
+            <div id="project-progress" class="project-progress"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Orden Recomendado</p>
+                <h3>Qué hacer primero, después y al final</h3>
+              </div>
+            </div>
+            <div id="route-grid" class="info-grid"></div>
+          </article>
+        </section>
+
+        <section class="split-grid section-muted" id="execution">
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Tareas de la semana</p>
+                <h3>Marca el avance y mueve el trabajo</h3>
+              </div>
+            </div>
+            <div id="task-board" class="task-board"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Nueva Tarea</p>
+                <h3>Añade trabajo concreto</h3>
+              </div>
+            </div>
+            <form id="task-form" class="form-grid">
+              <label class="field field-full">
+                Título
+                <input id="task-title" placeholder="Ej. Publicar 1 post de comparativa en X" />
+              </label>
+              <label class="field field-full">
+                Instrucción
+                <input id="task-instruction" placeholder="Explica qué hay que hacer para que no haya dudas" />
+              </label>
+              <label class="field">
+                Owner
+                <input id="task-owner" placeholder="Founder" />
+              </label>
+              <label class="field">
+                Canal
+                <input id="task-channel" placeholder="SEO / Social / Paid / Infra" />
+              </label>
+              <label class="field">
+                Fecha
+                <input id="task-due" type="date" />
+              </label>
+              <label class="field">
+                Estado
+                <select id="task-status">
+                  <option>Todo</option>
+                  <option>Doing</option>
+                  <option>Done</option>
+                </select>
+              </label>
+              <button class="primary" type="submit">Añadir tarea</button>
+            </form>
           </article>
         </section>
 
@@ -507,54 +583,6 @@
               </div>
             </div>
             <div id="editorial-grid" class="editorial-grid"></div>
-          </article>
-        </section>
-
-        <section class="split-grid section-muted" id="execution">
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Execution</p>
-                <h3>Tablero de tareas</h3>
-              </div>
-            </div>
-            <div id="task-board" class="task-board"></div>
-          </article>
-
-          <article class="panel">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">New Task</p>
-                <h3>Captura de trabajo</h3>
-              </div>
-            </div>
-            <form id="task-form" class="form-grid">
-              <label class="field field-full">
-                Título
-                <input id="task-title" placeholder="Ej. Crear landing AI agents with memory" />
-              </label>
-              <label class="field">
-                Owner
-                <input id="task-owner" placeholder="Founder" />
-              </label>
-              <label class="field">
-                Canal
-                <input id="task-channel" placeholder="SEO / Social / Paid / Infra" />
-              </label>
-              <label class="field">
-                Fecha
-                <input id="task-due" type="date" />
-              </label>
-              <label class="field">
-                Estado
-                <select id="task-status">
-                  <option>Todo</option>
-                  <option>Doing</option>
-                  <option>Done</option>
-                </select>
-              </label>
-              <button class="primary" type="submit">Añadir tarea</button>
-            </form>
           </article>
         </section>
 
