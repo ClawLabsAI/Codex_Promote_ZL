@@ -58,6 +58,11 @@ const defaultState = {
   shortsWorkflow: [],
   shortsToolStack: [],
   shortsReviewRules: [],
+  landingAudit: [],
+  messageTesting: [],
+  objectionTracker: [],
+  conversionChangeLog: [],
+  homepageFocusMap: [],
   landingMessaging: [],
   ctaBank: [],
   experiments: [],
@@ -1080,6 +1085,41 @@ function renderPlanSections() {
       `Proof: ${item.proof}`,
       `CTA focus: ${item.cta}`
     ]
+  });
+
+  renderInfoCards("#landing-audit-grid", state.landingAudit, {
+    title: (item) => item.name,
+    body: (item) => item.summary,
+    meta: (item) => [item.priority, item.owner],
+    list: (item) => item.items
+  });
+
+  renderInfoCards("#message-testing-grid", state.messageTesting, {
+    title: (item) => item.name,
+    body: (item) => item.hypothesis,
+    meta: (item) => [item.stage, item.channel],
+    list: (item) => [`Hook: ${item.hook}`, `CTA: ${item.cta}`, `Landing: ${item.landing}`]
+  });
+
+  renderInfoCards("#objection-grid", state.objectionTracker, {
+    title: (item) => item.objection,
+    body: (item) => item.risk,
+    meta: (item) => [item.priority],
+    list: (item) => [`Answer: ${item.answer}`, `Fix: ${item.fix}`]
+  });
+
+  renderInfoCards("#conversion-log-grid", state.conversionChangeLog, {
+    title: (item) => item.change,
+    body: (item) => item.reason,
+    meta: (item) => [item.stage, item.expectedImpact],
+    list: (item) => [`Owner: ${item.owner}`, `Track: ${item.track}`]
+  });
+
+  renderInfoCards("#homepage-focus-grid", state.homepageFocusMap, {
+    title: (item) => item.area,
+    body: (item) => item.rule,
+    meta: (item) => [item.priority],
+    list: (item) => item.items
   });
 
   renderInfoCards("#cta-bank-grid", state.ctaBank, {

@@ -2104,6 +2104,172 @@
       "action": "Usa CTA tipo 'mira la comparativa' o 'estamos probando esto en beta'."
     }
   ],
+  "landingAudit": [
+    {
+      "name": "Hero demasiado cargado",
+      "priority": "P1",
+      "owner": "Founder",
+      "summary": "La home intenta vender ZeroOptimize, ZeroClaw, ZeroLabs, lifetime y 200+ modelos demasiado pronto.",
+      "items": [
+        "Reducir a una sola promesa principal",
+        "Dejar ZeroClaw y ZeroLabs como apoyo",
+        "Mover parte del detalle más abajo"
+      ]
+    },
+    {
+      "name": "Claridad de oferta",
+      "priority": "P1",
+      "owner": "Founder",
+      "summary": "Unlimited free AI y trial limitado pueden generar fricción de confianza si no se explican mejor.",
+      "items": [
+        "Aclarar qué es gratis y qué es trial",
+        "Evitar claims ambiguos",
+        "Simplificar lenguaje de pricing"
+      ]
+    },
+    {
+      "name": "Prueba visual rápida",
+      "priority": "P1",
+      "owner": "Founder",
+      "summary": "Falta una demostración muy rápida y concreta del valor real en el primer scroll.",
+      "items": [
+        "Screenshot más clara",
+        "Mini demo encima del fold",
+        "Caso de uso visible"
+      ]
+    },
+    {
+      "name": "Objeciones de LTD",
+      "priority": "P2",
+      "owner": "Founder",
+      "summary": "El modelo lifetime necesita más confianza y explicación para convertir mejor.",
+      "items": [
+        "FAQ más visibles",
+        "Explicar sostenibilidad",
+        "Añadir más trust signals"
+      ]
+    }
+  ],
+  "messageTesting": [
+    {
+      "name": "Alternative to subscriptions",
+      "stage": "Live",
+      "channel": "Hero + social",
+      "hypothesis": "El ángulo pay once / use forever atraerá mejor a usuarios intensivos que ya pagan varias tools.",
+      "hook": "Deja de pagar 3 suscripciones AI para hacer el mismo trabajo.",
+      "cta": "Mira la comparativa",
+      "landing": "/chatgpt-alternative"
+    },
+    {
+      "name": "Better workflow, not more models",
+      "stage": "Queued",
+      "channel": "Hero + LinkedIn",
+      "hypothesis": "Hablar de menos fricción y mejor flujo convertirá mejor que hablar de 200+ modelos.",
+      "hook": "No necesitas más herramientas AI, necesitas un flujo mejor.",
+      "cta": "Prueba el flujo",
+      "landing": "/chatgpt-alternative"
+    },
+    {
+      "name": "Memory as daily advantage",
+      "stage": "Queued",
+      "channel": "Shorts + landing blocks",
+      "hypothesis": "Memory puede funcionar mejor como diferenciador concreto que ZeroLabs en home.",
+      "hook": "La mayoría de herramientas AI te obligan a repetir contexto todo el tiempo.",
+      "cta": "Ver cómo funciona",
+      "landing": "/memory-automation"
+    }
+  ],
+  "objectionTracker": [
+    {
+      "objection": "¿De verdad es un pago único?",
+      "priority": "Alta",
+      "risk": "Puede sonar demasiado bueno para ser verdad y frenar el clic al checkout.",
+      "answer": "Explicar con transparencia qué incluye el lifetime y qué límites reales existen.",
+      "fix": "Añadir bloque de trust y FAQ visible junto a pricing."
+    },
+    {
+      "objection": "No entiendo qué es ZeroOptimize vs ZeroClaw vs ZeroLabs",
+      "priority": "Alta",
+      "risk": "La home se percibe potente pero confusa en el primer scroll.",
+      "answer": "Primero vender la promesa principal y después presentar los módulos secundarios.",
+      "fix": "Simplificar hero y renarrar módulos como capas de valor."
+    },
+    {
+      "objection": "¿Qué gano respecto a ChatGPT o Claude?",
+      "priority": "Alta",
+      "risk": "Si no se ve rápido la diferencia, la visita rebota o no entiende la propuesta.",
+      "answer": "Mostrar comparativa, ahorro, memory y workflow como beneficios concretos.",
+      "fix": "Subir comparativa y mini demo."
+    }
+  ],
+  "conversionChangeLog": [
+    {
+      "change": "Simplificar el hero a una sola promesa",
+      "stage": "Planned",
+      "expectedImpact": "Alto",
+      "reason": "Reducir confusión y mejorar comprensión en primeros 5 segundos.",
+      "owner": "Founder",
+      "track": "CTR hero -> pricing / trial"
+    },
+    {
+      "change": "Subir la comparativa antes en la home",
+      "stage": "Planned",
+      "expectedImpact": "Alto",
+      "reason": "Aclarar por qué ZeroLimitAI es diferente de ChatGPT/Claude.",
+      "owner": "Founder",
+      "track": "Scroll depth y clicks a CTA"
+    },
+    {
+      "change": "Añadir bloque de trust para el lifetime",
+      "stage": "Planned",
+      "expectedImpact": "Medio",
+      "reason": "Responder mejor objeciones sobre sostenibilidad y credibilidad.",
+      "owner": "Founder",
+      "track": "Checkout starts / pricing clicks"
+    },
+    {
+      "change": "Meter una mini demo real por encima del fold",
+      "stage": "Queued",
+      "expectedImpact": "Medio",
+      "reason": "Dar valor visual inmediato y reducir abstracción.",
+      "owner": "Founder",
+      "track": "Time on page / CTA clicks"
+    }
+  ],
+  "homepageFocusMap": [
+    {
+      "area": "Home principal",
+      "priority": "P1",
+      "rule": "La home debe vender una narrativa simple y empujar a una sola acción.",
+      "items": [
+        "Promesa principal clara",
+        "Comparativa visible",
+        "CTA principal único",
+        "Módulos secundarios más abajo"
+      ]
+    },
+    {
+      "area": "Landings secundarias",
+      "priority": "P1",
+      "rule": "ZeroClaw, memory, developers y automation funcionan mejor como landings específicas que como hero principal.",
+      "items": [
+        "/chatgpt-alternative",
+        "/memory-automation",
+        "/developers",
+        "/lifetime-ai"
+      ]
+    },
+    {
+      "area": "Módulos del producto",
+      "priority": "P2",
+      "rule": "ZeroOptimize, ZeroClaw y ZeroLabs deben leerse como ventajas de la promesa principal, no como 3 productos distintos.",
+      "items": [
+        "ZeroOptimize = mejor modelo",
+        "ZeroClaw = memoria y continuidad",
+        "ZeroLabs = extras / experiments"
+      ]
+    }
+  ],
   "landingMessaging": [
     {
       "name": "ChatGPT alternative landing",
