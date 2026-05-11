@@ -3319,7 +3319,7 @@
   ],
   "notes": "Flujo recomendado: GitHub como fuente de verdad del proyecto, Vercel para despliegue y data/dashboard.json como estado consolidado. Para shorts, usa un sistema simple: angulo -> guion IA -> grabacion de pantalla -> plantilla -> publicacion en 2-3 redes. La siguiente iteracion debe conectar sources reales en data/sources y ejecutar scripts de consolidacion antes de publicar.",
   "meta": {
-    "updatedAt": "2026-05-08T07:27:01.389Z",
+    "updatedAt": "2026-05-11T09:34:59.556Z",
     "updatedBy": "scripts/sync-data.mjs",
     "sourceFilesApplied": [
       "posthog",
